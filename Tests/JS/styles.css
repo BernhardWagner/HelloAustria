@@ -1,0 +1,54 @@
+html, body{height:100%;margin:0;}
+
+/* YOUR BOX */
+.box{
+    position: fixed;
+    overflow: hidden; /* in order to contain content */
+
+    /* The initial styles: */
+    border-radius: 25px;
+    left:800px; top:200px;
+    width: 50px;
+    height: 50px;
+
+
+    /* TRANSITION TO THE RESCUE */
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+}
+
+/* ADD THIS CLASS WITH JS */
+.box.fullScreen{
+    /* Your override styles: */
+    border-radius: 0;
+    left:0; top:0;
+    width: 100vw;
+    height:100vh;
+}
+
+.boxImage {
+    z-index: 200;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box.fullScreen .boxImage {
+    display: none;
+    opacity: 0;
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+}
+
+.box .canvas {
+     display: none;
+    opacity: 0;
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+ }
+.box.fullScreen .canvas {            /* TODO mit klasse lösen */
+    display: block;
+    opacity: 1;
+}
