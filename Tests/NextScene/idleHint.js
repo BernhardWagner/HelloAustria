@@ -46,25 +46,30 @@ bw.idle = (function ($) {
 
     function idleAction() {
         for (var idleObjKey in idleObjects) {
-            var obj = idleObjects[idleObjKey];
+            var obj = idleObjects[idleObjKey],
+                newScaleX = obj.scaleX *  1.1,
+                newScaleY = obj.scaleY * 1.1;
 
             if (!obj.shadow) {
                 obj.shadow = new createjs.Shadow("#ff2222", 0, 0, 0);
             }
 
             createjs.Tween.get(obj.shadow, {override: true}).to({blur: 40}, 1000, createjs.Ease.backIn);
-            createjs.Tween.get(obj, {override: true}).to({scaleX: 1.1, scaleY: 1.1}, 1000, createjs.Ease.backIn);
+            createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 1000, createjs.Ease.backIn);
 
         }
     }
 
     function removeHints() {
         for (var idleObjKey in idleObjects) {
-            var obj = idleObjects[idleObjKey];
+            var obj = idleObjects[idleObjKey],
+                newScaleX = obj.scaleX / 1.1,
+                newScaleY = obj.scaleY / 1.1;
+
 
             if (hintMode && obj.shadow) {
                 createjs.Tween.get(obj.shadow, {override: true}).to({blur: 0}, 1000, createjs.Ease.backIn);
-                createjs.Tween.get(obj, {override: true}).to({scaleX: 1, scaleY: 1}, 1000, createjs.Ease.backIn);
+                createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 1000, createjs.Ease.backIn);
 
             }
 

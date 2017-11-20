@@ -17,6 +17,7 @@ bw.sceneChanger = (function ($) {
         parallaxLayerDampings = parallaxLayerDampings_;
         stage = stage_;
 
+        bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
         bw.idle.registerIdleHints(idleSeconds, stage);
         bw.idle.setIdleObjects(interactionObjects[currentScene]);
         bw.parallax.registerParallax(parallaxLayers[currentScene], parallaxLayerDampings[currentScene], stage_);
