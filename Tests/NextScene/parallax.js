@@ -13,12 +13,16 @@ bw.parallax = (function ($) {
     function registerParallax(layers_, layerdampings_, stage_) {
         layers = layers_;
         dampingFactors = layerdampings_;
-        stage = stage_;
+        stage= stage_;
 
         setInitLayerPos();
 
 
         stage.addEventListener('stagemousemove', parallaxHandler);
+    }
+    
+    function unregisterParallax() {
+        stage.removeEventListener('stagemousemove', parallaxHandler);
     }
 
     function setInitLayerPos() {
@@ -51,6 +55,7 @@ bw.parallax = (function ($) {
 
     return {
         registerParallax: registerParallax,
+        unregisterParallax: unregisterParallax,
     }
 
 

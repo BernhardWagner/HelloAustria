@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>CreateJS export from NextScene</title>
+    <meta charset="UTF-8">
+    <title>CreateJS export from NextScene</title>
 
-<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
-<script src="http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
-<script src="http://code.createjs.com/movieclip-0.6.0.min.js"></script>
-<script src="NextScene.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+    <script src="http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
+    <script src="http://code.createjs.com/movieclip-0.6.0.min.js"></script>
+    <script src="NextScene.js"></script>
+    <script src="parallax.js"></script>
+    <script src="sceneChanger.js"></script>
+    <script src="idleHint.js"></script>
+    <script src="dev.js"></script>
 
-<script>
-var canvas, stage, exportRoot;
-
-function init() {
-	canvas = document.getElementById("canvas");
-	exportRoot = new lib.NextScene();
-
-	stage = new createjs.Stage(canvas);
-	stage.addChild(exportRoot);
-	stage.update();
-
-	createjs.Ticker.setFPS(24);
-	createjs.Ticker.addEventListener("tick", stage);
-}
-</script>
 </head>
 
-<body onload="init();" style="background-color:#D4D4D4">
-	<canvas id="canvas" width="550" height="400" style="background-color:#ffffff"></canvas>
+<body style="background-color:#D4D4D4">
+<canvas id="canvas" width="550" height="400" style="background-color:#ffffff"></canvas>
 </body>
 </html>

@@ -131,6 +131,18 @@ p.nominalBounds = new cjs.Rectangle(-156.9,-157.9,314,316);
 (lib.sc2 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{"in":0,action:14,out:15});
 
+	// timeline functions:
+	this.frame_14 = function() {
+		this.stop();
+	}
+	this.frame_30 = function() {
+		$(document).trigger("nextScene");
+		this.stop();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(14).call(this.frame_14).wait(16).call(this.frame_30));
+
 	// Ebene 4
 	this.instance = new lib.sc1_2_ebene1();
 	this.instance.setTransform(678.6,107.1);
@@ -145,36 +157,48 @@ p.nominalBounds = new cjs.Rectangle(-156.9,-157.9,314,316);
 
 	// Ebene 5
 	this.instance_2 = new lib.sc1_2_ebene1();
-	this.instance_2.setTransform(754.6,117.3);
+	this.instance_2.setTransform(38.6,100.1);
 	this.instance_2._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(15).to({_off:false},0).wait(16));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(15).to({_off:false},0).wait(1).to({x:85.1,y:99.7},0).wait(1).to({x:131.7,y:99.4},0).wait(1).to({x:178.2,y:99.1},0).wait(1).to({x:224.7,y:98.7},0).wait(1).to({x:271.3,y:98.4},0).wait(1).to({x:317.8,y:98.1},0).wait(1).to({x:364.3,y:97.7},0).wait(1).to({x:410.8,y:97.4},0).wait(1).to({x:457.4,y:97.1},0).wait(1).to({x:503.9,y:96.7},0).wait(1).to({x:550.4,y:96.4},0).wait(1).to({x:597,y:96.1},0).wait(1).to({x:643.5,y:95.7},0).wait(1).to({x:690,y:95.4},0).wait(1).to({x:736.6,y:95.1},0).wait(1));
 
 	// Ebene 6
 	this.instance_3 = new lib.sc1_2_ebene2();
-	this.instance_3.setTransform(-676,14.3);
+	this.instance_3.setTransform(-46.1,9.3);
 	this.instance_3._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(15).to({_off:false},0).wait(16));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(15).to({_off:false},0).wait(1).to({x:-84.3,y:8.4},0).wait(1).to({x:-122.7,y:7.5},0).wait(1).to({x:-161.1,y:6.7},0).wait(1).to({x:-199.5,y:5.8},0).wait(1).to({x:-237.9,y:4.9},0).wait(1).to({x:-276.3,y:4.1},0).wait(1).to({x:-314.7,y:3.2},0).wait(1).to({x:-353.1,y:2.3},0).wait(1).to({x:-391.5,y:1.5},0).wait(1).to({x:-429.9,y:0.6},0).wait(1).to({x:-468.3,y:-0.1},0).wait(1).to({x:-506.7,y:-1},0).wait(1).to({x:-545.1,y:-1.8},0).wait(1).to({x:-583.5,y:-2.7},0).wait(1).to({x:-621.9,y:-3.6},0).wait(1));
 
 	// Ebene 1
 	this.instance_4 = new lib.Himmel();
 	this.instance_4.setTransform(17.7,-23);
 
-	this.instance_5 = new lib.sc1_2_ebene1();
-	this.instance_5.setTransform(38.6,100.1);
+	this.l1 = new lib.sc1_2_ebene1();
+	this.l1.setTransform(38.6,100.1);
 
-	this.instance_6 = new lib.sc1_2_ebene2();
-	this.instance_6.setTransform(-46.1,9.3);
+	this.l2 = new lib.sc1_2_ebene2();
+	this.l2.setTransform(-46.1,9.3);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_4}]}).to({state:[{t:this.instance_4},{t:this.instance_6},{t:this.instance_5}]},14).to({state:[{t:this.instance_4}]},1).wait(16));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_4}]}).to({state:[{t:this.instance_4},{t:this.l2},{t:this.l1}]},14).to({state:[{t:this.instance_4}]},1).wait(16));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-888.4,-273.5,1846.4,549.9);
+p.nominalBounds = new cjs.Rectangle(-931.8,-273.5,1939,550.1);
 
 
 (lib.sc1 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{"in":0,"action":19,"out":20});
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{"in":0,"action":19,"out":20});
+
+	// timeline functions:
+	this.frame_19 = function() {
+		this.stop();
+	}
+	this.frame_34 = function() {
+		$(document).trigger("nextScene");
+		this.stop();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(19).call(this.frame_19).wait(15).call(this.frame_34));
 
 	// Ebene 4
 	this.instance = new lib.Ebene1();
@@ -219,19 +243,19 @@ p.nominalBounds = new cjs.Rectangle(-888.4,-273.5,1846.4,549.9);
 	this.instance_6 = new lib.Himmel();
 	this.instance_6.setTransform(-20.4,4);
 
-	this.instance_7 = new lib.Ebene1();
-	this.instance_7.setTransform(-170,63.5);
+	this.l1 = new lib.Ebene1();
+	this.l1.setTransform(-170,63.5);
 
-	this.instance_8 = new lib.Ebene2();
-	this.instance_8.setTransform(103.8,77.9);
+	this.l2 = new lib.Ebene2();
+	this.l2.setTransform(103.8,77.9);
 
-	this.instance_9 = new lib.Ebene3();
-	this.instance_9.setTransform(-50.3,19.8);
+	this.l3 = new lib.Ebene3();
+	this.l3.setTransform(-50.3,19.8);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_6}]}).to({state:[{t:this.instance_6},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7}]},19).to({state:[{t:this.instance_6}]},1).wait(15));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_6}]}).to({state:[{t:this.instance_6},{t:this.l3},{t:this.l2},{t:this.l1}]},19).to({state:[{t:this.instance_6}]},1).wait(15));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-579.2,-246.4,1339.5,917.4);
+p.nominalBounds = new cjs.Rectangle(-386.4,-246.4,819.2,600.8);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{});
 var lib, images, createjs;
