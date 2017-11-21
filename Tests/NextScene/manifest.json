@@ -1,0 +1,6 @@
+{
+  "path": "assets/",
+  "manifest": [
+    "sound.mp3", "image.jpg"
+  ]
+}
