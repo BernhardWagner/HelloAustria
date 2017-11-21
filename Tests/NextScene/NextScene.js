@@ -215,9 +215,12 @@ p.nominalBounds = new cjs.Rectangle(-85.9,-158.8,171.9,317.7);
 
 
 (lib.sc2 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{"in":0,"action":14,out:15});
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{"in":1,"action":14,out:15});
 
 	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
 	this.frame_14 = function() {
 		this.stop();
 	}
@@ -227,7 +230,7 @@ p.nominalBounds = new cjs.Rectangle(-85.9,-158.8,171.9,317.7);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(14).call(this.frame_14).wait(16).call(this.frame_30));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(14).call(this.frame_14).wait(16).call(this.frame_30));
 
 	// Ebene 4
 	this.instance = new lib.sc1_2_ebene1();
@@ -291,9 +294,12 @@ p.nominalBounds = new cjs.Rectangle(-156.9,-157.9,314,316);
 
 
 (lib.sc1 = function(mode,startPosition,loop) {
-if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{"in":0,"action":19,"out":20});
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{"in":1,"action":19,"out":20});
 
 	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
 	this.frame_19 = function() {
 		this.stop();
 	}
@@ -303,7 +309,7 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{"in
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(19).call(this.frame_19).wait(15).call(this.frame_34));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(19).call(this.frame_19).wait(15).call(this.frame_34));
 
 	// Ebene 4
 	this.instance = new lib.Ebene1();

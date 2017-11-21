@@ -5,24 +5,31 @@ var bw = bw || {};
 
 bw.parallax = (function ($) {
 
-    var preload;
+    var preload,
+        manifest = [
+            "Canon.wav",
+            "img.jpg"
+    ];
     
     
     function init() {
-        preload = new createjs.LoadQueue(true);
+        var itemK;
+        preload = new createjs.LoadQueue(true, "./assets/");
 
         createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin]);  // need this so it doesn't default to Web Audio
         preload.installPlugin(createjs.Sound);
-        preload.loadManifest({src:"manifest.json", type:"manifest"});
 
-        console.log(preload);
+        for(itemK in manifest) {
+            preload.loadFile(manifest[itemK]);
+        }
+
 
         preload.addEventListener("error", handleError);
 
         preload.addEventListener('fileload', handleFileLoad);
 
         preload.addEventListener("progress", function (e) {
-
+            console.log(e.loaded);
         });
 
     }

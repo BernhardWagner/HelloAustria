@@ -30,12 +30,20 @@ bw.action = (function ($) {
                     e.target.gotoAndPlay('action');
                 });
             }
+    }
 
+    function unregisterAnimationDefaultActions() {
+        for(var acionObjKey in defaultActionObjects) {
+            var obj = defaultActionObjects[acionObjKey];
+            obj.removeEventListener("mouseover");
+            obj.removeEventListener("click");
+        }
     }
 
 
     return {
         registerAnimationDefaultActions: registerAnimationDefaultActions,
+        unregisterAnimationDefaultActions: unregisterAnimationDefaultActions
     }
 
 
