@@ -6,7 +6,14 @@ nav#navigation {
   height: 30vh;
   background-color: grey;
   position: fixed;
+  top: 0;
+  left: 0;
   padding: 10px;
+
+}
+
+#menuitem ul {
+  list-style: none;
 
 }
 
@@ -15,7 +22,6 @@ div#menu {
 }
 
 button#menubutton {
-  position:fixed;
   color: black;
   font-size:2.5em;
   cursor:pointer;
@@ -24,7 +30,6 @@ button#menubutton {
 }
 
 button#menucross {
-  position:fixed;
   color: black;
   font-size:6em;
   cursor:pointer;
@@ -35,7 +40,7 @@ button#menucross {
 div#menuitem {
   height: 100vh;
   width: 30%;
-  background-color: transparent;
+  background-color: grey;
   padding: 20px;
   padding-top: 200px;
 
@@ -51,7 +56,7 @@ main#content {
 }
 
 #content {
-  background-image: url(images/map.jpg);
+  /*background-image: url(images/map.jpg);*/
   background-size: cover;
   height: 70vh;
   width: 100vw;

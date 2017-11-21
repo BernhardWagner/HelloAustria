@@ -10,8 +10,9 @@ bw.action = (function ($) {
     function registerAnimationDefaultActions(actionObjects_) {
             defaultActionObjects = actionObjects_;
 
-
-            //TODO register mouse over out and click interactions
+        actionObjects_[0].addEventListener("mouseover", function () {
+            console.log("nmousdf");         //TODO on mouse over something should happen
+        });
 
     }
 
