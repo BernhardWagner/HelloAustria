@@ -5,7 +5,7 @@ var bw = bw || {};
 
 bw.sceneChanger = (function ($) {
 
-    var scenes, currentScene, stage, direction, rootScene, parallaxLayers, parallaxLayerDampings, interactionObjects, idleSeconds = 10;
+    var scenes, currentScene, stage, direction, rootScene, parallaxLayers, parallaxLayerDampings, interactionObjects, idleSeconds = 10, reset;
 
     function registerSceneChanger(scenes_, stage_, rootScene_, parallaxLayers_, parallaxLayerDampings_, interactionObjects_) {
         rootScene = rootScene_;
@@ -16,6 +16,9 @@ bw.sceneChanger = (function ($) {
         interactionObjects = interactionObjects_;
         parallaxLayerDampings = parallaxLayerDampings_;
         stage = stage_;
+        reset = false;
+
+        scenes[currentScene].gotoAndPlay(1);
 
         bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
         bw.idle.registerIdleHints(idleSeconds, stage);
@@ -28,9 +31,7 @@ bw.sceneChanger = (function ($) {
 
 
 
-        stage.canvas.addEventListener("dblclick", function (evt) {
-            changeScene();
-        });
+        stage.canvas.addEventListener("dblclick", changeScene);
     }
 
     
@@ -41,6 +42,13 @@ bw.sceneChanger = (function ($) {
 
 
     function nextScene() {
+
+        if(reset){
+            reset = false;
+            rootScene.gotoAndStop(0);
+            currentScene = 0;
+            return;
+        }
 
         if(currentScene === scenes.length - 1 && direction === 'forward') {
             direction = 'backward'
@@ -68,6 +76,17 @@ bw.sceneChanger = (function ($) {
     function getCurrentScene() {
         return currentScene;
     }
+    
+    function resetToDefault() {
+        stage.canvas.removeEventListener("dblclick", changeScene);
+        $(document).off("nextScene");
+        bw.parallax.unregisterParallax();
+        bw.action.unregisterAnimationDefaultActions(interactionObjects[currentScene]);
+        bw.idle.setIdleObjects([]);
+        scenes[currentScene].gotoAndPlay('out');
+
+        reset = true;
+    }
 
 
 
@@ -75,7 +94,8 @@ bw.sceneChanger = (function ($) {
     return {
         registerSceneChanger: registerSceneChanger,
         changeScene: changeScene,
-        getCurrentScene: getCurrentScene
+        getCurrentScene: getCurrentScene,
+        unregisterSceneChanger: resetToDefault,
     }
 
 

@@ -81,7 +81,7 @@ bw.idle = (function ($) {
 
     return {
         registerIdleHints: setIdleHint,
-        setIdleObjects: setIdleObjects
+        setIdleObjects: setIdleObjects,
     }
 
 }($));
