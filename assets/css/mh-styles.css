@@ -12,6 +12,7 @@ nav#navigation {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 
 }
 
@@ -64,7 +65,6 @@ main#content {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
 
 }
 
@@ -83,7 +83,7 @@ button.info img {
     cursor:pointer;
 }
 
-.map {
+#info {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,10 +92,11 @@ button.info img {
 
 #content div.infobox {
   width: 75%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 4%;
   color: #fafafa;
   z-index: 1;
+  box-shadow: 0px 0px 10px #000000;
 }
 
 .hiddeninfobox {
