@@ -1,6 +1,6 @@
 {
   "path": "assets/",
   "manifest": [
-    "Canon.wav"
+    {"id":"song1", "src":"Canon.wav"}, {"id":"img1", "src":"img.jpg"}
   ]
 }

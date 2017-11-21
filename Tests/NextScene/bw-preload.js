@@ -5,65 +5,43 @@ var bw = bw || {};
 
 bw.parallax = (function ($) {
 
-    var layers,
-        dampingFactors,
-        stage,
-        initLayerPos;
+    var preload;
+    
+    
+    function init() {
+        preload = new createjs.LoadQueue(true);
 
-    function registerParallax(layers_, layerdampings_, stage_) {
-        layers = layers_;
-        dampingFactors = layerdampings_;
-        stage= stage_;
+        createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin]);  // need this so it doesn't default to Web Audio
+        preload.installPlugin(createjs.Sound);
+        preload.loadManifest({src:"manifest.json", type:"manifest"});
 
-        setInitLayerPos();
+        console.log(preload);
 
+        preload.addEventListener("error", handleError);
 
-        stage.addEventListener('stagemousemove', parallaxHandler);
+        preload.addEventListener('fileload', handleFileLoad);
+
+        preload.addEventListener("progress", function (e) {
+
+        });
+
     }
-
-    function unregisterParallax() {
-        var i = 0;
-
-        for (var layer in layers) {             //reset init layer positions
-            layers[layer].x = initLayerPos[i].x;
-            layers[layer].y = initLayerPos[i].y;
-            i++;
-        }
-        stage.removeEventListener('stagemousemove', parallaxHandler);
-    }
-
-    function setInitLayerPos() {
-        initLayerPos = [];
-        var i = 0;
-
-        for (var layer in layers) {
-            initLayerPos[i] = {
-                "x": layers[layer].x,
-                "y": layers[layer].y
-            };
-            i++;
-        }
-    }
-
-    function parallaxHandler(e) {
-        var horizontalValue = (e.stageX - stage.canvas.width / 2) * -1,
-            verticalValue = (e.stageY - stage.canvas.height / 2) * -1,
-            i = 0;
-
-        for (var layer in layers) {
-            layers[layer].x = initLayerPos[i].x + horizontalValue / dampingFactors[i];
-            layers[layer].y = initLayerPos[i].y + verticalValue / dampingFactors[i];
-            i++;
-        }
-
-        stage.update();
+    
+    
+    function handleFileLoad() {
 
     }
 
+    function handleError() {
+        console.log("lfsdasdflj")
+    }
+
+    init();
+    
+    
     return {
-        registerParallax: registerParallax,
-        unregisterParallax: unregisterParallax,
-    }
+
+    };
 
 
 }($));
