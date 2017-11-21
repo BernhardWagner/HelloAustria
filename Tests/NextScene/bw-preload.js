@@ -7,7 +7,7 @@ bw.preload = (function ($) {
 
     var preload,
         loadQueue = [
-            "./assets/image.jpg",
+            "NextScene.js",
             {id: "sound1", src: "./assets/sound.mp3"}
         ];
 
@@ -18,6 +18,8 @@ bw.preload = (function ($) {
         preload.installPlugin(createjs.Sound);
 
         preload.loadManifest(loadQueue);
+
+        console.log(preload);
 
         preload.addEventListener("progress", handleProgress);
         preload.addEventListener("complete", handleComplete, this);
