@@ -5,7 +5,9 @@ var bw = bw || {};
 
 bw.sceneChanger = (function ($) {
 
-    var scenes, currentScene, stage, direction, rootScene, parallaxLayers, parallaxLayerDampings, interactionObjects, idleSeconds = 10, reset;
+    var scenes, currentScene, stage, direction, rootScene, parallaxLayers, parallaxLayerDampings, interactionObjects,
+        reset, sceneChangeSound, sceneChange,
+        specialScene;
 
     function registerSceneChanger(scenes_, stage_, rootScene_, parallaxLayers_, parallaxLayerDampings_, interactionObjects_) {
         rootScene = rootScene_;
@@ -17,78 +19,152 @@ bw.sceneChanger = (function ($) {
         parallaxLayerDampings = parallaxLayerDampings_;
         stage = stage_;
         reset = false;
+        specialScene = {active: false};
+        sceneChange = true;
 
-        scenes[currentScene].gotoAndPlay(1);
+        scenes[currentScene].gotoAndPlay(1); //TODO so the animation starts at the beginning see flash file
 
         bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
-        bw.idle.registerIdleHints(idleSeconds, stage);
         bw.idle.setIdleObjects(interactionObjects[currentScene]);
         bw.parallax.registerParallax(parallaxLayers[currentScene], parallaxLayerDampings[currentScene], stage_);
 
         $(document).on("nextScene", function () {
-           nextScene();
+            if (specialScene.active === true) {
+                specialSceneAction();
+            }
+            else {
+                nextScene();
+            }
         });
-
 
 
         stage.canvas.addEventListener("dblclick", changeScene);
     }
 
-    
+
     function changeScene() {
         bw.parallax.unregisterParallax();
-        scenes[currentScene].gotoAndPlay("out");
+        bw.action.unregisterAnimationDefaultActions();
+
+        if (specialScene.active === true) {
+            specialScene.scene.gotoAndPlay("out");
+            specialScene.active = false;
+
+        }
+        else {
+            scenes[currentScene].gotoAndPlay("out");
+        }
+
+        if (sceneChangeSound) {
+            sceneChangeSound.play();
+        }
+    }
+
+
+    function registerSpecialScene(scene, parallaxLayers_, parallaxLayerDampings_, interactionObjects_) {             //for the winter scene for example
+        specialScene.scene = scene;
+        specialScene.parallaxLayers = parallaxLayers_;
+        specialScene.parallaxLayerDampings = parallaxLayerDampings_;
+        specialScene.active = false;
+        specialScene.interactionObjects = interactionObjects_;
+    }
+
+    function toggleSpecialScene() {
+        if(specialScene.active === false) {
+            specialScene.active = true;
+            bw.parallax.unregisterParallax();
+            scenes[currentScene].gotoAndPlay("out");
+        }
+
+        else if (specialScene.active === true){
+            sceneChange = false;
+            changeScene();
+        }
+
+        if (sceneChangeSound) {
+            sceneChangeSound.play();
+        }
+
+    }
+
+    function specialSceneAction() {
+        rootScene.gotoAndPlay('specialScene');
+        bw.action.registerAnimationDefaultActions(specialScene.interactionObjects);
+        bw.idle.setIdleObjects(specialScene.interactionObjects);
+        bw.parallax.registerParallax(specialScene.parallaxLayers, specialScene.parallaxLayerDampings, stage);
+        specialScene.scene.gotoAndPlay('in');
     }
 
 
     function nextScene() {
-
-        if(reset){
+        if (reset) {
             reset = false;
             rootScene.gotoAndStop(0);
             currentScene = 0;
             return;
         }
 
-        if(currentScene === scenes.length - 1 && direction === 'forward') {
-            direction = 'backward'
+        if(sceneChange) {
+            if (currentScene === scenes.length - 1 && direction === 'forward') {
+                direction = 'backward'
+            }
+
+            else if (currentScene === 0 && direction === 'backward') {
+                direction = 'forward';
+            }
+
+            if (direction === 'forward') {
+                currentScene++;
+            }
+            else if (direction === 'backward') {
+                currentScene--;
+            }
         }
 
-        else if(currentScene === 0 && direction === 'backward'){
-            direction = 'forward';
-        }
-
-        if(direction === 'forward') {
-            currentScene++;
-        }
-        else if (direction === 'backward') {
-            currentScene--;
+        else {
+            sceneChange = true;
         }
 
         rootScene.gotoAndPlay(currentScene);
-        scenes[currentScene].gotoAndPlay('in');
 
+        bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
         bw.idle.setIdleObjects(interactionObjects[currentScene]);
         bw.parallax.registerParallax(parallaxLayers[currentScene], parallaxLayerDampings[currentScene], stage);
+        scenes[currentScene].gotoAndPlay('in');
     }
 
 
     function getCurrentScene() {
         return currentScene;
     }
-    
+
     function resetToDefault() {
         stage.canvas.removeEventListener("dblclick", changeScene);
         $(document).off("nextScene");
         bw.parallax.unregisterParallax();
-        bw.action.unregisterAnimationDefaultActions(interactionObjects[currentScene]);
+        bw.action.unregisterAnimationDefaultActions();
         bw.idle.setIdleObjects([]);
-        scenes[currentScene].gotoAndPlay('out');
+
+        if(specialScene.active === true){
+            specialScene.scene.gotoAndPlay('out');
+        }
+        else {
+            scenes[currentScene].gotoAndPlay('out');
+        }
 
         reset = true;
     }
 
+    function setSceneChangeSound(sound) {
+        if (typeof sound === "string") {
+            console.log(sound);
+            sceneChangeSound = createjs.Sound.createInstance(sound);
+        }
 
+        else if (typeof sound === "object") {
+            sceneChangeSound = sound;
+        }
+    }
 
 
     return {
@@ -96,6 +172,9 @@ bw.sceneChanger = (function ($) {
         changeScene: changeScene,
         getCurrentScene: getCurrentScene,
         unregisterSceneChanger: resetToDefault,
+        setSceneChangeSound: setSceneChangeSound,
+        registerSpecialScene: registerSpecialScene,
+        toggleSpecialScene: toggleSpecialScene,
     }
 
 

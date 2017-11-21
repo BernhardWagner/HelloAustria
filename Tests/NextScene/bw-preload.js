@@ -8,7 +8,8 @@ bw.preload = (function ($) {
     var preload,
         loadQueue = [
             "NextScene.js",
-            {id: "sound1", src: "./assets/sound.mp3"}
+            {id: "sound1", src: "./assets/sound.mp3"},
+            {id: "whosh", src: "./assets/whoosh.wav"}
         ];
 
 
@@ -19,19 +20,18 @@ bw.preload = (function ($) {
 
         preload.loadManifest(loadQueue);
 
-        console.log(preload);
-
         preload.addEventListener("progress", handleProgress);
         preload.addEventListener("complete", handleComplete, this);
 
     }
     
     function handleProgress(e) {
-        console.log(e.loaded)
+        //console.log(e)
     }
 
     function handleComplete() {
-        createjs.Sound.play("sound1");
+        console.log("loaded");
+        //createjs.Sound.play("sound1");
     }
 
 

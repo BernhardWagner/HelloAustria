@@ -4,7 +4,7 @@ var bw = bw || {};
 
 bw.devNextScene = (function ($) {
 
-    var canvas, stage, exportRoot;
+    var canvas, stage, exportRoot, idleSeconds = 10;
 
     function init() {
         canvas = document.getElementById("canvas");
@@ -17,6 +17,8 @@ bw.devNextScene = (function ($) {
         stage.mouseEnabled = true;
         stage.enableMouseOver(24);
 
+        bw.idle.registerIdleHints(idleSeconds, stage);
+
 
         bw.sceneChanger.registerSceneChanger(
             [exportRoot.subscene1, exportRoot.subscene2],           //standard animaitons for scene "in", "action", "out"
@@ -25,10 +27,20 @@ bw.devNextScene = (function ($) {
             [[exportRoot.subscene1.l1, exportRoot.subscene1.l2, exportRoot.subscene1.l3], [exportRoot.subscene2.l1, exportRoot.subscene2.l2]], //Scenes first array is first scene, second is second scene...
             [[20,50,100], [20,50]], [[exportRoot.subscene1.l1.flower]]); //last array for interaction objects (also seperated per subscene)
 
+        bw.sceneChanger.registerSpecialScene(exportRoot.specialScene, [exportRoot.specialScene.instance_2, exportRoot.specialScene.l2], [20, 50], []); //for witer scene for example
+
+
+        bw.action.addActionSound(exportRoot.subscene1.l1.flower, "whosh");   //TO register action (on click) sounds
+
+        //which sound should be played between scenes
+        bw.sceneChanger.setSceneChangeSound("whosh");
+
+
+
         createjs.Ticker.setFPS(24);
         createjs.Ticker.addEventListener("tick", tickHandler);
 
-       /* $(document).on("keypress", function (e) {
+        $(document).on("keypress", function (e) {
             if(e.keyCode === 114) {
                 bw.sceneChanger.unregisterSceneChanger();
             }
@@ -40,7 +52,11 @@ bw.devNextScene = (function ($) {
                     [[exportRoot.subscene1.l1, exportRoot.subscene1.l2, exportRoot.subscene1.l3], [exportRoot.subscene2.l1, exportRoot.subscene2.l2]], //Scenes first array is first scene, second is second scene...
                     [[20,50,100], [20,50]], [[exportRoot.subscene1.l1.flower]]); //last array for interaction objects (also seperated per subscene)
             }
-        })*/
+
+            if(e.keyCode === 107) {
+                bw.sceneChanger.toggleSpecialScene();
+            }
+        })
     }
     
     function tickHandler() {
@@ -50,6 +66,10 @@ bw.devNextScene = (function ($) {
     }
 
     $(document).ready(init);
+
+    return {
+        init: init,
+    }
 
 
 }($));

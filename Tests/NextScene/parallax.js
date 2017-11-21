@@ -24,7 +24,7 @@ bw.parallax = (function ($) {
     function unregisterParallax() {
         var i = 0;
 
-        for (var layer in layers) {             //reset init layer positions
+        for (var layer in layers) {       //reset init layer positions
             layers[layer].x = initLayerPos[i].x;
             layers[layer].y = initLayerPos[i].y;
             i++;

@@ -27,6 +27,10 @@ bw.action = (function ($) {
                 });
 
                 obj.addEventListener("click", function (e) {
+                    if(e.target.actionSound) {
+                        e.target.actionSound.stop();
+                        e.target.actionSound.play();
+                    }
                     e.target.gotoAndPlay('action');
                 });
             }
@@ -39,11 +43,17 @@ bw.action = (function ($) {
             obj.removeEventListener("click");
         }
     }
+    
+    
+    function addActionSound(object, soundID) {
+            object.actionSound = createjs.Sound.createInstance(soundID);
+    }
 
 
     return {
         registerAnimationDefaultActions: registerAnimationDefaultActions,
-        unregisterAnimationDefaultActions: unregisterAnimationDefaultActions
+        unregisterAnimationDefaultActions: unregisterAnimationDefaultActions,
+        addActionSound: addActionSound,
     }
 
 
