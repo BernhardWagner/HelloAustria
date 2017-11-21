@@ -22,8 +22,7 @@ $( document ).ready(function() {
     $( "#menubutton" ).show();
   });
 
-  $( ".info" ).click(function() {
-    console.log("jhkadhjk");
+  $( "button.info" ).click(function() {
      $( "div.infobox" ).toggleClass( "hiddeninfobox" );
   });
 
