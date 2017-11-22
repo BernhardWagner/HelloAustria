@@ -12,11 +12,25 @@ $( document ).ready(function() {
 
 /*toggle infobox*/
    $( "button.info" ).click(function() {
-      $( "div.infobox" ).toggleClass( "hiddeninfobox" );
+    $( "div.infobox" ).toggleClass( "hiddeninfobox" );
    });
 
-   $(".icon").on("click", function() {
-			$(".box").toggleClass("fullScreen");
-		});
+/*open canvas*/
+  $(".icon").on("click", function() {
+		$(".box").addClass("fullScreen");
+    $("#content").addClass("gray");
+    $(".close").addClass("closecanvas");
+  });
+
+/*close canvas*/
+  $(".close").on("click", function() {
+    $(".box").removeClass("fullScreen");
+    $("#content").removeClass("gray");
+    $(".close").removeClass("closecanvas");
+  });
+
+  // $(".icon").on("click", function() {
+  //   $(".closecanvas").hide();
+  // });
 
 });
