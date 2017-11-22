@@ -68,7 +68,7 @@ bw.idle = (function ($) {
 
 
             if (hintMode && obj.shadow) {
-                createjs.Tween.get(obj.shadow, {override: true}).to({blur: 0}, 1000, createjs.Ease.backIn);
+                createjs.Tween.get(obj.shadow, {override: true}).to({blur: 0}, 200, createjs.Ease.backIn);
                 createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 200, createjs.Ease.backIn);
 
             }
@@ -81,7 +81,7 @@ bw.idle = (function ($) {
 
     return {
         registerIdleHints: setIdleHint,
-        setIdleObjects: setIdleObjects
+        setIdleObjects: setIdleObjects,
     }
 
 }($));
