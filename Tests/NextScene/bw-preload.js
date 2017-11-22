@@ -9,13 +9,17 @@ bw.preload = (function ($) {
         loadQueue = [
             "NextScene.js",
             /*{id: "sound1", src: "./assets/sound.mp3"},*/
-            {id: "whosh", src: "./assets/whoosh.wav"}
+            {id: "whosh", src: "./assets/whoosh.wav"},                //TODO: working with sound sprites?
+            {id: "grkl-sc1-windsound", src: "./assets/grkl-windsound1.ogg"},
+            {id: "grkl-sc2-windsound", src: "./assets/grkl-windsound2.mp3"},
+            {id: "grkl-special-ambience", src: "./assets/grkl-ambienceSpring.mp3"}
         ];
 
 
     function load() {
         preload = new createjs.LoadQueue(true);
 
+        createjs.Sound.registerPlugins([createjs.WebAudioPlugin]);
         preload.installPlugin(createjs.Sound);
 
         preload.loadManifest(loadQueue);

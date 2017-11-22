@@ -5,11 +5,11 @@ var bw = bw || {};
 
 bw.sceneChanger = (function ($) {
 
-    var scenes, currentScene, stage, direction, rootScene, parallaxLayers, parallaxLayerDampings, interactionObjects,
+    var scenes, currentScene, stage, direction, rootScene, parallaxLayers, parallaxLayerDampings, interactionObjects, sceneSounds,
         reset, sceneChangeSound, sceneChange,
         specialScene;
 
-    function registerSceneChanger(scenes_, stage_, rootScene_, parallaxLayers_, parallaxLayerDampings_, interactionObjects_) {
+    function registerSceneChanger(scenes_, stage_, rootScene_, parallaxLayers_, parallaxLayerDampings_, interactionObjects_, sceneSounds_) {
         rootScene = rootScene_;
         scenes = scenes_;
         currentScene = 0;
@@ -21,12 +21,15 @@ bw.sceneChanger = (function ($) {
         reset = false;
         specialScene = {active: false};
         sceneChange = true;
+        sceneSounds = addSceneSounds(sceneSounds_);
 
         scenes[currentScene].gotoAndPlay(1); //TODO so the animation starts at the beginning see flash file
 
         bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
         bw.idle.setIdleObjects(interactionObjects[currentScene]);
         bw.parallax.registerParallax(parallaxLayers[currentScene], parallaxLayerDampings[currentScene], stage_);
+
+        sceneSounds[currentScene] && sceneSounds[currentScene].play({loop: -1});
 
         $(document).on("nextScene", function () {
             if (specialScene.active === true) {
@@ -41,12 +44,28 @@ bw.sceneChanger = (function ($) {
         stage.canvas.addEventListener("dblclick", changeScene);
     }
 
+    function addSceneSounds(soundArray) {
+        var returnArray = [];
+
+        for(var key in soundArray) {
+            if(typeof soundArray[key] === 'object'){
+                returnArray[key] = soundArray[key];
+            }
+
+            else if(typeof soundArray[key] === 'string') {
+                returnArray[key] = createjs.Sound.createInstance(soundArray[key]);
+            }
+        }
+        return returnArray;
+    }
+
 
     function changeScene() {
         bw.parallax.unregisterParallax();
         bw.action.unregisterAnimationDefaultActions();
 
         if (specialScene.active === true) {
+            specialScene.sound && specialScene.sound.stop();
             specialScene.scene.gotoAndPlay("out");
             specialScene.active = false;
 
@@ -58,15 +77,24 @@ bw.sceneChanger = (function ($) {
         if (sceneChangeSound) {
             sceneChangeSound.play();
         }
+
+        sceneSounds[currentScene] && sceneSounds[currentScene].stop();
     }
 
 
-    function registerSpecialScene(scene, parallaxLayers_, parallaxLayerDampings_, interactionObjects_) {             //for the winter scene for example
+    function registerSpecialScene(scene, parallaxLayers_, parallaxLayerDampings_, interactionObjects_, sceneSound_) {             //for the winter scene for example
         specialScene.scene = scene;
         specialScene.parallaxLayers = parallaxLayers_;
         specialScene.parallaxLayerDampings = parallaxLayerDampings_;
         specialScene.active = false;
         specialScene.interactionObjects = interactionObjects_;
+
+        if(typeof sceneSound_ === 'object'){
+            specialScene.sound = sceneSound_;
+        }
+        else if(typeof sceneSound_ === 'string'){
+            specialScene.sound =createjs.Sound.createInstance(sceneSound_);
+        }
     }
 
     function toggleSpecialScene() {
@@ -74,6 +102,7 @@ bw.sceneChanger = (function ($) {
             specialScene.active = true;
             bw.parallax.unregisterParallax();
             scenes[currentScene].gotoAndPlay("out");
+            sceneSounds[currentScene].stop();
         }
 
         else if (specialScene.active === true){
@@ -93,6 +122,7 @@ bw.sceneChanger = (function ($) {
         bw.idle.setIdleObjects(specialScene.interactionObjects);
         bw.parallax.registerParallax(specialScene.parallaxLayers, specialScene.parallaxLayerDampings, stage);
         specialScene.scene.gotoAndPlay('in');
+        specialScene.sound && specialScene.sound.play({loop: -1});
     }
 
 
@@ -127,6 +157,7 @@ bw.sceneChanger = (function ($) {
 
         rootScene.gotoAndPlay(currentScene);
 
+        sceneSounds[currentScene] && sceneSounds[currentScene].play({loop: -1});
         bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
         bw.idle.setIdleObjects(interactionObjects[currentScene]);
         bw.parallax.registerParallax(parallaxLayers[currentScene], parallaxLayerDampings[currentScene], stage);
@@ -147,9 +178,12 @@ bw.sceneChanger = (function ($) {
 
         if(specialScene.active === true){
             specialScene.scene.gotoAndPlay('out');
+
+            specialScene.sound && specialScene.sound.stop();
         }
         else {
             scenes[currentScene].gotoAndPlay('out');
+            sceneSounds[currentScene] && sceneSounds[currentScene] .stop();
         }
 
         reset = true;
@@ -157,7 +191,6 @@ bw.sceneChanger = (function ($) {
 
     function setSceneChangeSound(sound) {
         if (typeof sound === "string") {
-            console.log(sound);
             sceneChangeSound = createjs.Sound.createInstance(sound);
         }
 
