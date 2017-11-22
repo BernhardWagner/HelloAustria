@@ -8,7 +8,7 @@ bw.preload = (function ($) {
     var preload,
         loadQueue = [
             "NextScene.js",
-            {id: "sound1", src: "./assets/sound.mp3"},
+            /*{id: "sound1", src: "./assets/sound.mp3"},*/
             {id: "whosh", src: "./assets/whoosh.wav"}
         ];
 
