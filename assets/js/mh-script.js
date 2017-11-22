@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+
+/*Hamburger Menu to arrow + toggle menuitem */
   var $hamburger = $(".hamburger");
   var $menuitem = $("#menuitem");
     $hamburger.on("click", function(e) {
@@ -8,12 +10,13 @@ $( document ).ready(function() {
     });
 
 
-
-
-
-
+/*toggle infobox*/
    $( "button.info" ).click(function() {
       $( "div.infobox" ).toggleClass( "hiddeninfobox" );
    });
+
+   $(".icon").on("click", function() {
+			$(".box").toggleClass("fullScreen");
+		});
 
 });
