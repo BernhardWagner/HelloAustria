@@ -1,31 +1,19 @@
-function openNav() {
-    document.getElementById("menuitem").style.width = "150px";
-}
-
-function closeNav() {
-    document.getElementById("menuitem").style.width = "0";
-}
-
-
-
 $( document ).ready(function() {
 
-  $( "#menucross" ).hide();
-
-  $( "#menubutton" ).click(function() {
-    $( "#menubutton" ).hide();
-    $( "#menucross" ).show();
-  });
-
-  $( "#menucross" ).click(function() {
-    $( "#menucross" ).hide();
-    $( "#menubutton" ).show();
-  });
-
-  $( "button.info" ).click(function() {
-     $( "div.infobox" ).toggleClass( "hiddeninfobox" );
-  });
+  var $hamburger = $(".hamburger");
+  var $menuitem = $("#menuitem");
+    $hamburger.on("click", function(e) {
+      $hamburger.toggleClass("is-active");
+      $menuitem.toggleClass("seemenu");
+    });
 
 
+
+
+
+
+   $( "button.info" ).click(function() {
+      $( "div.infobox" ).toggleClass( "hiddeninfobox" );
+   });
 
 });

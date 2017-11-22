@@ -16,20 +16,8 @@ nav#navigation {
 
 }
 
-button#menubutton {
-  color: black;
-  font-size:2.5em;
-  cursor:pointer;
-  border: none;
-  background:none;
-}
-
-button#menucross {
-  color: black;
-  font-size:6em;
-  cursor:pointer;
-  border: none;
-  background:none;
+button:focus {
+  outline: none;
 }
 
 div#menuitem {
@@ -44,6 +32,10 @@ div#menuitem {
   transition: 0.5s;
   padding-top: 50px;
   padding-left: 2%;
+}
+
+div#menuitem.seemenu {
+  width: 200px;
 }
 
 div#menuitem ul {

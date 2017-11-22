@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hello Austria</title>
     <link rel="stylesheet" href="assets/css/mh-styles.css">
+    <link rel="stylesheet" href="assets/css/dist/hamburgers.css">
     <script src="assets/lib/jquery-3.2.1.min.js"></script>
     <script src="assets/js/mh-script.js"></script>
 
@@ -20,8 +21,13 @@
 
   <nav id="navigation">
     <div id="menu">
-      <button id="menubutton" type="button" onclick="openNav()">&#9776;</button>
-      <button id="menucross" type="button" onclick="closeNav()">&#735;</button>
+      <button class="hamburger hamburger--arrowturn" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    <!-- <button id="menubutton" type="button" onclick="openNav()">&#9776;</button>
+      <button id="menucross" type="button" onclick="closeNav()">&#735;</button> -->
     </div>
     <div id="logo">
       <img src="assets/images/logo.png" alt="Logo" />
