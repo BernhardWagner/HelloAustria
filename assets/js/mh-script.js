@@ -1,31 +1,36 @@
-function openNav() {
-    document.getElementById("menuitem").style.width = "150px";
-}
-
-function closeNav() {
-    document.getElementById("menuitem").style.width = "0";
-}
-
-
-
 $( document ).ready(function() {
 
-  $( "#menucross" ).hide();
 
-  $( "#menubutton" ).click(function() {
-    $( "#menubutton" ).hide();
-    $( "#menucross" ).show();
+/*Hamburger Menu to arrow + toggle menuitem */
+  var $hamburger = $(".hamburger");
+  var $menuitem = $("#menuitem");
+    $hamburger.on("click", function(e) {
+      $hamburger.toggleClass("is-active");
+      $menuitem.toggleClass("seemenu");
+    });
+
+
+/*toggle infobox*/
+   $( "button.info" ).click(function() {
+    $( "div.infobox" ).toggleClass( "hiddeninfobox" );
+   });
+
+/*open canvas*/
+  $(".icon").on("click", function() {
+		$(".box").addClass("fullScreen");
+    $(".mapAsBg").addClass("gray");
+    $(".close").addClass("closecanvas");
   });
 
-  $( "#menucross" ).click(function() {
-    $( "#menucross" ).hide();
-    $( "#menubutton" ).show();
+/*close canvas*/
+  $(".close").on("click", function() {
+    $(".box").removeClass("fullScreen");
+    $(".mapAsBg").removeClass("gray");
+    $(".close").removeClass("closecanvas");
   });
 
-  $( "button.info" ).click(function() {
-     $( "div.infobox" ).toggleClass( "hiddeninfobox" );
-  });
-
-
+  // $(".icon").on("click", function() {
+  //   $(".closecanvas").hide();
+  // });
 
 });
