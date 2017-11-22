@@ -18,14 +18,14 @@ $( document ).ready(function() {
 /*open canvas*/
   $(".icon").on("click", function() {
 		$(".box").addClass("fullScreen");
-    $("#content").addClass("gray");
+    $(".mapAsBg").addClass("gray");
     $(".close").addClass("closecanvas");
   });
 
 /*close canvas*/
   $(".close").on("click", function() {
     $(".box").removeClass("fullScreen");
-    $("#content").removeClass("gray");
+    $(".mapAsBg").removeClass("gray");
     $(".close").removeClass("closecanvas");
   });
 
