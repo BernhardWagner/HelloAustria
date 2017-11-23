@@ -25,6 +25,10 @@ button {
   border: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .hamburger {
   padding: 15px 15px;
   display: inline-block;
