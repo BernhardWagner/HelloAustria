@@ -4,7 +4,7 @@ var mh = mh || {};
 
 mh.main = (function () {
 
-  var content, navigation, icons, places, map;
+  var content, navigation, icons, places, map, boxes;
 
   function init() {
     content = $('#content');
@@ -12,6 +12,7 @@ mh.main = (function () {
     icons = $('.icon');
     places = $('.place');
     map = $('.map');
+    boxes = $('.box');
 
 
       /*Hamburger Menu to arrow + toggle menuitem */

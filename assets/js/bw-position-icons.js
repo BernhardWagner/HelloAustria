@@ -16,7 +16,7 @@ bw.resizeMap = (function ($) {
 
         setTimeout(function () {
             $(window).trigger("resize");
-        });
+        },200);
 
 
         $(window).on("resize", function (e) {
@@ -25,24 +25,29 @@ bw.resizeMap = (function ($) {
             content.height(window.innerHeight - navigation.outerHeight());
 
             /*--to get the icons sticky--*/
-            setTimeout(function () {
-                mapBackgroundSize = getBackgroundSize(map[0]);
+            mapBackgroundSize = getBackgroundSize(map[0]);
 
 
-                ratioX = mapBackgroundSize.width/3264;
-                ratioY =  mapBackgroundSize.height/1824;
+            ratioX = mapBackgroundSize.width / 3264;
+            ratioY = mapBackgroundSize.height / 1824;
 
-                places.each(function (key, value) {
-                    topValue = (((mapBackgroundSize.height - content.height()) / 2) * -1 + value.initPosY * ratioY);
-                    leftValue =(((mapBackgroundSize.width - content.width()) / 2) *-1 + value.initPosX * ratioX);
+            places.each(function (key, value) {
+                topValue = (((mapBackgroundSize.height - content.height()) / 2) * -1 + value.initPosY * ratioY);
+                leftValue = (((mapBackgroundSize.width - content.width()) / 2) * -1 + value.initPosX * ratioX);
 
-                    console.log(content.width());
+                $(value).css('top', topValue + 'px');
+                $(value).css('left', leftValue + 'px');
 
 
-                    $(value).css('top', topValue + 'px');
-                    $(value).css('left', leftValue + 'px');
+                $(value).next().css({
+                   'top': topValue + $(value).height()/2,
+                    'left': leftValue + $(value).width()/2
                 });
-            }, 200);
+            });
+
+
+
+
         });
 
         content.height(window.innerHeight - navigation.outerHeight());

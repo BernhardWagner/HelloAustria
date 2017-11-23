@@ -131,12 +131,12 @@ div#logo img{
 main#content {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 
 }
 
 #content button.info {
-  width: 5%;
-  height: 10%;
+  width: 100px;
   position: fixed;
   bottom:  2%;
   right: 2%;
@@ -160,7 +160,6 @@ main#content {
 .grossglockner {
   top: 1200px;         /*Dank javascript auf hintergundbild bezogen*/
   left: 1500px;
-  transform: translate(-50%, 0);
 }
 
 
@@ -204,8 +203,6 @@ button.info img {
 
   /* The initial styles: */
   border-radius: 25px;
-  left: 50%;
-  top: 50%;
   width: 0;
   height: 0;
 
@@ -213,6 +210,12 @@ button.info img {
   /* TRANSITION TO THE RESCUE */
   transition: 0.7s;
   -webkit-transition: 0.7s;
+}
+
+.box canvas {
+  z-index: 1;
+  display: block;
+  margin: auto;
 }
 
 .place {
@@ -223,9 +226,10 @@ button.info img {
 .box.fullScreen{
   /* Your override styles: */
   border-radius: 0;
-  left:0; bottom:0;
-  width: 100vw;
-  height:90vh;
+  left: 0 !important;
+  top: 0 !important;
+  height: 100%;
+  width: auto;
   z-index: 1;
 }
 
@@ -246,10 +250,10 @@ canvas#canvas {
 
 .closecanvas {
   position: absolute;
-  right: 80px;
-  top: 130px;
-  width: 32px;
-  height: 32px;
+  right: 20px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
   opacity: 0.5;
   z-index: 2;
 }
@@ -259,10 +263,10 @@ canvas#canvas {
 .closecanvas:before,
 .closecanvas:after {
   position: absolute;
-  left: 15px;
-  content: ' ';
-  height: 33px;
-  width: 3px;
+  left: 28px;
+  content: '';
+  height: 60px;
+  width: 4px;
   background-color: #333;
   top: 0;
 }

@@ -4,12 +4,35 @@ var bw = bw || {};
 
 bw.main = (function ($) {
 
-    var canvas, stage, exportRoot, idleSeconds = 10;
+    var places, currentPlace, closeButton;
 
+
+    function init() {
+        places = $('.place');
+        closeButton = $('close-canvas');
+
+
+        places.click(function (e) {
+            currentPlace = $(e.target.parentNode).attr('data-place');
+        });
+
+        closeButton.click(function () {
+           currentPlace = null;
+        });
+
+
+    }
+
+    function getCurrentPlace() {
+        return currentPlace;
+    }
+
+
+    $(document).ready(init);
 
 
     return {
-        init: init,
+        getCurrentPlace: getCurrentPlace,
     }
 
 

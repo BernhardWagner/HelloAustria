@@ -59,12 +59,13 @@
 
 <main id="content">
     <div class="map">
-        <button type="button" class="close"></button>
-        <div class="place grossglockner">
+        <button type="button" id="close-canvas" class="close"></button>
+        <div class="place grossglockner" data-place="grossglockner">
             <img class="icon" src="assets/images/mountain.png" alt="Mountain"/>
-            <div class="box one">
-                <canvas id="grossglockner" width="1800" height="960" style="background-color:#ffffff"></canvas>
-            </div>
+        </div>
+        <div class="box one">
+            <div class="grayoverlay"></div>
+            <canvas id="grossglockner" width="1920" height="1080" style="background-color:#ffffff"></canvas>
         </div>
 
         <div id="info">
@@ -92,6 +93,7 @@
 </main>
 
 </body>
+<script src="assets/js/bw-script.js"></script>
 <script src="assets/js/mh-script.js"></script>
 
 </html>
