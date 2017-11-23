@@ -1,15 +1,16 @@
 html, body{height:100%;margin:0;}
 
+body .container{
+  height: 100vh;
+}
+
+
 nav#navigation {
-  width: 98%;
-  height: 10vh;
+  box-sizing: border-box;
+  width: 100%;
   background-color: #8B623E;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 1% 0 1%;
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
@@ -122,19 +123,14 @@ div#menuitem ul {
 div#logo img{
   max-width: 500px;
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
 }
 
 main#content {
-  padding-top: 10vh;
-  background-image: url(../images/map/map.png);
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  height: 90vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: 100%;
+  width: 100%;
 
 }
 
@@ -149,19 +145,27 @@ main#content {
   z-index: 1;
 }
 
-.mapAsBg {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
+
+.map {
+  position: relative;
+  background: url("../images/map/map.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
-.mapAsBg img {
-  width: 100%;
+
+/*places */
+.grossglockner {
+  top: 1200px;         /*Dank javascript auf hintergundbild bezogen*/
+  left: 1500px;
+  transform: translate(-50%, 0);
 }
+
+
+
+
 
 .gray {
   -webkit-filter: grayscale(1);
@@ -195,20 +199,24 @@ button.info img {
 }
 
 .box{
-  position: fixed;
+  position: absolute;
   overflow: hidden; /* in order to contain content */
 
   /* The initial styles: */
   border-radius: 25px;
-  left: 850px;
-  bottom: 300px;
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
 
 
   /* TRANSITION TO THE RESCUE */
   transition: 0.7s;
   -webkit-transition: 0.7s;
+}
+
+.place {
+  position: absolute;
 }
 
 /* ADD THIS CLASS WITH JS */
@@ -222,12 +230,10 @@ button.info img {
 }
 
 .icon {
-  position: fixed;
-  left: 800px;
-  bottom: 250px;
   width: 100px;
   height: 100px;
   z-index: 1;
+  opacity: 1;
 }
 
 canvas#canvas {
