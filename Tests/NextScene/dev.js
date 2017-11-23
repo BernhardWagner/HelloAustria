@@ -7,8 +7,9 @@ bw.devNextScene = (function ($) {
     var canvas, stage, exportRoot, idleSeconds = 10;
 
     function init() {
+      var libb = AdobeAn.getComposition("268F5A6346D1409884CFAEDC779F6205").getLibrary();
         canvas = document.getElementById("canvas");
-        exportRoot = new lib.NextScene();
+        exportRoot = new libb.NextScene_HTML5Canvas();
 
         stage = new createjs.Stage(canvas);
         stage.addChild(exportRoot);
@@ -58,7 +59,7 @@ bw.devNextScene = (function ($) {
             }
         })
     }
-    
+
     function tickHandler() {
 
 
