@@ -9,7 +9,7 @@ bw.test1 = (function ($, images) {
     var canvas, stage, exportRoot, scenes, currentScene, state, sceneNext, currentSceneIndex, i;
 
     function init() {
-        canvas = document.getElementById("scene1");
+        canvas = document.getElementById("canvas");
         images = images || {};
         scenes = [];
         currentScene = "Szene 1";
