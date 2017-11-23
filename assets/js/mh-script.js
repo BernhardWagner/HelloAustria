@@ -48,7 +48,7 @@ mh.main = (function () {
 
 
       /* sets the init pos of the css*/
-      /* sehr inperformant aber keine Ahnung wies sonst gehen sollt */
+      /* sehr inperformant aber keine Ahnung wies sonst gehen sollte */
       places.each(function (key, value) {
           value.initPosY = parseInt($(value).css('top'));
           value.initPosX = parseInt($(value).css('left'));
