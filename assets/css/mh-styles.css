@@ -224,7 +224,7 @@ button.info img {
 
 /* ADD THIS CLASS WITH JS */
 .box.fullScreen{
-  /* Your override styles: */
+  /* Your override styles:  */
   border-radius: 0;
   left: 0 !important;
   top: 0 !important;
