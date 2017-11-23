@@ -3,7 +3,10 @@
 /*map icons*/
 .icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 5px 5px #888888;
+    /*box-shadow: 0 0 5px 5px #888888;*/
     cursor: pointer;
+}
+
+.icon {
     transition: 0.5s;
 }
