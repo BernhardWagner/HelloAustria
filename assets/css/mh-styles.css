@@ -229,8 +229,13 @@ button.info img {
   left: 0 !important;
   top: 0 !important;
   height: 100%;
-  width: auto;
+  width: 100%;
   z-index: 1;
+}
+
+.box.fullScreen canvas {
+  height: 100%;
+  width: auto;
 }
 
 .icon {
@@ -238,14 +243,6 @@ button.info img {
   height: 100px;
   z-index: 1;
   opacity: 1;
-}
-
-canvas#canvas {
-  background-color: #ffffff;
-  margin: auto;
-  display: block;
-  height: 100%;
-  box-shadow: 0px 0px 20px 0px;
 }
 
 .closecanvas {

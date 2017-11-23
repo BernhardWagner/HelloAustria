@@ -14,13 +14,23 @@ bw.main = (function ($) {
 
         places.click(function (e) {
             currentPlace = $(e.target.parentNode).attr('data-place');
+
+            switch (currentPlace) {
+                case "grossglockner":
+                    bw.grossglockner.register();
+                    break;
+            }
         });
 
         closeButton.click(function () {
+            switch (currentPlace) {
+                case "grossglockner":
+                    bw.grossglockner.unregister();
+                    break;
+            }
+
            currentPlace = null;
         });
-
-
     }
 
     function getCurrentPlace() {

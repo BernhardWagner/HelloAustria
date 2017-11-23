@@ -2,12 +2,12 @@
 var bw = bw || {};
 
 
-bw.testGrossglockner = (function ($) {
+bw.grossglockner = (function ($) {
 
     var canvas, stage, exportRoot, idleSeconds = 10;
 
-    function init() {
-        canvas = document.getElementById("grossglockner");
+    function init(canvas_) {
+        canvas = canvas_;
         exportRoot = new lib.grossglockner();
 
         stage = new createjs.Stage(canvas);
@@ -17,6 +17,13 @@ bw.testGrossglockner = (function ($) {
         stage.mouseEnabled = true;
         stage.enableMouseOver(24);
 
+        createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
+        createjs.Ticker.setFPS(30);
+        createjs.Ticker.addEventListener("tick", tickHandler);
+    }
+
+
+    function register() {
         bw.idle.registerIdleHints(idleSeconds, stage);
 
 
@@ -26,11 +33,10 @@ bw.testGrossglockner = (function ($) {
             exportRoot,
             [[exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4]], //Scenes first array is first scene, second is second scene...
             [[20,50,100, 200]], [], []); //secon last array for interaction objects (also seperated per subscene)
+    }
 
+    function unregister() {
 
-
-        createjs.Ticker.setFPS(24);
-        createjs.Ticker.addEventListener("tick", tickHandler);
     }
     
     function tickHandler() {
@@ -41,6 +47,8 @@ bw.testGrossglockner = (function ($) {
 
     return {
         init: init,
+        register: register,
+        unregister: unregister,
     }
 
 

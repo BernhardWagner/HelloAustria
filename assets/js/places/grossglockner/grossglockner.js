@@ -114,9 +114,9 @@ p.nominalBounds = new cjs.Rectangle(-1043.9,-293,2087.9,586.2);
 
 	// Layer1AnimIn
 	this.instance = new lib.gk_sc1_layer1();
-	this.instance.setTransform(10.3,871.1);
+	this.instance.setTransform(-45.6,871.1);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({y:822.3},0).wait(1).to({y:773.6},0).wait(1).to({y:724.9},0).wait(1).to({y:676.1},0).wait(1).to({y:627.4},0).wait(1).to({y:578.7},0).wait(1).to({y:529.9},0).wait(1).to({y:481.2},0).wait(1).to({y:432.4},0).wait(1).to({y:383.7},0).wait(1).to({y:335},0).to({_off:true},1).wait(13));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({x:-44.6,y:822.3},0).wait(1).to({x:-43.7,y:773.6},0).wait(1).to({x:-42.8,y:724.9},0).wait(1).to({x:-41.9,y:676.1},0).wait(1).to({x:-41,y:627.4},0).wait(1).to({x:-40,y:578.7},0).wait(1).to({x:-39.1,y:529.9},0).wait(1).to({x:-38.2,y:481.2},0).wait(1).to({x:-37.3,y:432.4},0).wait(1).to({x:-36.4,y:383.7},0).wait(1).to({x:-35.5,y:335},0).to({_off:true},1).wait(13));
 
 	// Layer2AnimIn
 	this.instance_1 = new lib.gk_sc1_layer2();
@@ -138,10 +138,10 @@ p.nominalBounds = new cjs.Rectangle(-1043.9,-293,2087.9,586.2);
 
 	// Ebene 16
 	this.instance_4 = new lib.gk_sc1_layer1();
-	this.instance_4.setTransform(10.3,335);
+	this.instance_4.setTransform(-35.6,335);
 	this.instance_4._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(13).to({_off:false},0).wait(1).to({x:10.5,y:393.8},0).wait(1).to({x:10.7,y:452.7},0).wait(1).to({x:10.8,y:511.5},0).wait(1).to({x:11,y:570.5},0).wait(1).to({x:11.2,y:629.3},0).wait(1).to({x:11.4,y:688.2},0).wait(1).to({x:11.5,y:747},0).wait(1).to({x:11.7,y:806},0).wait(1).to({x:11.9,y:864.8},0).wait(1).to({x:12.1,y:923.7},0).wait(1).to({x:12.3,y:982.6},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(13).to({_off:false},0).wait(1).to({x:-31.1,y:393.8},0).wait(1).to({x:-26.8,y:452.7},0).wait(1).to({x:-22.4,y:511.5},0).wait(1).to({x:-18.1,y:570.5},0).wait(1).to({x:-13.7,y:629.3},0).wait(1).to({x:-9.3,y:688.2},0).wait(1).to({x:-5,y:747},0).wait(1).to({x:-0.6,y:806},0).wait(1).to({x:3.5,y:864.8},0).wait(1).to({x:7.9,y:923.7},0).wait(1).to({x:12.3,y:982.6},0).wait(1));
 
 	// Ebene 17
 	this.instance_5 = new lib.gk_sc1_layer2();
@@ -169,7 +169,7 @@ p.nominalBounds = new cjs.Rectangle(-1043.9,-293,2087.9,586.2);
 	this.instance_8.setTransform(-959.9,-539.9);
 
 	this.l1 = new lib.gk_sc1_layer1();
-	this.l1.setTransform(10.3,335);
+	this.l1.setTransform(-35.6,335);
 
 	this.l2 = new lib.gk_sc1_layer2();
 	this.l2.setTransform(5.6,78.4,0.932,0.932);

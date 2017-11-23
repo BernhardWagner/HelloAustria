@@ -7,7 +7,7 @@ bw.preload = (function ($) {
 
     var preload,
         jsLoadQueue = [
-            "assets/js/places/grossglockner.js",
+
         ],
 
         imageLoadQueue = [
@@ -53,7 +53,7 @@ bw.preload = (function ($) {
 
     function handleComplete() {
         console.log("loaded");
-        bw.testGrossglockner.init();
+        bw.grossglockner.init(document.getElementById("grossglockner"));
         //createjs.Sound.play("sound1");
     }
 
