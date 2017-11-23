@@ -25,7 +25,7 @@ bw.testGrossglockner = (function ($) {
             stage,
             exportRoot,
             [[exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4]], //Scenes first array is first scene, second is second scene...
-            [[20,50,100, 250]], [], []); //secon last array for interaction objects (also seperated per subscene)
+            [[20,50,100, 200]], [], []); //secon last array for interaction objects (also seperated per subscene)
 
 
 
