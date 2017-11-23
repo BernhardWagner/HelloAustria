@@ -20,7 +20,7 @@ bw.parallax = (function ($) {
 
         stage.addEventListener('stagemousemove', parallaxHandler);
     }
-    
+
     function unregisterParallax() {
         var i = 0;
 
