@@ -37,12 +37,17 @@ bw.main = (function ($) {
         return currentPlace;
     }
 
+    function getCurrentScene() {
+        return bw.sceneChanger.getCurrentScene();
+    }
+
 
     $(document).ready(init);
 
 
     return {
         getCurrentPlace: getCurrentPlace,
+        getCurrentScene: getCurrentScene,
     }
 
 
