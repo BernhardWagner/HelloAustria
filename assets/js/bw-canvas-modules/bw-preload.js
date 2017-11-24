@@ -7,6 +7,11 @@ bw.preload = (function ($) {
 
     var preload,
         scriptInjector,
+        loadingPercentField,
+        loadingPercentBar,
+        loadingPercentBarMaxWidth,
+        loadingWindow,
+        loadedWindow,
         jsLoadQueue = [
             {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'parallaxjs'},
             {src: "assets/js/bw-canvas-modules/bw-sceneChanger.js", id:'sceneChangerjs'},
@@ -35,6 +40,12 @@ bw.preload = (function ($) {
     function load() {
         preload = new createjs.LoadQueue(true);
         scriptInjector = document.getElementById('scriptinjector');
+        loadingPercentBar = document.getElementById('loading-bar');
+        loadingPercentField = document.getElementById('loading-percent');
+        loadingWindow = $('.preload');
+        loadedWindow = $('.loaded');
+
+        loadingPercentBarMaxWidth = $(loadingPercentBar.parentNode).width();
 
         createjs.Sound.registerPlugins([createjs.WebAudioPlugin]);
         preload.installPlugin(createjs.Sound);
@@ -52,7 +63,8 @@ bw.preload = (function ($) {
     }
     
     function handleProgress(e) {
-        //console.log(e)
+       loadingPercentField.innerHTML = Math.round(e.progress * 100) + "%";
+       loadingPercentBar.style.width = loadingPercentBarMaxWidth * e.progress + 'px';
     }
 
     function handleFileLoad(evt) {
@@ -69,6 +81,8 @@ bw.preload = (function ($) {
 
     function handleComplete() {
         console.log("loaded");
+        loadingWindow.addClass('hidden');
+        loadedWindow.removeClass('hidden');
         bw.main.init();
         //createjs.Sound.play("sound1");
     }
