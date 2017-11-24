@@ -5,7 +5,7 @@ var bw = bw || {};
 
 bw.photo = (function ($) {
 
-    var triggerElement, pictureObject, pictureSound, closeButton, active;
+    var triggerElement, pictureObject, pictureSound, closeButton, active, closeButtonInitScale;
 
     /* TODO only one picture interaction per place? */
     function registerPictureInteraction(triggerElement_, pictureObject_, sound_, closeButton_) {
@@ -16,6 +16,11 @@ bw.photo = (function ($) {
         closeButton.cursor = "pointer";
         triggerElement.cursor = "pointer";
         active = false;
+
+        closeButtonInitScale = {
+            x: closeButton.scaleX,
+            y: closeButton.scaleY
+        };
 
         triggerElement.addEventListener('click', makeAPhoto);
         closeButton.addEventListener('click', closeImage);
@@ -55,7 +60,7 @@ bw.photo = (function ($) {
         pictureObject.gotoAndPlay('out');
         active = false;
     }
-    
+
     function setPictureSound(sound_) {
         if(sound_){
             if(typeof sound_ === 'object'){
@@ -69,17 +74,15 @@ bw.photo = (function ($) {
     }
 
     function hoverCloseButton() {
-        console.log("hoverIn");
-        var newScaleX = closeButton.scaleX * 1.1,
-            newScaleY = closeButton.scaleY * 1.1;
+        var newScaleX = closeButtonInitScale.x + 0.1,
+            newScaleY = closeButtonInitScale.y + 0.1;
 
         createjs.Tween.get(closeButton, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 200, createjs.Ease.cubicIn);
     }
 
     function nohoverCloseButton() {
-        console.log("hoverOut");
-        var newScaleX = closeButton.scaleX / 1.1,
-            newScaleY = closeButton.scaleY / 1.1;
+        var newScaleX = closeButtonInitScale.x,
+            newScaleY = closeButtonInitScale.y;
 
         createjs.Tween.get(closeButton, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 200, createjs.Ease.cubicIn);
     }
