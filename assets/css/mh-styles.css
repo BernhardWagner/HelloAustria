@@ -6,6 +6,7 @@ body .container{
 
 
 nav#navigation {
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   background-color: #8B623E;
@@ -13,7 +14,7 @@ nav#navigation {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
 
 }
 
@@ -98,21 +99,23 @@ button:hover {
 
 
 div#menuitem {
-  height: 90vh;
   width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 10vh;
+  position: absolute;
   left: 0;
-  background-color: transparent;
+  /*background-color: transparent*/;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 50px;
-  padding-left: 2%;
+  z-index: 3;
+  background-color: white;
 }
 
 div#menuitem.seemenu {
   width: 200px;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 3;
 }
 
 div#menuitem ul {

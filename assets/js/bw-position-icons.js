@@ -3,8 +3,10 @@ var bw = bw || {};
 
 
 bw.resizeMap = (function ($) {
+    var menuItem;
 
     function iconPosiontioningAndResize(content, places, navigation, map) {
+        menuItem = $('#menuitem');
 
         /* sets the init pos of the css*/
         /* sehr inperformant aber keine Ahnung wies sonst gehen sollte */
@@ -23,6 +25,7 @@ bw.resizeMap = (function ($) {
             var mapBackgroundSize, topValue, leftValue, ratioX, ratioY;
 
             content.height(window.innerHeight - navigation.outerHeight());
+            menuItem.height(content.height());
 
             /*--to get the icons sticky--*/
             mapBackgroundSize = getBackgroundSize(map[0]);
@@ -51,6 +54,8 @@ bw.resizeMap = (function ($) {
         });
 
         content.height(window.innerHeight - navigation.outerHeight());
+        menuItem.height(content.height());
+
     }
 
 
