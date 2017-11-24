@@ -211,8 +211,8 @@ button.info img {
 
 
   /* TRANSITION TO THE RESCUE */
-  transition: 0.7s;
-  -webkit-transition: 0.7s;
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
 }
 
 .box canvas {

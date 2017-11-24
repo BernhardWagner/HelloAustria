@@ -68,10 +68,10 @@ bw.sceneChanger = (function ($) {
             specialScene.sound && specialScene.sound.stop();
             specialScene.scene.gotoAndPlay("out");
             specialScene.active = false;
-
         }
         else {
             scenes[currentScene].gotoAndPlay("out");
+            bw.main.changeInfoText();
         }
 
         if (sceneChangeSound) {

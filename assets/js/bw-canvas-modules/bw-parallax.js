@@ -30,6 +30,9 @@ bw.parallax = (function ($) {
             i++;
         }
         stage.removeEventListener('stagemousemove', parallaxHandler);
+
+        layers = null;
+        dampingFactors = null;
     }
 
     function setInitLayerPos() {

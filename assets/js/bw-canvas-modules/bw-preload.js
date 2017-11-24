@@ -25,9 +25,6 @@ bw.preload = (function ($) {
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_03.png", id:"grossglockner_layer01_03"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_04.png", id:"grossglockner_layer01_04"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_05.jpg", id:"grossglockner_layer01_05"},
-
-
-
         ],
 
 
