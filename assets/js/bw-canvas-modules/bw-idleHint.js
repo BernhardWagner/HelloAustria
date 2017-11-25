@@ -51,7 +51,7 @@ bw.idle = (function ($) {
                 newScaleY = obj.scaleY * 1.1;
 
             if (!obj.shadow) {
-                obj.shadow = new createjs.Shadow("#ff2222", 0, 0, 0);
+                obj.shadow = new createjs.Shadow("#f6ff00", 0, 0, 0);
             }
 
             createjs.Tween.get(obj.shadow, {override: true}).to({blur: 40}, 1000, createjs.Ease.backIn);

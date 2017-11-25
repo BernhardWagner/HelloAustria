@@ -16,7 +16,7 @@ bw.action = (function ($) {
             obj.cursor = "pointer";
 
             obj.addEventListener("mouseover", function (e) {
-                if(hoverOk){
+                if(hoverOk && e.currentTarget.currentLabel === 'static'){
                     e.currentTarget.gotoAndPlay('hover');
                     hoverOk = false;
 
