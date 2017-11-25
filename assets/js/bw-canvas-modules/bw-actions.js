@@ -17,7 +17,7 @@ bw.action = (function ($) {
 
             obj.addEventListener("mouseover", function (e) {
                 if(hoverOk){
-                    e.target.gotoAndPlay('hover');
+                    e.currentTarget.gotoAndPlay('hover');
                     hoverOk = false;
 
                     setTimeout(function () {
@@ -27,11 +27,11 @@ bw.action = (function ($) {
             });
 
             obj.addEventListener("click", function (e) {
-                if(e.target.actionSound) {
-                    e.target.actionSound.stop();
-                    e.target.actionSound.play();
+                if(e.currentTarget.actionSound) {
+                    e.currentTarget.actionSound.stop();
+                    e.currentTarget.actionSound.play();
                 }
-                e.target.gotoAndPlay('action');
+                e.currentTarget.gotoAndPlay('action');
             });
         }
     }

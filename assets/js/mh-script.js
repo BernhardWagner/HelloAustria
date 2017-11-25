@@ -4,14 +4,10 @@ var mh = mh || {};
 
 mh.main = (function () {
 
-  var content, navigation, icons, places, map, boxes;
+  var icons, boxes;
 
   function init() {
-    content = $('#content');
-    navigation = $('#navigation');
     icons = $('.icon');
-    places = $('.place');
-    map = $('.map');
     boxes = $('.box');
 
 
@@ -31,14 +27,14 @@ mh.main = (function () {
 
       /*open canvas*/
       icons.on("click", function() {
-          $(".box").addClass("fullScreen");
+          boxes.addClass("fullScreen");
           $(".mapAsBg").addClass("gray");
           $(".close").addClass("closecanvas");
       });
 
       /*close canvas*/
       $(".close").on("click", function() {
-          $(".box").removeClass("fullScreen");
+          boxes.removeClass("fullScreen");
           $(".mapAsBg").removeClass("gray");
           $(".close").removeClass("closecanvas");
       });
@@ -46,10 +42,6 @@ mh.main = (function () {
       // $(".icon").on("click", function() {
       //   $(".closecanvas").hide();
       // });
-
-      bw.resizeMap.iconPosiontioningAndResize(content, places, navigation, map);
-
-
   }
 
     $( document ).ready(init);

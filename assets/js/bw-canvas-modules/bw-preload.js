@@ -25,11 +25,24 @@ bw.preload = (function ($) {
 
         imageLoadQueue = [
             /*grossglockner*/
+            {src:"assets/images/grossglockner/sc2/auto.png", id:"auto"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01.png", id:"grossglockner_layer01_01"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_01.png", id:"grossglockner_layer01_01_01"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_02.png", id:"grossglockner_layer01_01_02"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_03.png", id:"grossglockner_layer01_01_03"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_04.png", id:"grossglockner_layer01_01_04"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_05.png", id:"grossglockner_layer01_01_05"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06.png", id:"grossglockner_layer01_01_06"},
+            //{src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06_1.png", id:"grossglockner_layer01_01_06_1"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_02.png", id:"grossglockner_layer01_02"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_03.png", id:"grossglockner_layer01_03"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_04.png", id:"grossglockner_layer01_04"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_05.jpg", id:"grossglockner_layer01_05"},
+            {src:"assets/images/grossglockner/sc2/grossglockner_layer02_01.png", id:"grossglockner_layer02_01"},
+            {src:"assets/images/grossglockner/sc2/grossglockner_layer02_02.png", id:"grossglockner_layer02_02"},
+            {src:"assets/images/grossglockner/sc1/reh01.png", id:"reh01"},
+            {src:"assets/images/grossglockner/sc1/reh02.png", id:"reh02"},
+            {src:"assets/images/grossglockner/sc2/schifahrer.png", id:"schifahrer"}
         ],
 
 
@@ -81,6 +94,7 @@ bw.preload = (function ($) {
 
     function handleComplete() {
         console.log("loaded");
+        bw.resizeMap.iconPosiontioningAndResize();
         loadingWindow.addClass('hidden');
         loadedWindow.removeClass('hidden');
         bw.main.init();

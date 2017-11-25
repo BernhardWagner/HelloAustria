@@ -24,15 +24,18 @@ bw.grossglockner = (function ($) {
 
 
     function register() {
+        var scene1InteractionObjects = [exportRoot.sc1.l1.wald],
+            scene2InteractionsObjects = [exportRoot.sc2.l1.auto, exportRoot.sc2.l2.skifahrer];
+
         bw.idle.registerIdleHints(idleSeconds, stage);
 
 
         bw.sceneChanger.registerSceneChanger(
-            [exportRoot.sc1],           //standard animaitons for scene "in", "action", "out"
+            [exportRoot.sc1, exportRoot.sc2],           //standard animaitons for scene "in", "action", "out"
             stage,
             exportRoot,
-            [[exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4]], //Scenes first array is first scene, second is second scene...
-            [[20,50,100, 200]], [], []); //secon last array for interaction objects (also seperated per subscene)
+            [[exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4], [exportRoot.sc2.l1, exportRoot.sc2.l2]], //Scenes first array is first scene, second is second scene...
+            [[20,50,100, 200], [20,80]], [scene1InteractionObjects, scene2InteractionsObjects], []); //second last array for interaction objects (also seperated per subscene)
 
 
 

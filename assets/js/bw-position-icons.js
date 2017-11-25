@@ -3,10 +3,14 @@ var bw = bw || {};
 
 
 bw.resizeMap = (function ($) {
-    var menuItem;
+    var menuItem, content, navigation, places, map;
 
-    function iconPosiontioningAndResize(content, places, navigation, map) {
+    function iconPosiontioningAndResize() {
         menuItem = $('#menuitem');
+        places = $('.place');
+        content = $('#content');
+        map = $('.map');
+        navigation = $('#navigation');
 
         /* sets the init pos of the css*/
         /* sehr inperformant aber keine Ahnung wies sonst gehen sollte */
