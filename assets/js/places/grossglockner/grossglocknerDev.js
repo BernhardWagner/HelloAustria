@@ -20,14 +20,14 @@ bw.grossglockner = (function ($) {
         createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
         createjs.Ticker.setFPS(30);
         createjs.Ticker.addEventListener("tick", tickHandler);
+
+        bw.idle.registerIdleHints(idleSeconds, stage);
     }
 
 
     function register() {
         var scene1InteractionObjects = [exportRoot.sc1.l1.wald],
             scene2InteractionsObjects = [exportRoot.sc2.l1.auto, exportRoot.sc2.l2.skifahrer];
-
-        bw.idle.registerIdleHints(idleSeconds, stage);
 
 
         bw.sceneChanger.registerSceneChanger(

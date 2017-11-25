@@ -72,11 +72,11 @@ bw.idle = (function ($) {
                 createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 200, createjs.Ease.backIn);
 
             }
-
-            hintMode = false;
-
-            idleTimeCount = 0;
         }
+
+        hintMode = false;
+
+        idleTimeCount = 0;
     }
 
     return {

@@ -59,7 +59,7 @@ bw.parallax = (function ($) {
             i++;
         }
 
-        stage.update();
+        //stage.update();
 
     }
 

@@ -23,6 +23,7 @@ bw.sceneChanger = (function ($) {
         sceneChange = true;
         sceneSounds = addSceneSounds(sceneSounds_);
 
+        rootScene.gotoAndStop(currentScene);
         scenes[currentScene].gotoAndPlay(1); //TODO so the animation starts at the beginning see flash file
 
         bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
