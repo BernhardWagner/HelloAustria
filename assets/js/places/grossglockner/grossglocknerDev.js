@@ -27,15 +27,24 @@ bw.grossglockner = (function ($) {
 
     function register() {
         var scene1InteractionObjects = [exportRoot.sc1.l1.wald],
-            scene2InteractionsObjects = [exportRoot.sc2.l1.auto, exportRoot.sc2.l2.skifahrer];
+            scene2InteractionsObjects = [exportRoot.sc2.l1.auto, exportRoot.sc2.l2.skifahrer],
+
+
+            scene1Layers = [exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4],
+            scene2Layers = [[exportRoot.sc2.l1, exportRoot.sc2.l2]],
+
+            scene1LayerParallaxDampings = [20,50,100, 200],
+            scene2LayerParallaxDampings = [20,80];
 
 
         bw.sceneChanger.registerSceneChanger(
             [exportRoot.sc1, exportRoot.sc2],           //standard animaitons for scene "in", "action", "out"
             stage,
             exportRoot,
-            [[exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4], [exportRoot.sc2.l1, exportRoot.sc2.l2]], //Scenes first array is first scene, second is second scene...
-            [[20,50,100, 200], [20,80]], [scene1InteractionObjects, scene2InteractionsObjects], []); //second last array for interaction objects (also seperated per subscene)
+            [scene1Layers, scene2Layers], //Scenes first array is first scene, second is second scene...
+            [scene1LayerParallaxDampings, scene2LayerParallaxDampings],
+            [scene1InteractionObjects, scene2InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
+            []); //last array for the sccene change sounds
 
 
 
