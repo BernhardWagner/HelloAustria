@@ -44,3 +44,44 @@
     height: 30px;
     transition: 0.5s ease;
 }
+
+.small-screen-message {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* so map is not out of bounce */
+@media screen and (min-device-aspect-ratio: 17/9) {
+    .small-screen-message {
+        display: block;
+    }
+
+    .loaded {
+        display: none;
+    }
+
+    .preload {
+        display: none;
+    }
+}
+
+
+@media screen and (max-device-aspect-ratio: 6/5) {
+    .small-screen-message {
+        display: block;
+    }
+
+    .loaded {
+        display: none;
+    }
+
+    .preload {
+        display: none;
+    }
+}
+
+
+
