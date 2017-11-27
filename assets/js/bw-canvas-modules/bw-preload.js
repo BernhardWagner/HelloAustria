@@ -8,24 +8,33 @@ bw.preload = (function ($) {
     var preload,
         scriptInjector,
         loadingPercentField,
-        loadingPercentBar,
-        loadingPercentBarMaxWidth,
         loadingWindow,
         loadedWindow,
+        firstPreloadImageLoaded,
+        loadingImageInjector,
+        preloadingImages,
+        currentPercentStep,
         loadingScreenImages = [
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'5%'},           //TODO in eigene json auslagern
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'10%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'15%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'20%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'25%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'30%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'35%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'40%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'45%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'50%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'55%'},
-            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'60%'},
-
+            {src: "assets/images/loading/loadingscreen_05.png", id:'5%', data: 'preloadImg'},           //TODO in eigene json auslagern
+            {src: "assets/images/loading/loadingscreen_10.png", id:'10%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_15.png", id:'15%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_20.png", id:'20%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_25.png", id:'25%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_30.png", id:'30%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_35.png", id:'35%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_40.png", id:'40%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_45.png", id:'45%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_50.png", id:'50%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_55.png", id:'55%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_60.png", id:'60%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_65.png", id:'65%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_70.png", id:'70%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_75.png", id:'75%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_80.png", id:'80%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_85.png", id:'85%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_90.png", id:'90%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_95.png", id:'95%', data: 'preloadImg'},
+            {src: "assets/images/loading/loadingscreen_100.png", id:'100%', data: 'preloadImg'},
         ],
 
         jsLoadQueue = [
@@ -69,12 +78,12 @@ bw.preload = (function ($) {
     function load() {
         preload = new createjs.LoadQueue(true);
         scriptInjector = document.getElementById('scriptinjector');
-        loadingPercentBar = document.getElementById('loading-bar');
         loadingPercentField = document.getElementById('loading-percent');
         loadingWindow = $('.preload');
         loadedWindow = $('.loaded');
-
-        loadingPercentBarMaxWidth = $(loadingPercentBar.parentNode).width();
+        loadingImageInjector = $('#loadingImageInjector');
+        preloadingImages = [];
+        currentPercentStep = 0;
 
         createjs.Sound.registerPlugins([createjs.WebAudioPlugin]);
         preload.installPlugin(createjs.Sound);
@@ -94,12 +103,20 @@ bw.preload = (function ($) {
     
     function handleProgress(e) {
        loadingPercentField.innerHTML = Math.round(e.progress * 100) + "%";
-       loadingPercentBar.style.width = loadingPercentBarMaxWidth * e.progress + 'px';
+
+       if(firstPreloadImageLoaded && preloadingImages !== [] && e.progress * 100 > currentPercentStep) {
+           loadingImageInjector.append(preloadingImages.shift());
+           currentPercentStep += 5;
+       }
     }
 
     function handleFileLoad(evt) {
-        if (evt.item.type === "image") {
-            console.log(evt.item);
+        if(evt.item.data === 'preloadImg') {
+            firstPreloadImageLoaded = true;
+            preloadingImages.push(evt.result);
+        }
+
+        else if (evt.item.type === "image") {
             images[evt.item.id] = evt.result;
         }
 

@@ -40,6 +40,8 @@ bw.main = (function ($) {
             currentPlace = null;
             changeInfoText();
         });
+
+        bw.resizeMap.iconPosiontioningAndResize();
     }
 
     function getCurrentPlace() {
