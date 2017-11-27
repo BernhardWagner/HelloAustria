@@ -72,7 +72,6 @@ bw.sceneChanger = (function ($) {
         }
         else {
             scenes[currentScene].gotoAndPlay("out");
-            bw.main.changeInfoText();
         }
 
         if (sceneChangeSound) {
@@ -156,6 +155,7 @@ bw.sceneChanger = (function ($) {
             sceneChange = true;
         }
 
+        bw.main.changeInfoText();
         rootScene.gotoAndPlay(currentScene);
 
         sceneSounds[currentScene] && sceneSounds[currentScene].play({loop: -1});
@@ -200,6 +200,10 @@ bw.sceneChanger = (function ($) {
         }
     }
 
+    function isSpecialScene() {
+        return specialScene.active;
+    }
+
 
     return {
         registerSceneChanger: registerSceneChanger,
@@ -209,6 +213,7 @@ bw.sceneChanger = (function ($) {
         setSceneChangeSound: setSceneChangeSound,
         registerSpecialScene: registerSpecialScene,
         toggleSpecialScene: toggleSpecialScene,
+        isSpecialScene: isSpecialScene,
     }
 
 

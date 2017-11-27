@@ -12,6 +12,22 @@ bw.preload = (function ($) {
         loadingPercentBarMaxWidth,
         loadingWindow,
         loadedWindow,
+        loadingScreenImages = [
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'5%'},           //TODO in eigene json auslagern
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'10%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'15%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'20%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'25%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'30%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'35%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'40%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'45%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'50%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'55%'},
+            {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'60%'},
+
+        ],
+
         jsLoadQueue = [
             {src: "assets/js/bw-canvas-modules/bw-parallax.js", id:'parallaxjs'},
             {src: "assets/js/bw-canvas-modules/bw-sceneChanger.js", id:'sceneChangerjs'},
@@ -64,6 +80,7 @@ bw.preload = (function ($) {
         preload.installPlugin(createjs.Sound);
 
         preload.loadFile('descriptions.json');
+        preload.loadManifest(loadingScreenImages);
         preload.loadManifest(jsLoadQueue);
         preload.loadManifest(soundLoadQueue);
         preload.loadManifest(imageLoadQueue);
@@ -81,7 +98,10 @@ bw.preload = (function ($) {
     }
 
     function handleFileLoad(evt) {
-        if (evt.item.type === "image") { images[evt.item.id] = evt.result;}
+        if (evt.item.type === "image") {
+            console.log(evt.item);
+            images[evt.item.id] = evt.result;
+        }
 
         else if (evt.item.id === 'descriptions.json') {
                 bw.main.setDescriptions(evt.result);
