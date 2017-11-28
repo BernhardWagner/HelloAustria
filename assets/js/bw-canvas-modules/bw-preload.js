@@ -50,24 +50,29 @@ bw.preload = (function ($) {
 
         imageLoadQueue = [
             /*grossglockner*/
-            {src:"assets/images/grossglockner/sc2/auto.png", id:"auto"},
+            {src:"assets/images/grossglockner/sc1/baum02.png", id:"baum02"},
+            {src:"assets/images/grossglockner/sc1/baum04.png", id:"baum04"},
+            {src:"assets/images/grossglockner/sc1/baum05.png", id:"baum05"},
+            {src:"assets/images/grossglockner/sc1/Baum08.png", id:"Baum08"},
+            {src:"assets/images/grossglockner/sc1/baum09.png", id:"baum09"},
+            {src:"assets/images/grossglockner/sc1/baumstümfpe.png", id:"baumstümfpe"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01.png", id:"grossglockner_layer01_01"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_01.png", id:"grossglockner_layer01_01_01"},
-            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_02.png", id:"grossglockner_layer01_01_02"},
-            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_03.png", id:"grossglockner_layer01_01_03"},
-            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_04.png", id:"grossglockner_layer01_01_04"},
-            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_05.png", id:"grossglockner_layer01_01_05"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06.png", id:"grossglockner_layer01_01_06"},
-            //{src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06_1.png", id:"grossglockner_layer01_01_06_1"},
+            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06_1.png", id:"grossglockner_layer01_01_06_1"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_02.png", id:"grossglockner_layer01_02"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_03.png", id:"grossglockner_layer01_03"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_04.png", id:"grossglockner_layer01_04"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_05.jpg", id:"grossglockner_layer01_05"},
+            {src:"assets/images/grossglockner/sc1/Grossglockner_Reh01.png", id:"Grossglockner_Reh01"},
+            {src:"assets/images/grossglockner/sc1/Grossglockner_Reh02.png", id:"Grossglockner_Reh02"},
+            {src:"assets/images/grossglockner/sc1/Grossglockner_Reh03.png", id:"Grossglockner_Reh03"},
+            {src:"assets/images/grossglockner/sc1/Grossglockner_Reh04.png", id:"Grossglockner_Reh04"},
+            
             {src:"assets/images/grossglockner/sc2/grossglockner_layer02_01.png", id:"grossglockner_layer02_01"},
             {src:"assets/images/grossglockner/sc2/grossglockner_layer02_02.png", id:"grossglockner_layer02_02"},
-            {src:"assets/images/grossglockner/sc1/reh01.png", id:"reh01"},
-            {src:"assets/images/grossglockner/sc1/reh02.png", id:"reh02"},
-            {src:"assets/images/grossglockner/sc2/schifahrer.png", id:"schifahrer"}
+            {src:"assets/images/grossglockner/sc2/schifahrer.png", id:"schifahrer"},
+            {src:"assets/images/grossglockner/sc2/auto.png", id:"auto"},
         ],
 
 

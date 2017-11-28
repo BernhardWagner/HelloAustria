@@ -37,6 +37,42 @@ p.nominalBounds = new cjs.Rectangle(-615,-0.1,3636.6,2263);
 p.nominalBounds = new cjs.Rectangle(0,0,250,230);
 
 
+(lib.baum02 = function() {
+	this.initialize(img.baum02);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,160,202);
+
+
+(lib.baum04 = function() {
+	this.initialize(img.baum04);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,185,167);
+
+
+(lib.baum05 = function() {
+	this.initialize(img.baum05);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,130,159);
+
+
+(lib.Baum08 = function() {
+	this.initialize(img.Baum08);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,95,132);
+
+
+(lib.baum09 = function() {
+	this.initialize(img.baum09);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,95,115);
+
+
+(lib.baumstümfpe = function() {
+	this.initialize(img.baumstümfpe);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,168,80);
+
+
 (lib.grossglockner_layer01_01 = function() {
 	this.initialize(img.grossglockner_layer01_01);
 }).prototype = p = new cjs.Bitmap();
@@ -47,30 +83,6 @@ p.nominalBounds = new cjs.Rectangle(0,0,1920,539);
 	this.initialize(img.grossglockner_layer01_01_01);
 }).prototype = p = new cjs.Bitmap();
 p.nominalBounds = new cjs.Rectangle(0,0,1920,528);
-
-
-(lib.grossglockner_layer01_01_02 = function() {
-	this.initialize(img.grossglockner_layer01_01_02);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,185,189);
-
-
-(lib.grossglockner_layer01_01_03 = function() {
-	this.initialize(img.grossglockner_layer01_01_03);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,130,183);
-
-
-(lib.grossglockner_layer01_01_04 = function() {
-	this.initialize(img.grossglockner_layer01_01_04);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,95,138);
-
-
-(lib.grossglockner_layer01_01_05 = function() {
-	this.initialize(img.grossglockner_layer01_01_05);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,160,217);
 
 
 (lib.grossglockner_layer01_01_06 = function() {
@@ -121,16 +133,28 @@ p.nominalBounds = new cjs.Rectangle(0,0,1920,1080);
 p.nominalBounds = new cjs.Rectangle(0,0,1920,1080);
 
 
-(lib.reh01 = function() {
-	this.initialize(img.reh01);
+(lib.Grossglockner_Reh01 = function() {
+	this.initialize(img.Grossglockner_Reh01);
 }).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,117,93);
+p.nominalBounds = new cjs.Rectangle(0,0,125,105);
 
 
-(lib.reh02 = function() {
-	this.initialize(img.reh02);
+(lib.Grossglockner_Reh02 = function() {
+	this.initialize(img.Grossglockner_Reh02);
 }).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,122,93);
+p.nominalBounds = new cjs.Rectangle(0,0,120,104);
+
+
+(lib.Grossglockner_Reh03 = function() {
+	this.initialize(img.Grossglockner_Reh03);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,125,102);
+
+
+(lib.Grossglockner_Reh04 = function() {
+	this.initialize(img.Grossglockner_Reh04);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,123,105);
 
 
 (lib.schifahrer = function() {
@@ -209,39 +233,48 @@ p.nominalBounds = new cjs.Rectangle(-1083.9,-561.7,2168,1123.5);
 	this.frame_16 = function() {
 		this.gotoAndStop(0);
 	}
-	this.frame_96 = function() {
+	this.frame_95 = function() {
 		this.gotoAndStop(0);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(16).call(this.frame_16).wait(80).call(this.frame_96));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(16).call(this.frame_16).wait(79).call(this.frame_95));
 
 	// Main
-	this.instance = new lib.grossglockner_layer01_01_02();
-	this.instance.setTransform(-29.1,-89.8,1.148,1.148);
+	this.instance = new lib.baum05();
+	this.instance.setTransform(-197,-71.6,1.169,1.169);
 
-	this.instance_1 = new lib.grossglockner_layer01_01_04();
-	this.instance_1.setTransform(-21.2,-56,1.052,1.052);
+	this.instance_1 = new lib.baum04();
+	this.instance_1.setTransform(-28.2,-77.4,1.131,1.131);
 
-	this.instance_2 = new lib.grossglockner_layer01_01_03();
-	this.instance_2.setTransform(-195.4,-75.9,1.131,1.131);
+	this.instance_2 = new lib.Baum08();
+	this.instance_2.setTransform(257.2,-27.4,1.134,1.1,0,0,180);
 
-	this.instance_3 = new lib.grossglockner_layer01_01_05();
-	this.instance_3.setTransform(-119.9,-141.9,1.1,1.1);
+	this.instance_3 = new lib.baum02();
+	this.instance_3.setTransform(-124.1,-139.4,1.148,1.148);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},2).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},1).wait(80));
+	this.instance_4 = new lib.baumstümfpe();
+	this.instance_4.setTransform(51,41.8,1.119,1.08);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3,p:{rotation:0,x:-124.1,y:-139.4}},{t:this.instance_2,p:{scaleX:1.134,skewX:0,skewY:180,x:257.2,y:-27.4}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]}).to({state:[{t:this.instance_3,p:{rotation:-2.1,x:-130.7,y:-135.8}},{t:this.instance_2,p:{scaleX:1.158,skewX:-2.6,skewY:177.3,x:254,y:-30.1}},{t:this.instance_1,p:{rotation:-2.1,x:-33.4,y:-72.9}},{t:this.instance,p:{rotation:-1.6,x:-202.3,y:-69.2}}]},1).to({state:[{t:this.instance_3,p:{rotation:-3.3,x:-134.2,y:-133.8}},{t:this.instance_2,p:{scaleX:1.158,skewX:-6.1,skewY:173.8,x:247.7,y:-33.2}},{t:this.instance_1,p:{rotation:-4.1,x:-37.8,y:-68.7}},{t:this.instance,p:{rotation:-3.1,x:-206.8,y:-67}}]},1).to({state:[{t:this.instance_3,p:{rotation:-2.1,x:-130.7,y:-135.8}},{t:this.instance_2,p:{scaleX:1.158,skewX:-6.6,skewY:173.3,x:246.7,y:-33.6}},{t:this.instance_1,p:{rotation:-4.3,x:-38.4,y:-68.2}},{t:this.instance,p:{rotation:-1.9,x:-203,y:-68.9}}]},1).to({state:[{t:this.instance_3,p:{rotation:-0.7,x:-126.4,y:-138.1}},{t:this.instance_2,p:{scaleX:1.158,skewX:-4.1,skewY:175.8,x:251.4,y:-31.5}},{t:this.instance_1,p:{rotation:-3.1,x:-35.6,y:-70.9}},{t:this.instance,p:{rotation:-0.1,x:-197.6,y:-71.3}}]},1).to({state:[{t:this.instance_3,p:{rotation:0.3,x:-123.4,y:-139.7}},{t:this.instance_2,p:{scaleX:1.158,skewX:0,skewY:180,x:258.9,y:-27.3}},{t:this.instance_1,p:{rotation:1,x:-25.9,y:-79.4}},{t:this.instance,p:{rotation:0.5,x:-195.5,y:-72.2}}]},1).to({state:[{t:this.instance_3,p:{rotation:0,x:-124.2,y:-139.3}},{t:this.instance_2,p:{scaleX:1.158,skewX:4.5,skewY:-175.4,x:266.6,y:-22.4}},{t:this.instance_1,p:{rotation:3.2,x:-20.5,y:-83.5}},{t:this.instance,p:{rotation:1,x:-193.7,y:-72.9}}]},1).to({state:[{t:this.instance_3,p:{rotation:0.7,x:-122,y:-140.3}},{t:this.instance_2,p:{scaleX:1.158,skewX:6.2,skewY:-173.7,x:269.5,y:-20.3}},{t:this.instance_1,p:{rotation:4.9,x:-16.2,y:-86.6}},{t:this.instance,p:{rotation:1.5,x:-192.1,y:-73.6}}]},1).to({state:[{t:this.instance_3,p:{rotation:0.4,x:-123,y:-139.9}},{t:this.instance_2,p:{scaleX:1.158,skewX:6.2,skewY:-173.7,x:269.5,y:-20.3}},{t:this.instance_1,p:{rotation:4.5,x:-17.4,y:-85.8}},{t:this.instance,p:{rotation:2.2,x:-189.8,y:-74.5}}]},1).to({state:[{t:this.instance_3,p:{rotation:0.1,x:-123.8,y:-139.5}},{t:this.instance_2,p:{scaleX:1.158,skewX:4.4,skewY:-175.5,x:266.6,y:-22.4}},{t:this.instance_1,p:{rotation:3,x:-20.9,y:-83.1}},{t:this.instance,p:{rotation:2.5,x:-189.1,y:-74.9}}]},1).to({state:[{t:this.instance_3,p:{rotation:2.1,x:-117.8,y:-142.4}},{t:this.instance_2,p:{scaleX:1.158,skewX:2.2,skewY:-177.7,x:262.8,y:-24.9}},{t:this.instance_1,p:{rotation:0.8,x:-26.4,y:-78.9}},{t:this.instance,p:{rotation:0.4,x:-195.5,y:-72.3}}]},1).to({state:[{t:this.instance_3,p:{rotation:3.9,x:-112.2,y:-144.9}},{t:this.instance_2,p:{scaleX:1.158,skewX:1,skewY:-178.9,x:260.7,y:-26.3}},{t:this.instance_1,p:{rotation:-0.8,x:-30.4,y:-75.5}},{t:this.instance,p:{rotation:-1.4,x:-201.6,y:-69.6}}]},1).to({state:[{t:this.instance_3,p:{rotation:2.7,x:-115.9,y:-143.3}},{t:this.instance_2,p:{scaleX:1.158,skewX:1,skewY:-178.9,x:260.7,y:-26.3}},{t:this.instance_1,p:{rotation:-2.5,x:-34.4,y:-71.9}},{t:this.instance,p:{rotation:-2.4,x:-204.6,y:-68.2}}]},1).to({state:[{t:this.instance_3,p:{rotation:2.7,x:-115.8,y:-143.4}},{t:this.instance_2,p:{scaleX:1.158,skewX:1,skewY:-178.9,x:260.7,y:-26.3}},{t:this.instance_1,p:{rotation:-0.1,x:-28.6,y:-76.9}},{t:this.instance,p:{rotation:-0.2,x:-197.7,y:-71.3}}]},1).to({state:[{t:this.instance_3,p:{rotation:2.2,x:-117.4,y:-142.6}},{t:this.instance_2,p:{scaleX:1.158,skewX:-1.1,skewY:178.8,x:256.7,y:-28.6}},{t:this.instance_1,p:{rotation:-1.1,x:-31,y:-74.9}},{t:this.instance,p:{rotation:-3.2,x:-207,y:-67}}]},1).to({state:[{t:this.instance_3,p:{rotation:2.9,x:-115.2,y:-143.6}},{t:this.instance_2,p:{scaleX:1.158,skewX:-1.1,skewY:178.8,x:256.7,y:-28.6}},{t:this.instance_1,p:{rotation:-1.1,x:-31,y:-74.9}},{t:this.instance,p:{rotation:-0.4,x:-198.5,y:-71}}]},1).to({state:[{t:this.instance_3,p:{rotation:1.8,x:-120.6,y:-142.6}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:0,skewY:180,x:258.9,y:-27.4}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.8,x:-120.2,y:-142.5}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:-0.3,skewY:179.6,x:258.1,y:-27.8}},{t:this.instance_1,p:{rotation:-1.4,x:-30.9,y:-75.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:0,skewY:180,x:258.9,y:-27.4}},{t:this.instance_1,p:{rotation:1.2,x:-26,y:-78.9}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:0,skewY:180,x:258.9,y:-27.4}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:0.9,skewY:-179,x:260.6,y:-26.4}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:1.4,skewY:-178.5,x:261.5,y:-25.8}},{t:this.instance_1,p:{rotation:-1.6,x:-31.4,y:-75.1}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:2.5,skewY:-177.4,x:263.5,y:-24.8}},{t:this.instance_1,p:{rotation:-0.8,x:-30,y:-76.2}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:1.2,skewY:-178.7,x:261.2,y:-26.1}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:-1.1,skewY:178.8,x:256.7,y:-28.6}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:-2.1,skewY:177.8,x:254.7,y:-29.6}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:1.2,skewY:-178.7,x:261.2,y:-26.1}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:-2.6,skewY:177.3,x:253.7,y:-30.1}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:-0.9,skewY:179,x:257,y:-28.4}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},2).to({state:[{t:this.instance_3,p:{rotation:1.5,x:-121.2,y:-142.1}},{t:this.instance_4},{t:this.instance_2,p:{scaleX:1.123,skewX:-0.9,skewY:179,x:257,y:-28.4}},{t:this.instance_1,p:{rotation:0,x:-28.2,y:-77.4}},{t:this.instance,p:{rotation:0,x:-197,y:-71.6}}]},54).wait(1));
 
 	// Reh
-	this.instance_4 = new lib.reh01();
-	this.instance_4.setTransform(28,12);
+	this.instance_5 = new lib.Grossglockner_Reh01();
+	this.instance_5.setTransform(29.4,-4.4);
 
-	this.instance_5 = new lib.reh02();
-	this.instance_5.setTransform(38.4,15);
+	this.instance_6 = new lib.Grossglockner_Reh02();
+	this.instance_6.setTransform(51,-2.6);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_4,p:{x:28,y:12}}]},17).to({state:[{t:this.instance_5,p:{x:38.4,y:15}}]},4).to({state:[{t:this.instance_4,p:{x:54.6,y:17.5}}]},4).to({state:[{t:this.instance_5,p:{x:59.9,y:21}}]},4).to({state:[{t:this.instance_4,p:{x:66.3,y:21.5}}]},4).to({state:[{t:this.instance_5,p:{x:83.3,y:29.5}}]},4).to({state:[{t:this.instance_4,p:{x:119.5,y:29.5}}]},4).to({state:[{t:this.instance_5,p:{x:145.3,y:34.2}}]},4).to({state:[{t:this.instance_4,p:{x:183.4,y:43.5}}]},4).to({state:[{t:this.instance_5,p:{x:218.3,y:54.5}}]},4).to({state:[{t:this.instance_4,p:{x:257,y:63}}]},4).to({state:[{t:this.instance_5,p:{x:286.3,y:73}}]},4).to({state:[{t:this.instance_4,p:{x:337.5,y:80.5}}]},4).to({state:[{t:this.instance_5,p:{x:385.3,y:100.8}}]},4).to({state:[{t:this.instance_4,p:{x:430.5,y:112.8}}]},4).to({state:[{t:this.instance_5,p:{x:476.3,y:127.2}}]},4).to({state:[{t:this.instance_4,p:{x:532,y:149.5}}]},4).to({state:[{t:this.instance_5,p:{x:582.8,y:164}}]},4).to({state:[{t:this.instance_4,p:{x:630,y:184.5}}]},4).to({state:[{t:this.instance_5,p:{x:679.3,y:207.5}}]},4).wait(4));
+	this.instance_7 = new lib.Grossglockner_Reh03();
+	this.instance_7.setTransform(66.9,-7.4);
+
+	this.instance_8 = new lib.Grossglockner_Reh04();
+	this.instance_8.setTransform(90.5,-1.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_5,p:{x:29.4,y:-4.4}}]},17).to({state:[{t:this.instance_6,p:{x:51,y:-2.6}}]},2).to({state:[{t:this.instance_7,p:{x:66.9,y:-7.4}}]},2).to({state:[{t:this.instance_8,p:{x:90.5,y:-1.9}}]},2).to({state:[{t:this.instance_5,p:{x:102.2,y:-4.7}}]},2).to({state:[{t:this.instance_6,p:{x:132.5,y:-1.1}}]},2).to({state:[{t:this.instance_7,p:{x:150.8,y:-1.9}}]},2).to({state:[{t:this.instance_8,p:{x:175.5,y:-0.9}}]},2).to({state:[{t:this.instance_5,p:{x:185.3,y:-2.9}}]},2).to({state:[{t:this.instance_6,p:{x:211.5,y:-1.1}}]},2).to({state:[{t:this.instance_7,p:{x:228.8,y:-4.4}}]},2).to({state:[{t:this.instance_8,p:{x:253.5,y:-3.4}}]},2).to({state:[{t:this.instance_5,p:{x:264.3,y:-4.4}}]},2).to({state:[{t:this.instance_6,p:{x:289.5,y:-4.6}}]},2).to({state:[{t:this.instance_7,p:{x:304.4,y:-1.4}}]},2).to({state:[{t:this.instance_8,p:{x:329.5,y:0}}]},2).to({state:[{t:this.instance_5,p:{x:336.9,y:0}}]},2).to({state:[{t:this.instance_6,p:{x:359.5,y:0}}]},2).to({state:[{t:this.instance_7,p:{x:372.3,y:-2.4}}]},2).to({state:[{t:this.instance_8,p:{x:394,y:0}}]},2).to({state:[{t:this.instance_5,p:{x:400.3,y:0}}]},2).to({state:[{t:this.instance_6,p:{x:427.5,y:0}}]},2).to({state:[{t:this.instance_7,p:{x:438.3,y:-0.9}}]},2).to({state:[{t:this.instance_8,p:{x:461.5,y:-1.9}}]},2).to({state:[{t:this.instance_5,p:{x:471.3,y:-2.9}}]},2).to({state:[{t:this.instance_6,p:{x:496,y:-2.6}}]},2).to({state:[{t:this.instance_7,p:{x:511.3,y:-1.9}}]},2).to({state:[{t:this.instance_8,p:{x:533.5,y:-1.4}}]},2).to({state:[{t:this.instance_5,p:{x:545.3,y:-2.4}}]},2).to({state:[{t:this.instance_6,p:{x:569.5,y:-3.6}}]},2).to({state:[{t:this.instance_7,p:{x:581.8,y:-3.4}}]},2).to({state:[{t:this.instance_8,p:{x:604.5,y:-2.4}}]},2).to({state:[{t:this.instance_5,p:{x:615.3,y:-5.4}}]},2).to({state:[{t:this.instance_6,p:{x:638.5,y:-7.6}}]},2).to({state:[{t:this.instance_7,p:{x:651.8,y:-5.9}}]},2).to({state:[{t:this.instance_8,p:{x:675,y:-6.9}}]},2).to({state:[{t:this.instance_5,p:{x:685.8,y:-7.4}}]},2).to({state:[{t:this.instance_6,p:{x:700,y:-7.1}}]},2).to({state:[{t:this.instance_7,p:{x:714.3,y:-6.9}}]},2).to({state:[]},2).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-195.4,-141.9,378.8,273);
+p.nominalBounds = new cjs.Rectangle(-197,-139.4,454.2,257.2);
 
 
 (lib.gk_sc1_layer1_haus = function() {
@@ -280,7 +313,7 @@ p.nominalBounds = new cjs.Rectangle(-157.1,-121.9,314.4,244);
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(2).wait(1).to({scaleX:0,scaleY:0,x:-11.5},0).wait(1).to({scaleX:1,scaleY:1,skewY:180,x:9},0).wait(1).to({x:9.7},0).wait(1).to({skewY:0,x:10.4},0).wait(1).to({x:11.1},0).wait(1).to({x:11.8},0).wait(1).to({x:12.5},0).wait(1).to({x:13.2},0).wait(1).to({x:13.9},0).wait(1).to({x:14.5},0).wait(1).to({x:18.4,y:18.8},0).wait(1).to({x:22.4,y:21.6},0).wait(1).to({x:26.3,y:24.5},0).wait(1).to({x:30.3,y:27.3},0).wait(1).to({x:34.2,y:30.1},0).wait(1).to({x:38.1,y:32.9},0).wait(1).to({x:42.1,y:35.8},0).wait(1).to({x:46,y:38.6},0).wait(1).to({x:50,y:41.4},0).wait(1).to({x:53.9,y:44.2},0).wait(1).to({x:57.9,y:47.1},0).wait(1).to({x:61.8,y:49.9},0).wait(1).to({x:65.7,y:52.7},0).wait(1).to({x:69.7,y:55.5},0).wait(1).to({x:73.6,y:58.4},0).wait(1).to({x:77.6,y:61.2},0).wait(1).to({x:81.5,y:64},0).wait(1).to({skewY:180,x:76.3,y:66},0).wait(1).to({x:71.1,y:68},0).wait(1).to({x:65.9,y:70},0).wait(1).to({x:60.7,y:72},0).wait(1).to({x:55.5,y:74},0).wait(1).to({x:50.3,y:76},0).wait(1).to({x:45.1,y:78},0).wait(1).to({x:39.9,y:80},0).wait(1).to({x:34.7,y:82},0).wait(1).to({x:29.5,y:84},0).wait(1).to({x:24.3,y:86},0).wait(1).to({x:19.1,y:88},0).wait(1).to({x:13.9,y:90},0).wait(1).to({x:8.7,y:92},0).wait(1).to({x:3.5,y:94},0).wait(1).to({x:-1.5,y:96},0).wait(1).to({x:-6.7,y:98},0).wait(1).to({x:-11.9,y:100},0).wait(1).to({x:-17.1,y:102},0).wait(1).to({x:-22.3,y:104.1},0).wait(1).to({skewY:0,x:-13.9,y:106.8},0).wait(1).to({x:-5.5,y:109.6},0).wait(1).to({x:2.7,y:112.4},0).wait(1).to({x:11.1,y:115.2},0).wait(1).to({x:19.4,y:118},0).wait(1).to({x:27.8,y:120.7},0).wait(1).to({x:36.2,y:123.5},0).wait(1).to({x:44.6,y:126.3},0).wait(1).to({x:53,y:129.1},0).wait(1).to({x:61.4,y:131.9},0).wait(1).to({x:69.8,y:134.7},0).wait(1).to({x:78.2,y:137.4},0).wait(1).to({x:86.6,y:140.2},0).wait(1).to({x:95,y:143},0).wait(1).to({x:103.4,y:145.8},0).wait(1).to({x:111.8,y:148.6},0).wait(1).to({x:120.2,y:151.3},0).wait(1).to({x:128.6,y:154.1},0).wait(1).to({x:137,y:156.9},0).wait(1).to({x:145.4,y:159.7},0).wait(1).to({x:153.8,y:162.5},0).wait(1).to({x:162.2,y:165.3},0).wait(1).to({x:170.6,y:168},0).wait(1).to({x:179,y:170.8},0).wait(1).to({x:187.4,y:173.6},0).wait(1).to({x:195.8,y:176.4},0).wait(1).to({x:204.2,y:179.2},0).wait(1).to({skewY:180,x:212.6,y:182},0).wait(1).to({x:204.7,y:186.2},0).wait(1).to({x:196.8,y:190.5},0).wait(1).to({x:188.8,y:194.8},0).wait(1).to({x:180.9,y:199.1},0).wait(1).to({x:173,y:203.4},0).wait(1).to({x:165.1,y:207.7},0).wait(1).to({x:157.1,y:211.9},0).wait(1).to({x:149.2,y:216.2},0).wait(1).to({x:141.3,y:220.5},0).wait(1).to({x:133.4,y:224.8},0).wait(1).to({x:125.4,y:229.1},0).wait(1).to({x:117.5,y:233.4},0).wait(1).to({x:109.6,y:237.6},0).wait(1).to({x:101.7,y:241.9},0).wait(1).to({x:93.7,y:246.2},0).wait(1).to({x:85.8,y:250.5},0).wait(1).to({x:77.9,y:254.8},0).wait(1).to({x:70,y:259.1},0).wait(1).to({x:62,y:263.3},0).wait(1).to({x:54.1,y:267.6},0).wait(1).to({x:46.2,y:271.9},0).wait(1).to({x:38.3,y:276.2},0).wait(1).to({x:30.3,y:280.5},0).wait(1).to({x:22.4,y:284.8},0).wait(1).to({x:14.5,y:289.1},0).wait(1).to({skewY:0,x:24.7,y:292.7},0).wait(1).to({x:34.9,y:296.3},0).wait(1).to({x:45.1,y:299.9},0).wait(1).to({x:55.3,y:303.5},0).wait(1).to({x:65.5,y:307.1},0).wait(1).to({x:75.8,y:310.7},0).wait(1).to({x:86,y:314.3},0).wait(1).to({x:96.2,y:318},0).wait(1).to({x:106.4,y:321.6},0).wait(1).to({x:116.6,y:325.2},0).wait(1).to({x:126.8,y:328.8},0).wait(1).to({x:137,y:332.4},0).wait(1).to({x:147.2,y:336},0).wait(1).to({x:157.4,y:339.6},0).wait(1).to({x:167.6,y:343.2},0).wait(1).to({x:177.8,y:346.9},0).wait(1).to({x:188.1,y:350.5},0).wait(1).to({x:198.3,y:354.1},0).wait(1).to({x:208.5,y:357.7},0).wait(1).to({x:218.7,y:361.3},0).wait(1).to({x:228.9,y:364.9},0).wait(1).to({x:239.1,y:368.5},0).wait(1).to({x:249.3,y:372.1},0).wait(1).to({x:259.5,y:375.8},0).wait(1).to({x:269.7,y:379.4},0).wait(1).to({x:279.9,y:383},0).wait(1).to({x:290.1,y:386.6},0).wait(1).to({x:300.4,y:390.2},0).wait(1).to({x:310.6,y:393.8},0).wait(1).to({x:320.8,y:397.4},0).wait(1).to({x:331,y:401},0).wait(1).to({x:341.2,y:404.7},0).wait(1).to({x:351.4,y:408.3},0).wait(1).to({x:361.6,y:411.9},0).wait(1).to({x:371.8,y:415.5},0).wait(1).to({x:382,y:419.1},0).wait(1).to({x:392.2,y:422.7},0).wait(1).to({x:402.4,y:426.3},0).wait(1).to({x:412.7,y:430},0).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-14.2,-15.7,57.6,63.5);
+p.nominalBounds = new cjs.Rectangle(41.2,227.3,57.6,63.5);
 
 
 (lib.gk_sc2_layer2 = function() {
@@ -407,23 +440,23 @@ p.nominalBounds = new cjs.Rectangle(0,0,2095.9,1179);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_4}]}).to({state:[{t:this.instance_4},{t:this.l2},{t:this.l1}]},12).to({state:[{t:this.instance_4}]},1).wait(12));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-1701.3,0,4642.7,1964.9);
+p.nominalBounds = new cjs.Rectangle(-1862.4,0,4896.9,2033.2);
 
 
 (lib.gk_sc1_layer1 = function() {
 	this.initialize();
 
 	// Ebene 1
-	this.instance = new lib.gk_sc1_layer1_haus();
-	this.instance.setTransform(-488.7,-88.5);
-
 	this.wald = new lib.gk_sc1_layer1_wald();
 	this.wald.setTransform(389,-93.5);
+
+	this.instance = new lib.gk_sc1_layer1_haus();
+	this.instance.setTransform(-488.7,-88.5);
 
 	this.instance_1 = new lib.grossglockner_layer01_01_01();
 	this.instance_1.setTransform(-1017.1,-310.5,1.117,1.117);
 
-	this.addChild(this.instance_1,this.wald,this.instance);
+	this.addChild(this.instance_1,this.instance,this.wald);
 }).prototype = p = new cjs.Container();
 p.nominalBounds = new cjs.Rectangle(-1017.1,-310.5,2144.4,589.7);
 
@@ -450,7 +483,7 @@ p.nominalBounds = new cjs.Rectangle(-1017.1,-310.5,2144.4,589.7);
 	this.instance = new lib.gk_sc1_layer1();
 	this.instance.setTransform(-45.6,871.1);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({regX:86.5,regY:-15.5,x:41.8,y:806.7},0).wait(1).to({x:42.7,y:758},0).wait(1).to({x:43.6,y:709.3},0).wait(1).to({x:44.5,y:660.5},0).wait(1).to({x:45.4,y:611.8},0).wait(1).to({x:46.3,y:563.1},0).wait(1).to({x:47.2,y:514.3},0).wait(1).to({x:48.1,y:465.6},0).wait(1).to({x:49,y:416.8},0).wait(1).to({x:49.9,y:368.1},0).wait(1).to({x:50.8,y:319.4},0).to({_off:true},1).wait(13));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({regX:105.5,regY:-15.5,x:60.8,y:806.7},0).wait(1).to({x:61.7,y:758},0).wait(1).to({x:62.6,y:709.3},0).wait(1).to({x:63.5,y:660.5},0).wait(1).to({x:64.4,y:611.8},0).wait(1).to({x:65.3,y:563.1},0).wait(1).to({x:66.2,y:514.3},0).wait(1).to({x:67.1,y:465.6},0).wait(1).to({x:68,y:416.8},0).wait(1).to({x:68.9,y:368.1},0).wait(1).to({x:69.8,y:319.4},0).to({_off:true},1).wait(13));
 
 	// Layer2AnimIn
 	this.instance_1 = new lib.gk_sc1_layer2();
@@ -475,7 +508,7 @@ p.nominalBounds = new cjs.Rectangle(-1017.1,-310.5,2144.4,589.7);
 	this.instance_4.setTransform(-35.6,335);
 	this.instance_4._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(13).to({_off:false},0).wait(1).to({regX:86.5,regY:-15.5,x:55.2,y:378.2},0).wait(1).to({x:59.6,y:437.1},0).wait(1).to({x:63.9,y:495.9},0).wait(1).to({x:68.3,y:554.9},0).wait(1).to({x:72.6,y:613.7},0).wait(1).to({x:77,y:672.6},0).wait(1).to({x:81.4,y:731.4},0).wait(1).to({x:85.7,y:790.4},0).wait(1).to({x:90,y:849.2},0).wait(1).to({x:94.4,y:908.1},0).wait(1).to({x:98.8,y:967},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(13).to({_off:false},0).wait(1).to({regX:105.5,regY:-15.5,x:74.2,y:378.2},0).wait(1).to({x:78.6,y:437.1},0).wait(1).to({x:82.9,y:495.9},0).wait(1).to({x:87.3,y:554.9},0).wait(1).to({x:91.6,y:613.7},0).wait(1).to({x:96,y:672.6},0).wait(1).to({x:100.4,y:731.4},0).wait(1).to({x:104.7,y:790.4},0).wait(1).to({x:109,y:849.2},0).wait(1).to({x:113.4,y:908.1},0).wait(1).to({x:117.8,y:967},0).wait(1));
 
 	// Ebene 17
 	this.instance_5 = new lib.gk_sc1_layer2();
@@ -517,7 +550,7 @@ p.nominalBounds = new cjs.Rectangle(-1017.1,-310.5,2144.4,589.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_8}]}).to({state:[{t:this.instance_8},{t:this.l4},{t:this.l3},{t:this.l2},{t:this.l1}]},12).to({state:[{t:this.instance_8}]},1).wait(12));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-1522.9,-539.9,3491.3,2176.6);
+p.nominalBounds = new cjs.Rectangle(-1574.7,-539.9,3636.6,2263);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{});
 var lib, images, createjs;
