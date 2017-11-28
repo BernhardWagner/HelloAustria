@@ -26,7 +26,7 @@ bw.grossglockner = (function ($) {
 
 
     function register() {
-        var scene1InteractionObjects = [exportRoot.sc1.l1.wald],
+        var scene1InteractionObjects = [exportRoot.sc1.l1.wald, exportRoot.sc1.sonne],
             scene2InteractionsObjects = [exportRoot.sc2.l1.auto, exportRoot.sc2.l2.skifahrer],
 
 
@@ -46,7 +46,30 @@ bw.grossglockner = (function ($) {
             [scene1InteractionObjects, scene2InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
             []); //last array for the sccene change sounds
 
+        registerSpecialScene();
 
+
+    }
+
+
+    function registerSpecialScene() {
+        var hoverOk;
+
+        hoverOk = true;
+
+        bw.sceneChanger.registerSpecialScene(exportRoot.special, [exportRoot.special.l1, exportRoot.special.l2, exportRoot.special.l3, exportRoot.special.l4], [20, 50, 100, 200], [exportRoot.special.sonne], null);
+
+        exportRoot.sc1.sonne.cursor = "pointer";
+        exportRoot.special.sonne.cursor = "pointer";
+
+
+        exportRoot.special.sonne.addEventListener("click", function (e) {
+            bw.sceneChanger.toggleSpecialScene();
+        });
+
+        exportRoot.sc1.sonne.addEventListener("click", function (e) {
+            bw.sceneChanger.toggleSpecialScene();
+        });
 
     }
 
@@ -90,6 +113,9 @@ bw.grossglockner = (function ($) {
 
     function unregister() {
             bw.sceneChanger.unregisterSceneChanger();
+        exportRoot.special.sonne.removeAllEventListeners();
+        exportRoot.sc1.sonne.removeAllEventListeners();
+
     }
     
     function tickHandler() {

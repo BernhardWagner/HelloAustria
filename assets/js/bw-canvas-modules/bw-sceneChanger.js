@@ -66,7 +66,7 @@ bw.sceneChanger = (function ($) {
         bw.action.unregisterAnimationDefaultActions();
 
         if (specialScene.active === true) {
-            specialScene.sound && specialScene.sound.stop();
+            specialScene.sound && specialScene.sound.length !== 0 && specialScene.sound.stop();
             specialScene.scene.gotoAndPlay("out");
             specialScene.active = false;
         }
@@ -102,7 +102,7 @@ bw.sceneChanger = (function ($) {
             specialScene.active = true;
             bw.parallax.unregisterParallax();
             scenes[currentScene].gotoAndPlay("out");
-            sceneSounds[currentScene].stop();
+            sceneSounds[currentScene] && sceneSounds[currentScene].stop();
         }
 
         else if (specialScene.active === true){
@@ -122,7 +122,8 @@ bw.sceneChanger = (function ($) {
         bw.idle.setIdleObjects(specialScene.interactionObjects);
         bw.parallax.registerParallax(specialScene.parallaxLayers, specialScene.parallaxLayerDampings, stage);
         specialScene.scene.gotoAndPlay('in');
-        specialScene.sound && specialScene.sound.play({loop: -1});
+        console.log(specialScene.sound);
+        specialScene.sound && specialScene.sound.length !== 0 && specialScene.sound.play({loop: -1});
     }
 
 
@@ -180,7 +181,7 @@ bw.sceneChanger = (function ($) {
         if(specialScene.active === true){
             specialScene.scene.gotoAndPlay('out');
 
-            specialScene.sound && specialScene.sound.stop();
+            specialScene.sound && specialScene.sound.length !== 0 && specialScene.sound.stop();
         }
         else {
             scenes[currentScene].gotoAndPlay('out');
