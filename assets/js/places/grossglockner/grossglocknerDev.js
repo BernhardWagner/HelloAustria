@@ -32,17 +32,19 @@ bw.grossglockner = (function ($) {
 
             scene1Layers = [exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4],
             scene2Layers = [exportRoot.sc2.l1, exportRoot.sc2.l2],
+            scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2],
 
             scene1LayerParallaxDampings = [20,50,100, 200],
-            scene2LayerParallaxDampings = [20,80];
+            scene2LayerParallaxDampings = [20,80],
+            scene3LayerParallaxDampings = [30,90];
 
 
         bw.sceneChanger.registerSceneChanger(
-            [exportRoot.sc1, exportRoot.sc2],           //standard animaitons for scene "in", "action", "out"
+            [exportRoot.sc1, exportRoot.sc2, exportRoot.sc3],           //standard animaitons for scene "in", "action", "out"
             stage,
             exportRoot,
-            [scene1Layers, scene2Layers], //Scenes first array is first scene, second is second scene...
-            [scene1LayerParallaxDampings, scene2LayerParallaxDampings],
+            [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
+            [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
             []); //last array for the sccene change sounds
 
@@ -57,13 +59,13 @@ bw.grossglockner = (function ($) {
 
         hoverOk = true;
 
-        bw.sceneChanger.registerSpecialScene(exportRoot.special, [exportRoot.special.l1, exportRoot.special.l2, exportRoot.special.l3, exportRoot.special.l4], [20, 50, 100, 200], [exportRoot.special.sonne], null);
+        bw.sceneChanger.registerSpecialScene(exportRoot.special, [exportRoot.special.l1, exportRoot.special.l2, exportRoot.special.l3, exportRoot.special.l4], [20, 50, 100, 200], [exportRoot.special.sonne2], null);
 
         exportRoot.sc1.sonne.cursor = "pointer";
-        exportRoot.special.sonne.cursor = "pointer";
+        exportRoot.special.sonne2.cursor = "pointer";
 
 
-        exportRoot.special.sonne.addEventListener("click", function (e) {
+        exportRoot.special.sonne2.addEventListener("click", function (e) {
             bw.sceneChanger.toggleSpecialScene();
         });
 

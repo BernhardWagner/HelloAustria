@@ -122,7 +122,7 @@ bw.sceneChanger = (function ($) {
         bw.idle.setIdleObjects(specialScene.interactionObjects);
         bw.parallax.registerParallax(specialScene.parallaxLayers, specialScene.parallaxLayerDampings, stage);
         specialScene.scene.gotoAndPlay('in');
-        console.log(specialScene.sound);
+        //console.log(specialScene.sound);
         specialScene.sound && specialScene.sound.length !== 0 && specialScene.sound.play({loop: -1});
     }
 

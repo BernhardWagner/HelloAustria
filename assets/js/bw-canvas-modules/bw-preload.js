@@ -59,7 +59,6 @@ bw.preload = (function ($) {
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01.png", id:"grossglockner_layer01_01"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_01.png", id:"grossglockner_layer01_01_01"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06.png", id:"grossglockner_layer01_01_06"},
-            {src:"assets/images/grossglockner/sc1/grossglockner_layer01_01_06_1.png", id:"grossglockner_layer01_01_06_1"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_02.png", id:"grossglockner_layer01_02"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_03.png", id:"grossglockner_layer01_03"},
             {src:"assets/images/grossglockner/sc1/grossglockner_layer01_04.png", id:"grossglockner_layer01_04"},
@@ -76,11 +75,18 @@ bw.preload = (function ($) {
             {src:"assets/images/grossglockner/sc1/wolke01.png", id:"wolke01"},
             {src:"assets/images/grossglockner/sc1/wolken02.png", id:"wolken02"},
             {src:"assets/images/grossglockner/sc1/hintergrundalleine.png", id:"hintergrundalleine"},
+            {src:"assets/images/grossglockner/sc1/Himmel.png", id:"Himmel"},
             
             {src:"assets/images/grossglockner/sc2/grossglockner_layer02_01.png", id:"grossglockner_layer02_01"},
             {src:"assets/images/grossglockner/sc2/grossglockner_layer02_02.png", id:"grossglockner_layer02_02"},
             {src:"assets/images/grossglockner/sc2/schifahrer.png", id:"schifahrer"},
             {src:"assets/images/grossglockner/sc2/auto.png", id:"auto"},
+
+            {src:"assets/images/grossglockner/sc3/grossglockner_layer03_01.png", id:"grossglockner_layer03_01"},
+            {src:"assets/images/grossglockner/sc3/grossglockner_layer03_02.png", id:"grossglockner_layer03_02"},
+            {src:"assets/images/grossglockner/sc3/kletterer01_klecks.png", id:"kletterer01_klecks"},
+            {src:"assets/images/grossglockner/sc3/kletterer02_klecks.png", id:"kletterer02_klecks"},
+            {src:"assets/images/grossglockner/sc3/kletterer03_klecks.png", id:"kletterer03_klecks"},
         ],
 
 
