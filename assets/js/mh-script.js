@@ -26,8 +26,9 @@ mh.main = (function () {
       });
 
       /*open canvas*/
-      icons.on("click", function() {
-          boxes.addClass("fullScreen");
+      icons.on("click", function(e) {
+          console.log('#' + e.currentTarget.alt);
+          $('#' + e.currentTarget.alt).addClass("fullScreen");
           $(".mapAsBg").addClass("gray");
           $(".close").addClass("closecanvas");
       });

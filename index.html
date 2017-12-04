@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/mh-styles.css">
 
     <script src="assets/lib/jquery-3.2.1.min.js"></script>
+    <script src="assets/lib/waitForImages.js"></script>
     <script src="assets/lib/createjs-min.js"></script>
     <script src="assets/js/bw-canvas-modules/bw-preload.js"></script>
     <script src="assets/js/bw-position-icons.js"></script>
@@ -35,7 +36,7 @@
                 </button>
             </div>
             <div id="logo">
-                <img src="assets/images/logo.png" alt="Logo"/>
+               <!-- <img src="assets/images/logo.png" alt="Logo"/>-->
             </div>
         </nav>
         <div id="menuitem">
@@ -54,14 +55,22 @@
     </header>
 
     <main id="content">
-        <div class="map">
+        <div class="map" id="map">
             <button type="button" id="close-canvas" class="close"></button>
             <div class="place grossglockner" data-place="grossglockner">
-                <img class="icon" src="assets/images/mountain.png" alt="Mountain"/>
+                <img class="icon" src="assets/images/map/Großglockner_Icon.png" alt="Mountain"/>
             </div>
-            <div class="box one">
+            <div class="box one" id="Mountain">
                 <div class="grayoverlay"></div>
                 <canvas id="grossglockner" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+            </div>
+
+            <div class="place gruenersee" data-place="gruenersee">
+                <img class="icon" src="assets/images/map/icon_gruenersee.png" alt="Lake" name/>
+            </div>
+            <div class="box two" id="Lake">
+                <div class="grayoverlay"></div>
+                <canvas id="gruenersee" width="1920" height="1080" style="background-color:#ffffff"></canvas>
             </div>
 
             <div id="info">

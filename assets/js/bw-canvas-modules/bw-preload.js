@@ -83,7 +83,6 @@ bw.preload = (function ($) {
 
     function handleComplete() {
         console.log("loaded");
-        bw.resizeMap.iconPosiontioningAndResize();
         loadingWindow.addClass('hidden');
         loadedWindow.removeClass('hidden');
         bw.main.init();

@@ -9,59 +9,62 @@ bw.resizeMap = (function ($) {
         menuItem = $('#menuitem');
         places = $('.place');
         content = $('#content');
-        map = $('.map');
+        map = $('#map');
         navigation = $('#navigation');
 
-        /* sets the init pos of the css*/
-        /* sehr inperformant aber keine Ahnung wies sonst gehen sollte */
-        places.each(function (key, value) {
-            value.initPosY = parseInt($(value).css('top'));
-            value.initPosX = parseInt($(value).css('left'));
-        });
-
-
-        setTimeout(function () {
-            $(window).trigger("resize");
-        },200);
-
-
-        $(window).on("resize", function (e) {
-            var mapBackgroundSize, topValue, leftValue, ratioX, ratioY;
-
-            content.height(window.innerHeight - navigation.outerHeight());
-            menuItem.outerHeight(content.height());
-
-            /*--to get the icons sticky--*/
-            mapBackgroundSize = getBackgroundSize(map[0]);
-
-
-            ratioX = mapBackgroundSize.width / 3264;
-            ratioY = mapBackgroundSize.height / 1824;
-
-            places.each(function (key, value) {
-                topValue = (((mapBackgroundSize.height - content.height()) / 2) * -1 + value.initPosY * ratioY);
-                leftValue = (((mapBackgroundSize.width - content.width()) / 2) * -1 + value.initPosX * ratioX);
-
-                $(value).css('top', topValue + 'px');
-                $(value).css('left', leftValue + 'px');
-
-
-                $(value).next().css({
-                   'top': topValue + $(value).height()/2,
-                    'left': leftValue + $(value).width()/2
-                });
-            });
-
-
-
-
-        });
-
-        content.height(window.innerHeight - navigation.outerHeight());
-        menuItem.outerHeight(content.height());
+        map.waitForImages({
+            waitForAll: true,
+            finished: function () {
+                setTimeout(position, 10);
+            }});
 
     }
 
+        function position() {
+            /* sets the init pos of the css*/
+            /* sehr inperformant aber keine Ahnung wies sonst gehen sollte */
+            places.each(function (key, value) {
+                value.initPosY = parseInt($(value).css('top'));
+                value.initPosX = parseInt($(value).css('left'));
+            });
+
+
+            setTimeout(function () {
+                $(window).trigger("resize");
+            }, 200);
+
+
+            $(window).on("resize", function (e) {
+                var mapBackgroundSize, topValue, leftValue, ratioX, ratioY;
+
+                content.height(window.innerHeight - navigation.outerHeight());
+                menuItem.outerHeight(content.height());
+
+                /*--to get the icons sticky--*/
+                mapBackgroundSize = getBackgroundSize(map[0]);
+
+
+                ratioX = mapBackgroundSize.width / 3264;
+                ratioY = mapBackgroundSize.height / 1824;
+
+                places.each(function (key, value) {
+                    topValue = (((mapBackgroundSize.height - content.height()) / 2) * -1 + value.initPosY * ratioY);
+                    leftValue = (((mapBackgroundSize.width - content.width()) / 2) * -1 + value.initPosX * ratioX);
+
+                    $(value).css('top', topValue + 'px');
+                    $(value).css('left', leftValue + 'px');
+
+
+                    $(value).next().css({
+                        'top': topValue + $(value).height()/2,
+                        'left': leftValue + $(value).width()/2
+                    });
+                });
+            });
+
+            content.height(window.innerHeight - navigation.outerHeight());
+            menuItem.outerHeight(content.height());
+        }
 
     function getBackgroundSize(elem) {
         var computedStyle = getComputedStyle(elem),
@@ -126,6 +129,7 @@ bw.resizeMap = (function ($) {
             height: computedDim[1]
         };
     }
+
 
     return {
         iconPosiontioningAndResize: iconPosiontioningAndResize,
