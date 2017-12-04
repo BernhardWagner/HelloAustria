@@ -14,7 +14,7 @@ nav#navigation {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
 
 }
 
@@ -106,7 +106,7 @@ div#menuitem {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 50px;
-  z-index: 3;
+  z-index: 30;
   background-color: white;
 }
 
@@ -115,7 +115,7 @@ div#menuitem.seemenu {
   padding-top: 50px;
   padding-left: 20px;
   padding-right: 20px;
-  z-index: 3;
+  z-index: 30;
 }
 
 div#menuitem ul {
@@ -145,7 +145,7 @@ main#content {
   right: 2%;
   border: none;
   background-color: transparent;
-  z-index: 1;
+  z-index: 10;
 }
 
 
@@ -197,7 +197,7 @@ button.info img {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 4%;
   color: #fafafa;
-  z-index: 1;
+  z-index: 10;
   box-shadow: 0px 0px 10px #000000;
 }
 
@@ -216,12 +216,13 @@ button.info img {
 
 
   /* TRANSITION TO THE RESCUE */
-  transition: 0.6s;
   -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
+
 .box canvas {
-  z-index: 1;
+  z-index: 20;
   display: block;
   margin: auto;
 }
@@ -238,7 +239,7 @@ button.info img {
   top: 0 !important;
   height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 
 .box.fullScreen canvas {
@@ -260,7 +261,7 @@ button.info img {
   width: 60px;
   height: 60px;
   opacity: 0.5;
-  z-index: 2;
+  z-index: 20;
 }
 .closecanvas:hover {
   opacity: 1;
