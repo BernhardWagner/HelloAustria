@@ -46,31 +46,39 @@ bw.idle = (function ($) {
 
     function idleAction() {
         for (var idleObjKey in idleObjects) {
-            var obj = idleObjects[idleObjKey],
-                newScaleX = obj.scaleX *  1.1,
-                newScaleY = obj.scaleY * 1.1;
+            if (idleObjects.hasOwnProperty(idleObjKey)) {
+                var obj = idleObjects[idleObjKey],
+                    newScaleX = obj.scaleX * 1.05,
+                    newScaleY = obj.scaleY * 1.05;
 
-            if (!obj.shadow) {
-                obj.shadow = new createjs.Shadow("#f6ff00", 0, 0, 0);
+                if (!obj.shadow) {
+                    obj.shadow = new createjs.Shadow("#f6ff00", 0, 0, 0);
+                }
+
+                if(idleObjects[idleObjKey].currentLabel === 'static') {
+                    createjs.Tween.get(obj.shadow, {override: true}).to({blur: 40}, 1000, createjs.Ease.backIn);
+                    createjs.Tween.get(obj, {override: true}).to({
+                        scaleX: newScaleX,
+                        scaleY: newScaleY
+                    }, 1000, createjs.Ease.backIn);
+                }
             }
-
-            createjs.Tween.get(obj.shadow, {override: true}).to({blur: 40}, 1000, createjs.Ease.backIn);
-            createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 1000, createjs.Ease.backIn);
-
         }
     }
 
     function removeHints() {
         for (var idleObjKey in idleObjects) {
-            var obj = idleObjects[idleObjKey],
-                newScaleX = obj.scaleX / 1.1,
-                newScaleY = obj.scaleY / 1.1;
+            if(idleObjects.hasOwnProperty(idleObjKey)){
+                var obj = idleObjects[idleObjKey],
+                    newScaleX = obj.scaleX / 1.05,
+                    newScaleY = obj.scaleY / 1.05;
 
 
-            if (hintMode && obj.shadow) {
-                createjs.Tween.get(obj.shadow, {override: true}).to({blur: 0}, 200, createjs.Ease.backIn);
-                createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 200, createjs.Ease.backIn);
+                if (hintMode && obj.shadow) {
+                    createjs.Tween.get(obj.shadow, {override: true}).to({blur: 0}, 200, createjs.Ease.backIn);
+                    createjs.Tween.get(obj, {override: true}).to({scaleX: newScaleX, scaleY: newScaleY}, 200, createjs.Ease.backIn);
 
+                }
             }
         }
 
@@ -79,9 +87,18 @@ bw.idle = (function ($) {
         idleTimeCount = 0;
     }
 
+
+    function addIdleObject(idleObject) {
+        if(!idleObjects) {
+            idleObjects = [];
+        }
+        idleObjects.push(idleObject);
+    }
+
     return {
         registerIdleHints: setIdleHint,
         setIdleObjects: setIdleObjects,
+        addIdleObject: addIdleObject,
     }
 
 }($));

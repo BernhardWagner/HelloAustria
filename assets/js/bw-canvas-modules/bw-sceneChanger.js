@@ -26,6 +26,7 @@ bw.sceneChanger = (function ($) {
         rootScene.gotoAndStop(currentScene);
         scenes[currentScene].gotoAndPlay(1); //TODO so the animation starts at the beginning see flash file
 
+
         bw.action.registerAnimationDefaultActions(interactionObjects[currentScene]);
         bw.idle.setIdleObjects(interactionObjects[currentScene]);
         bw.parallax.registerParallax(parallaxLayers[currentScene], parallaxLayerDampings[currentScene], stage_);
@@ -49,12 +50,14 @@ bw.sceneChanger = (function ($) {
         var returnArray = [];
 
         for(var key in soundArray) {
-            if(typeof soundArray[key] === 'object'){
-                returnArray[key] = soundArray[key];
-            }
+            if(soundArray.hasOwnProperty(key)){
+                if(typeof soundArray[key] === 'object'){
+                    returnArray[key] = soundArray[key];
+                }
 
-            else if(typeof soundArray[key] === 'string') {
-                returnArray[key] = createjs.Sound.createInstance(soundArray[key]);
+                else if(typeof soundArray[key] === 'string') {
+                    returnArray[key] = createjs.Sound.createInstance(soundArray[key]);
+                }
             }
         }
         return returnArray;

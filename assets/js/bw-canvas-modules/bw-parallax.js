@@ -63,9 +63,15 @@ bw.parallax = (function ($) {
 
     }
 
+
+    function setParallaxDampings(dampingArray) {
+        dampingFactors = dampingArray;
+    }
+
     return {
         registerParallax: registerParallax,
         unregisterParallax: unregisterParallax,
+        setParallaxDampings: setParallaxDampings,
     }
 
 

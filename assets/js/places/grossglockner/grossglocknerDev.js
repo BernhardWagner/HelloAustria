@@ -15,7 +15,7 @@ bw.grossglockner = (function ($) {
         stage.update();
 
         stage.mouseEnabled = true;
-        stage.enableMouseOver(24);
+        stage.enableMouseOver(22);
 
         createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
         createjs.Ticker.setFPS(30);
@@ -32,11 +32,11 @@ bw.grossglockner = (function ($) {
 
             scene1Layers = [exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4],
             scene2Layers = [exportRoot.sc2.l1, exportRoot.sc2.l2],
-            scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2],
+            scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2, exportRoot.sc3.kletterer],
 
             scene1LayerParallaxDampings = [20,50,100, 200],
             scene2LayerParallaxDampings = [20,80],
-            scene3LayerParallaxDampings = [30,90];
+            scene3LayerParallaxDampings = [30,90, 30];
 
 
         bw.sceneChanger.registerSceneChanger(
@@ -49,16 +49,13 @@ bw.grossglockner = (function ($) {
             []); //last array for the sccene change sounds
 
         registerSpecialScene();
+        registerClimber();
 
 
     }
 
 
     function registerSpecialScene() {
-        var hoverOk;
-
-        hoverOk = true;
-
         bw.sceneChanger.registerSpecialScene(exportRoot.special, [exportRoot.special.l1, exportRoot.special.l2, exportRoot.special.l3, exportRoot.special.l4], [20, 50, 100, 200], [exportRoot.special.sonne2], null);
 
         exportRoot.sc1.sonne.cursor = "pointer";
@@ -72,7 +69,63 @@ bw.grossglockner = (function ($) {
         exportRoot.sc1.sonne.addEventListener("click", function (e) {
             bw.sceneChanger.toggleSpecialScene();
         });
+    }
 
+    function registerClimber() {
+        var yHover = exportRoot.sc3.kletterer.y - 10,
+            hoverTimeout = 400;
+
+        exportRoot.sc3.kletterer.hoverOK = true;
+        exportRoot.sc3.kletterer.autoReset = false;
+
+        exportRoot.sc3.kletterer.cursor = "pointer";
+        exportRoot.sc3.kletterer.addEventListener('click', function (e) {
+            if(e.currentTarget.currentLabel === 'action') {
+                e.currentTarget.play();
+            } else {
+                e.currentTarget.gotoAndPlay('action');
+            }
+        });
+
+        $(exportRoot.sc3.kletterer).on('klettererBack', function () {
+            exportRoot.sc3.setChildIndex(exportRoot.sc3.kletterer, exportRoot.sc3.getChildIndex(exportRoot.sc3.kletterer) - 1);
+            console.log(exportRoot.sc3.getChildIndex(exportRoot.sc3.kletterer));
+            bw.parallax.setParallaxDampings([30,90,90]);
+            exportRoot.sc3.gotoAndStop('klettererBack');
+        });
+
+        $(exportRoot.sc3.kletterer).on('klettererFront', function () {
+            exportRoot.sc3.setChildIndex(exportRoot.sc3.kletterer, exportRoot.sc3.getChildIndex(exportRoot.sc3.kletterer) + 1);
+            bw.parallax.setParallaxDampings([30,90,30]);
+            exportRoot.sc3.gotoAndStop('klettererFront');
+        });
+
+        exportRoot.sc3.kletterer.addEventListener('mouseover', function (e) {
+            exportRoot.sc3.kletterer.hoverOK && createjs.Tween.get(exportRoot.sc3.kletterer, {override: true}).to({y: yHover}, 400, createjs.Ease.linear);
+            exportRoot.sc3.kletterer.hoverOK = false;
+
+            setTimeout(function () {
+                exportRoot.sc3.kletterer.hoverOK = true;
+            }, hoverTimeout);
+        });
+
+        $(document).on("nextScene", function () {
+            if(bw.sceneChanger.getCurrentScene() === 2){
+                exportRoot.sc3.kletterer.gotoAndStop(0);
+                bw.idle.addIdleObject(exportRoot.sc3.kletterer);
+            }
+        });
+
+
+
+
+    }
+
+    function unregisterClimber() {
+        exportRoot.sc3.kletterer.removeAllEventListeners('click');
+        $(exportRoot.sc3.kletterer).off('klettererFront');
+        $(exportRoot.sc3.kletterer).off('klettererBack');
+        exportRoot.sc3.kletterer.removeAllEventListeners('mouseover');
     }
 
 
@@ -114,8 +167,9 @@ bw.grossglockner = (function ($) {
     }
 
     function unregister() {
+            unregisterClimber();
             bw.sceneChanger.unregisterSceneChanger();
-        exportRoot.special.sonne.removeAllEventListeners();
+        exportRoot.special.sonne2.removeAllEventListeners();
         exportRoot.sc1.sonne.removeAllEventListeners();
 
     }

@@ -1,0 +1,24 @@
+{
+  "manifest": [
+    {"src": "assets/images/loading/loadingscreen_05.png", "id":"5%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_10.png", "id":"10%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_15.png", "id":"15%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_20.png", "id":"20%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_25.png", "id":"25%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_30.png", "id":"30%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_35.png", "id":"35%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_40.png", "id":"40%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_45.png", "id":"45%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_50.png", "id":"50%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_55.png", "id":"55%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_60.png", "id":"60%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_65.png", "id":"65%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_70.png", "id":"70%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_75.png", "id":"75%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_80.png", "id":"80%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_85.png", "id":"85%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_90.png", "id":"90%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_95.png", "id":"95%", "data": "preloadImg"},
+    {"src": "assets/images/loading/loadingscreen_100.png", "id":"100%", "data": "preloadImg"}
+  ]
+}

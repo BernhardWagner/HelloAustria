@@ -12,35 +12,42 @@ bw.action = (function ($) {
         hoverOk = true;
 
         for(var acionObjKey in defaultActionObjects) {
-            var obj = defaultActionObjects[acionObjKey];
-            obj.cursor = "pointer";
+            if(defaultActionObjects.hasOwnProperty(acionObjKey)) {
+                var obj = defaultActionObjects[acionObjKey];
+                obj.cursor = "pointer";
+                obj.autoReset = false;
 
-            obj.addEventListener("mouseover", function (e) {
-                if(hoverOk && e.currentTarget.currentLabel === 'static'){
-                    e.currentTarget.gotoAndPlay('hover');
-                    hoverOk = false;
+                obj.addEventListener("mouseover", function (e) {
+                    if (hoverOk && e.currentTarget.currentLabel === 'static') {
+                        e.currentTarget.gotoAndPlay('hover');
+                        hoverOk = false;
 
-                    setTimeout(function () {
-                        hoverOk = true;
-                    }, hoverTimeout);
-                }
-            });
+                        setTimeout(function () {
+                            hoverOk = true;
+                        }, hoverTimeout);
+                    }
+                });
 
-            obj.addEventListener("click", function (e) {
-                if(e.currentTarget.actionSound) {
-                    e.currentTarget.actionSound.stop();
-                    e.currentTarget.actionSound.play();
-                }
-                e.currentTarget.gotoAndPlay('action');
-            });
+                obj.addEventListener("click", clickAction);
+            }
         }
+    }
+
+    function clickAction(e) {
+        if (e.currentTarget.actionSound) {
+            e.currentTarget.actionSound.stop();
+            e.currentTarget.actionSound.play();
+        }
+        e.currentTarget.gotoAndPlay('action');
     }
 
     function unregisterAnimationDefaultActions() {
         for(var acionObjKey in defaultActionObjects) {
-            var obj = defaultActionObjects[acionObjKey];
-            obj.removeEventListener("mouseover");
-            obj.removeEventListener("click");
+            if(defaultActionObjects.hasOwnProperty(acionObjKey)){
+                var obj = defaultActionObjects[acionObjKey];
+                obj.removeAllEventListeners("mouseover");
+                obj.removeEventListener("click", clickAction);
+            }
         }
     }
 
