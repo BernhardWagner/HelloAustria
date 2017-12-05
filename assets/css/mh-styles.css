@@ -134,7 +134,7 @@ div#logo img{
 main#content {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  position: relative;
 
 }
 
@@ -149,25 +149,40 @@ main#content {
 }
 
 
+.map-image {
+
+}
+
 .map {
+  display: inline-block;
   position: relative;
-  background: url("../images/map/map.png") no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.map-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   height: 100%;
+  width: 100%;
 }
 
 
 /*places */
-.grossglockner {
-  top: 1200px;         /*Dank javascript auf hintergundbild bezogen*/
-  left: 1500px;
+.grossglockner,
+.grossglockner + .box {
+  top: 66%;         /*Dank javascript auf hintergundbild bezogen*/
+  left: 44%;
 }
 
-.gruenersee {
-  top: 1000px;
-  left: 2200px;
+.gruenersee,
+.gruenersee + .box {
+  top: 55%;
+  left: 67%;
 }
 
 
@@ -186,6 +201,7 @@ button.info img {
 }
 
 #info {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,10 +251,11 @@ button.info img {
 .box.fullScreen{
   /* Your override styles:  */
   border-radius: 0;
-  left: 0 !important;
-  top: 0 !important;
-  height: 100%;
+  left: 50% !important;
+  top: 50% !important;
+  height: 50%;
   width: 100%;
+  transform: translate(-50%, -50%);
   z-index: 10;
 }
 
@@ -252,6 +269,12 @@ button.info img {
   height: 100px;
   z-index: 1;
   opacity: 1;
+}
+
+#close-canvas {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .closecanvas {

@@ -55,32 +55,34 @@
     </header>
 
     <main id="content">
-        <div class="map" id="map">
-            <button type="button" id="close-canvas" class="close"></button>
-            <div class="place grossglockner" data-place="grossglockner">
-                <img class="icon" src="assets/images/map/Großglockner_Icon.png" alt="Mountain"/>
-            </div>
-            <div class="box one" id="Mountain">
-                <div class="grayoverlay"></div>
-                <canvas id="grossglockner" width="1920" height="1080" style="background-color:#ffffff"></canvas>
-            </div>
-
-            <div class="place gruenersee" data-place="gruenersee">
-                <img class="icon" src="assets/images/map/icon_gruenersee.png" alt="Lake" name/>
-            </div>
-            <div class="box two" id="Lake">
-                <div class="grayoverlay"></div>
-                <canvas id="gruenersee" width="1920" height="1080" style="background-color:#ffffff"></canvas>
-            </div>
-
-            <div id="info">
-                <button class="info" type="button"><img src="assets/images/info.png" alt="Info"/></button>
-                <div class="infobox hiddeninfobox">
-                    <h2 id="description-title"></h2>
-                    <p id="description-text">
-
-                    </p>
+        <div class="map-wrapper" id="map-wrap">
+            <div class="map" id="map">
+                <img id="map-image" class="map-image" src="assets/images/map/map.jpg" alt="Map"/>
+                <div class="place grossglockner" data-place="grossglockner">
+                    <img class="icon" src="assets/images/map/Großglockner_Icon.png" alt="Mountain"/>
                 </div>
+                <div class="box one" id="Mountain">
+                    <div class="grayoverlay"></div>
+                    <canvas id="grossglockner" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place gruenersee" data-place="gruenersee">
+                    <img class="icon" src="assets/images/map/icon_gruenersee.png" alt="Lake" name/>
+                </div>
+                <div class="box two" id="Lake">
+                    <div class="grayoverlay"></div>
+                    <canvas id="gruenersee" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" id="close-canvas" class="close"></button>
+        <div id="info">
+            <button class="info" type="button"><img src="assets/images/info.png" alt="Info"/></button>
+            <div class="infobox hiddeninfobox">
+                <h2 id="description-title"></h2>
+                <p id="description-text">
+                </p>
             </div>
         </div>
     </main>
