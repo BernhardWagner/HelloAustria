@@ -2,7 +2,7 @@
 
 /*map icons*/
 .icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translate(-50%, -50%);
     /*box-shadow: 0 0 5px 5px #888888;*/
     cursor: pointer;
 }
