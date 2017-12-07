@@ -9,7 +9,8 @@ nav#navigation {
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  background-color: #8B623E;
+  background-color: #f6f6f6;
+  border-bottom: 2px solid darkgray;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
@@ -65,9 +66,9 @@ button:hover {
 }
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
-  height: 4px;
+  height: 3px;
   background-color: #000;
-  border-radius: 4px;
+  border-radius: 3px;
   position: absolute;
   transition-property: transform;
   transition-duration: 0.15s;
@@ -91,10 +92,10 @@ button:hover {
   transform: rotate(-180deg);
 }
 .hamburger--arrowturn.is-active .hamburger-inner::before {
-  transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
+  transform: translate3d(10px, 1px, 0) rotate(45deg) scale(0.7, 1);
 }
 .hamburger--arrowturn.is-active .hamburger-inner::after {
-  transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+  transform: translate3d(10px, -1px, 0) rotate(-45deg) scale(0.7, 1);
 }
 
 
