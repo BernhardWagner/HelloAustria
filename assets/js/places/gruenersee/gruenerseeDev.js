@@ -16,10 +16,6 @@ bw.gruenersee = (function ($) {
 
         stage.mouseEnabled = true;
         stage.enableMouseOver(22);
-
-        createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
-        createjs.Ticker.setFPS(30);
-        createjs.Ticker.addEventListener("tick", tickHandler);
     }
 
 
@@ -47,6 +43,8 @@ bw.gruenersee = (function ($) {
             []); //last array for the sccene change sounds
 
             bw.idle.setStage(stage);
+
+        createjs.Ticker.addEventListener("tick", tickHandler);
 
     }
 
@@ -90,6 +88,7 @@ bw.gruenersee = (function ($) {
 
     function unregister() {
         bw.sceneChanger.unregisterSceneChanger();
+        createjs.Ticker.removeEventListener("tick", tickHandler);
 
     }
 

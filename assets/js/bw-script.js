@@ -13,6 +13,9 @@ bw.main = (function ($) {
         descriptionTitleField = document.getElementById('description-title');
         descriptionTextField = document.getElementById('description-text');
 
+        createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
+        createjs.Ticker.setFPS(30);
+
         changeInfoText();
 
         /*initialize places*/
