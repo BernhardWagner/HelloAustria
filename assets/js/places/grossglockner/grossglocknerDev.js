@@ -34,9 +34,9 @@ bw.grossglockner = (function ($) {
             scene2Layers = [exportRoot.sc2.l1, exportRoot.sc2.l2],
             scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2, exportRoot.sc3.kletterer],
 
-            scene1LayerParallaxDampings = [20,50,100, 200],
-            scene2LayerParallaxDampings = [20,80],
-            scene3LayerParallaxDampings = [30,90, 30];
+            scene1LayerParallaxDampings = [17,25,50, 100],
+            scene2LayerParallaxDampings = [20,50],
+            scene3LayerParallaxDampings = [20,45, 20];
 
 
         bw.sceneChanger.registerSceneChanger(
