@@ -1,5 +1,5 @@
 {
   "manifest": [
-    {"src": "assets/js/places/grossglockner/gruenerseeDev.js", "id": "gruenerseeDevjs"}
+    {"src": "assets/js/places/gruenersee/gruenerseeDev.js", "id": "gruenerseeDevjs"}
   ]
 }
