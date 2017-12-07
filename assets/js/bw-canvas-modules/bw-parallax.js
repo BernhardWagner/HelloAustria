@@ -54,7 +54,7 @@ bw.parallax = (function ($) {
             i = 0;
 
         for (var layer in layers) {
-            createjs.Tween.get(layers[layer], {override: true}).to({x: initLayerPos[i].x + horizontalValue / dampingFactors[i], y: initLayerPos[i].y + verticalValue / dampingFactors[i]}, 500, createjs.Ease.quintOut);
+            createjs.Tween.get(layers[layer], {override: true}).to({x: initLayerPos[i].x + horizontalValue / dampingFactors[i], y: initLayerPos[i].y + verticalValue / dampingFactors[i]}, 350, createjs.Ease.quintOut);
            // layers[layer].x = initLayerPos[i].x + horizontalValue / dampingFactors[i];
             // layers[layer].y = initLayerPos[i].y + verticalValue / dampingFactors[i];
             i++;
