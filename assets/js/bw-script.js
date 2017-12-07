@@ -25,6 +25,10 @@ bw.main = (function ($) {
                 case "grossglockner":
                     bw.grossglockner.register();
                     break;
+
+                case "gruenersee":
+                    bw.gruenersee.register();
+                    break;
             }
 
             changeInfoText();
@@ -34,6 +38,10 @@ bw.main = (function ($) {
             switch (currentPlace) {
                 case "grossglockner":
                     bw.grossglockner.unregister();
+                    break;
+
+                case "gruenersee":
+                    bw.gruenersee.unregister();
                     break;
             }
 

@@ -51,6 +51,8 @@ bw.grossglockner = (function ($) {
         registerSpecialScene();
         registerClimber();
 
+        bw.idle.setStage(stage);
+
 
     }
 
@@ -169,8 +171,8 @@ bw.grossglockner = (function ($) {
     function unregister() {
             unregisterClimber();
             bw.sceneChanger.unregisterSceneChanger();
-        exportRoot.special.sonne2.removeAllEventListeners();
-        exportRoot.sc1.sonne.removeAllEventListeners();
+            exportRoot.special.sonne2.removeAllEventListeners();
+            exportRoot.sc1.sonne.removeAllEventListeners();
 
     }
     

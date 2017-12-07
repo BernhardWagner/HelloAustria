@@ -27,6 +27,11 @@ bw.idle = (function ($) {
     }
 
 
+    function setStage(_stage) {
+        stage = _stage;
+    }
+
+
     function setIdleObjects(idleObjects_) {
         idleObjects = idleObjects_;
     }
@@ -99,6 +104,7 @@ bw.idle = (function ($) {
         registerIdleHints: setIdleHint,
         setIdleObjects: setIdleObjects,
         addIdleObject: addIdleObject,
+        setStage: setStage,
     }
 
 }($));
