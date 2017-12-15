@@ -10,7 +10,7 @@ nav#navigation {
   box-sizing: border-box;
   width: 100%;
   background-color: #4d4d4d;
-  border-bottom: 2px solid #c8c8c8;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
@@ -67,7 +67,7 @@ button:hover {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 3px;
-  background-color: #f4f4f4;
+  background-color: #4e4e4e;
   border-radius: 3px;
   position: absolute;
   transition-property: transform;
@@ -106,16 +106,13 @@ div#menuitem {
   /*background-color: transparent*/;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 50px;
+  padding-top: 10px;
   z-index: 30;
   background-color: white;
 }
 
 div#menuitem.seemenu {
-  width: 200px;
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 300px;
   z-index: 30;
 }
 
@@ -265,8 +262,10 @@ button.info img {
 }
 
 .box.fullScreen canvas {
-  height: 100%;
-  width: auto;
+position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .icon {
