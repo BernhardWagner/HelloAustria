@@ -10,7 +10,7 @@ nav#navigation {
   box-sizing: border-box;
   width: 100%;
   background-color: #4d4d4d;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 0.4mm solid #bbbbbb;
   display: flex;
   flex-flow: row;
   justify-content: space-between;

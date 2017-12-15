@@ -18,5 +18,19 @@
       "title": "Willkommen beim Großglockner3",
       "text": "Lorem iplum, lorem ipus2"
     }
-  ]
+  ],
+   "gruenersee": [
+      {
+        "title": "Willkommen beim gruenensee",
+        "text": "Lorem iplum, lorem ipus"
+      },
+      {
+        "title": "Willkommen beim greunensee2",
+        "text": "Lorem iplum, lorem ipus2"
+      },
+      {
+        "title": "Willkommen beim greuenensee3",
+        "text": "Lorem iplum, lorem ipus3"
+      }
+    ]
 }
