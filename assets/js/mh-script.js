@@ -40,6 +40,9 @@ mh.main = (function () {
           $(".close").removeClass("closecanvas");
       });
 
+      //register Popover
+      $('[data-toggle="popover"]').popover();
+
       // $(".icon").on("click", function() {
       //   $(".closecanvas").hide();
       // });
