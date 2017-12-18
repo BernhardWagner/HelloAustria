@@ -21,16 +21,30 @@
   ],
    "gruenersee": [
       {
-        "title": "Willkommen beim gruenensee",
-        "text": "Lorem iplum, lorem ipus"
+        "title": "The Green Lake",
+        "text": "The Green Lake, as it is called, is a hidden gem in the state of Styria. It is located in a small village called Targöss and surrounded by the Hochschwab Mountains. The lake got his name because of its’ greenish color."
       },
       {
-        "title": "Willkommen beim greunensee2",
-        "text": "Lorem iplum, lorem ipus2"
+        "title": "Winter",
+        "text": "During winter, most of the lake’s water disappears and leaves a beutiful park behind. There are paths and benches for people to enjoy walks and breaks of their daily lives. However, once the snow melts in spiring, the area is ﬁlled with water and transforms into the green lake again."
       },
       {
-        "title": "Willkommen beim greuenensee3",
-        "text": "Lorem iplum, lorem ipus3"
+        "title": "Under Water",
+        "text": "It is a dream of every diver to explore the underwater world of the lake. Trails, a bridge and benches make it a truly magical place. Due to the increasing number of tourists coming and diving the environment has been harmed which is why all sorts of watersport activities have been prohibited since 2016."
       }
-    ]
+    ],
+    "hallstatt": [
+          {
+            "title": "Hallstatt",
+            "text": "Once you see a picture of Hallstatt you will recognize it instanly. Even though it is anything but big, this town is one of Austria’s most famous places. Part of the district of Gmunden and located right by the Hallstätter See, Hallstatt enchants each and everyone who stops by. "
+          },
+          {
+            "title": "Replica in China",
+            "text": "While tourists from all around the world love Hallstatt, China has proved they might even be a little bit obsessed with it. In 2012 they built an replica of the entire town which is about 1000 times bigger than the original."
+          },
+          {
+            "title": "Salt Mine",
+            "text": "Within Austria, Hallstatt is mostly known for it’s Salt Mine. After going up the mountain by cable car, you can enter a world of adventure und history. With tunnels of 65 Kilometers, slides and 21 tiers in total, this is a fun activity for people of all ages."
+          }
+        ]
 }
