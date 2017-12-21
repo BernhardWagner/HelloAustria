@@ -40,6 +40,9 @@ mh.main = (function () {
           $(".close").removeClass("closecanvas");
       });
 
+      //register Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
       // $(".icon").on("click", function() {
       //   $(".closecanvas").hide();
       // });

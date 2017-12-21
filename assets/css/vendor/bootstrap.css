@@ -5496,6 +5496,7 @@ button.close {
   font-size: 0.7109375rem;
   word-wrap: break-word;
   opacity: 0;
+  margin-left: 5px;
 }
 
 .tooltip.show {
@@ -5505,6 +5506,8 @@ button.close {
 .tooltip .arrow {
   position: absolute;
   display: block;
+  left: -5px;
+  left: -3px;
   width: 5px;
   height: 5px;
 }
@@ -5513,6 +5516,13 @@ button.close {
   position: absolute;
   border-color: transparent;
   border-style: solid;
+}
+
+.tooltip .arrow::before {
+  margin-top: -3px;
+  content: "";
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
 }
 
 .tooltip.bs-tooltip-top, .tooltip.bs-tooltip-auto[x-placement^="top"] {
