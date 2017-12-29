@@ -79,6 +79,7 @@ bw.preload = (function ($) {
         }
 
         //loaded automatically
+
         // else if(evt.item.type === 'javascript') {
         //     //for proper js loading
         //     //scriptInjector.append('<script src="' + evt.item.src + '"></script>')
