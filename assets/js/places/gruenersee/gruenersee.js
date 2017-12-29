@@ -826,7 +826,7 @@ p.nominalBounds = new cjs.Rectangle(-42.9,-37.5,81.9,93.8);
 	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(17).to({_off:false},0).wait(1).to({rotation:-7.3,x:212.1,y:98.9},0).wait(1).to({rotation:-14.8,x:210,y:79.7},0).wait(1).to({rotation:-19.2,x:208.2,y:60.4},0).wait(1).to({rotation:-23.6,x:207,y:41.1},0).wait(1).to({rotation:-8.1,x:206.3,y:21.9},0).wait(1).to({rotation:7.2,x:206.5,y:2.6},0).wait(1).to({rotation:0,x:208.5,y:-16.4},0).wait(1).to({rotation:7.5,x:212.1,y:-30.5},0).wait(1).to({rotation:15,x:217.5,y:-44},0).wait(1).to({rotation:19.9,x:224.2,y:-56.9},0).wait(1).to({rotation:24.8,x:232,y:-69.3},0).wait(1).to({rotation:11.1,x:240.6,y:-81},0).wait(1).to({rotation:-2.5,x:249.7,y:-92.3},0).wait(1).to({rotation:21.1,x:259.5,y:-103.1},0).wait(1).to({rotation:45,x:269.5,y:-113.7},0).wait(1).to({rotation:48.4,x:279.4,y:-122.7},0).wait(1).to({rotation:51.8,x:289.7,y:-131.1},0).wait(1).to({rotation:31.1,x:300.3,y:-139.4},0).wait(1).to({rotation:10.3,x:310.9,y:-147.5},0).wait(1).to({rotation:23.8,x:321.6,y:-155.5},0).wait(1).to({rotation:37.3,x:332.3,y:-163.5},0).wait(1).to({x:343.1,y:-171.4},0).wait(1).to({x:353.9,y:-179.3},0).wait(1).to({rotation:39.8,x:364.8,y:-187.1},0).wait(1).to({rotation:42.3,x:375.6,y:-194.9},0).wait(1).to({rotation:30,x:386.5,y:-202.7},0).to({_off:true},1).wait(7));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,-158.9,581.2,390);
+p.nominalBounds = new cjs.Rectangle(0,0,410,231);
 
 
 (lib.gs_sc3_layer4 = function() {
@@ -1287,7 +1287,7 @@ p.nominalBounds = new cjs.Rectangle(-959.9,-418.4,1920,893.3);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.l4},{t:this.l3},{t:this.l2},{t:this.l1}]},12).to({state:[]},1).wait(12));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-435.2,-457.7,2865.2,2739.4);
+p.nominalBounds = new cjs.Rectangle(-369.8,-380,2716.6,2466.9);
 
 
 (lib.gs_sc1_layer2_wasser1 = function(mode,startPosition,loop) {
@@ -1471,7 +1471,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,2144,1206);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_6}]}).to({state:[{t:this.instance_6},{t:this.l3},{t:this.l2},{t:this.l1}]},11).to({state:[{t:this.instance_6}]},1).wait(13));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-2682.5,-434,6443,2025.2);
+p.nominalBounds = new cjs.Rectangle(-2172,-354,5576.5,1843.6);
 
 
 (lib.gk_sc1_photoX = function() {
@@ -1543,7 +1543,8 @@ p.nominalBounds = new cjs.Rectangle(-1553.3,128.9,600,800);
 		this.stop();
 	}
 	this.frame_11 = function() {
-		this.stop();
+		this.stop(); 
+		photo.stop();
 	}
 	this.frame_24 = function() {
 		$(document).trigger("nextScene");
@@ -1627,7 +1628,7 @@ p.nominalBounds = new cjs.Rectangle(-1553.3,128.9,600,800);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_8,p:{y:541.9}}]}).to({state:[{t:this.instance_8,p:{y:542}},{t:this.l4},{t:this.l3},{t:this.l2},{t:this.l1},{t:this.photo}]},11).to({state:[{t:this.instance_8,p:{y:541.9}}]},1).wait(13));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-1859.2,-323.8,6280.2,2799.5);
+p.nominalBounds = new cjs.Rectangle(-1509,-264.2,5695.5,2469.4);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{});
 var lib, images, createjs;
