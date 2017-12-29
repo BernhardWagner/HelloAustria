@@ -61,6 +61,8 @@ bw.preload = (function ($) {
        if(firstPreloadImageLoaded && preloadingImages !== [] && e.progress * 100 > currentPercentStep) {
            loadingImageInjector.append(preloadingImages.shift());
            currentPercentStep += 5;
+
+           bw.tippLoader.injectTipps(e.progress * 100);
        }
     }
 

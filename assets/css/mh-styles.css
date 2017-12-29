@@ -269,7 +269,7 @@ button.info img {
 }
 
 .box.fullScreen canvas {
-position: relative;
+  position: relative;
   height: 70%;
   top: 50%;
   transform: translateY(-50%);

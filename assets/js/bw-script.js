@@ -21,7 +21,7 @@ bw.main = (function ($) {
         /*initialize places*/
         bw.grossglockner.init(document.getElementById('grossglockner'));
         bw.gruenersee.init(document.getElementById('gruenersee'));
-        bw.hallstatt.init(document.getElementById('hallstatt'));
+       bw.hallstatt.init(document.getElementById('hallstatt'));
 
         places.click(function (e) {
             currentPlace = $(e.target.parentNode).attr('data-place');

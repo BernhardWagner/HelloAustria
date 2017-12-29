@@ -2,7 +2,7 @@
   "manifest": [
     {"src":"assets/js/places/hallstatt/hallstatt.js", "id":"hallstattjs"},
     {"src": "assets/js/places/hallstatt/hallstattDev.js", "id": "hallstattDevjs"},
-    {"src":"assets/images/hallstatt/sc3/foto.jpg", "id":"foto"},
+    {"src":"assets/images/hallstatt/sc3/foto.jpg", "id":"foto_hallstatt"},
     {"src":"assets/images/hallstatt/sc1/hallstatt_01_01.png", "id":"hallstatt_01_01"},
     {"src":"assets/images/hallstatt/sc1/hallstatt_01_02.png", "id":"hallstatt_01_02"},
     {"src":"assets/images/hallstatt/sc1/hallstatt_01_03.png", "id":"hallstatt_01_03"},

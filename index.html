@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/mh-styles.css">
 
     <script src="assets/lib/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/bw-tipps.js"></script>
     <script src="assets/lib/tether.min.js"></script>
     <script src="assets/lib/bootstrap.min.js"></script>
     <script src="assets/lib/waitForImages.js"></script>
@@ -21,7 +22,7 @@
     <div class="center-div">
         <div id="loadingImageInjector"></div>
         <h1 class="loading-text lead mt-2">Loading...<span id="loading-percent">0%</span></h1>
-        <h1 id="tipp" class="lead">Hallo ich bin ein Tipp!</h1>
+        <h1 id="tipp" class="lead">Welcome to Austria</h1>
     </div>
    <!-- <div class="loading-box"><div id="loading-bar"></div></div>-->
 </div>
@@ -90,7 +91,7 @@
 
         <button type="button" id="close-canvas" class="close"></button>
         <div id="info">
-            <button class="info" type="button"><img src="assets/images/info.png" alt="Info"/></button>
+            <button class="info" type="button"><img src="assets/images/iconinfo.svg" onerror="this.onerror=null; this.src='assets/images/iconinfo.png'" alt="Info"/></button>
             <div class="infobox hiddeninfobox">
                 <h2 id="description-title"></h2>
                 <p id="description-text">

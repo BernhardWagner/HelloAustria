@@ -86,6 +86,22 @@
     margin-bottom: 20px;
 }
 
+.preload > .center-div > h1{
+    animation: tippAnimation 5s ease infinite;
+}
+
+@keyframes tippAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 /*bootstrap changes */
 li.active > a {

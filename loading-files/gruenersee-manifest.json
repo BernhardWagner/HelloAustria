@@ -3,7 +3,7 @@
     {"src":"assets/js/places/gruenersee/gruenersee.js", "id":"gruenerseejs"},
     {"src": "assets/js/places/gruenersee/gruenerseeDev.js", "id": "gruenerseeDevjs"},
     {"src":"assets/images/gruenersee/comp/background.jpg", "id":"background"},
-    {"src":"assets/images/gruenersee/comp/bild_see.jpg", "id":"bild_see"},
+    {"src":"assets/images/gruenersee/comp/bild_see.png", "id":"bild_see"},
     {"src":"assets/images/gruenersee/comp/bird01.png", "id":"bird01"},
     {"src":"assets/images/gruenersee/comp/bird02.png", "id":"bird02"},
     {"src":"assets/images/gruenersee/comp/bird03.png", "id":"bird03"},
