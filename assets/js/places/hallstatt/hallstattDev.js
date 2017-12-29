@@ -103,6 +103,7 @@ bw.hallstatt = (function ($) {
 
     function unregister() {
         bw.sceneChanger.unregisterSceneChanger();
+        bw.photo.unregisterPictureIntearction();
         exportRoot.sc1.l3.pier.removeEventListener("click", boatAction);
         exportRoot.sc2.l2.lampe.removeEventListener("click", lampAction);
         createjs.Ticker.removeEventListener("tick", tickHandler);

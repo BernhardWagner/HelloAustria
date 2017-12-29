@@ -1287,7 +1287,7 @@ p.nominalBounds = new cjs.Rectangle(-959.9,-418.4,1920,893.3);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.l4},{t:this.l3},{t:this.l2},{t:this.l1}]},12).to({state:[]},1).wait(12));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-369.8,-380,2716.6,2466.9);
+p.nominalBounds = new cjs.Rectangle(-118.8,-30,2131.5,1240);
 
 
 (lib.gs_sc1_layer2_wasser1 = function(mode,startPosition,loop) {
@@ -1471,7 +1471,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,2144,1206);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_6}]}).to({state:[{t:this.instance_6},{t:this.l3},{t:this.l2},{t:this.l1}]},11).to({state:[{t:this.instance_6}]},1).wait(13));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-2172,-354,5576.5,1843.6);
+p.nominalBounds = new cjs.Rectangle(-2682.5,-434,6443,2025.2);
 
 
 (lib.gk_sc1_photoX = function() {
@@ -1543,8 +1543,7 @@ p.nominalBounds = new cjs.Rectangle(-1553.3,128.9,600,800);
 		this.stop();
 	}
 	this.frame_11 = function() {
-		this.stop(); 
-		photo.stop();
+		this.stop();
 	}
 	this.frame_24 = function() {
 		$(document).trigger("nextScene");
@@ -1606,12 +1605,15 @@ p.nominalBounds = new cjs.Rectangle(-1553.3,128.9,600,800);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(12).to({_off:false},0).wait(1).to({regY:512,x:1115.6,y:456},0).wait(1).to({x:1319.3,y:405},0).wait(1).to({x:1523.1,y:354},0).wait(1).to({x:1726.8,y:303},0).wait(1).to({x:1930.5,y:252},0).wait(1).to({x:2134.2,y:201},0).wait(1).to({x:2337.9,y:150},0).wait(1).to({x:2541.6,y:98.9},0).wait(1).to({x:2745.4,y:47.9},0).wait(1).to({x:2949.1,y:-2.9},0).wait(1).to({x:3152.8,y:-53.9},0).wait(1).to({x:3356.5,y:-104.9},0).wait(1));
 
+	// photo
+	this.photo = new lib.gr_sc1_photo();
+	this.photo.setTransform(824.7,378.9,0.999,0.999,9.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.photo}]}).wait(25));
+
 	// Ebene_1
 	this.instance_8 = new lib.gs_sc3_hg();
 	this.instance_8.setTransform(912,541.9,1,1,0,0,0,960,540);
-
-	this.photo = new lib.gr_sc1_photo();
-	this.photo.setTransform(824.7,378.9,0.999,0.999,9.7);
 
 	this.l1 = new lib.gs_sc3_layer1();
 	this.l1.setTransform(914.1,526.3,1,1,0,0,0,1060.1,596.3);
@@ -1625,10 +1627,10 @@ p.nominalBounds = new cjs.Rectangle(-1553.3,128.9,600,800);
 	this.l4 = new lib.gs_sc3_layer4();
 	this.l4.setTransform(911.9,553,1,1,0,0,0,991.9,558);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_8,p:{y:541.9}}]}).to({state:[{t:this.instance_8,p:{y:542}},{t:this.l4},{t:this.l3},{t:this.l2},{t:this.l1},{t:this.photo}]},11).to({state:[{t:this.instance_8,p:{y:541.9}}]},1).wait(13));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_8,p:{y:541.9}}]}).to({state:[{t:this.instance_8,p:{y:542}},{t:this.l4},{t:this.l3},{t:this.l2},{t:this.l1}]},11).to({state:[{t:this.instance_8,p:{y:541.9}}]},1).wait(13));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-1509,-264.2,5695.5,2469.4);
+p.nominalBounds = new cjs.Rectangle(-1859.2,-323.8,6280.2,2799.5);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{});
 var lib, images, createjs;
