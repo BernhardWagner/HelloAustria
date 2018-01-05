@@ -20,31 +20,36 @@ bw.gruenersee = (function ($) {
 
 
     function register() {
-        var scene1InteractionObjects = [],
-            scene2InteractionsObjects = [],
+        var scene1InteractionObjects = [exportRoot.sc1.l1.baum, exportRoot.sc1.l2.wasser],
+            scene2InteractionsObjects = [exportRoot.sc2.l2.bruecke, exportRoot.sc2.l3.person],
+            scene3InteractionsObjects = [exportRoot.sc3.l4.steinKL, exportRoot.sc3.l2.steinGR, exportRoot.sc3.l2.bank],
 
 
-            scene1Layers = [],
-            scene2Layers = [],
-            scene3Layers = [],
+            scene1Layers = [exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3],
+            scene2Layers = [exportRoot.sc2.l1, exportRoot.sc2.l2, exportRoot.sc2.l3],
+            scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2, exportRoot.sc3.l3, exportRoot.sc3.l4],
 
-            scene1LayerParallaxDampings = [],
-            scene2LayerParallaxDampings = [],
-            scene3LayerParallaxDampings = [];
+            scene1LayerParallaxDampings = [17, 50, 80],
+            scene2LayerParallaxDampings = [20,30,50],
+            scene3LayerParallaxDampings = [17,25,50, 100];
 
 
         bw.sceneChanger.registerSceneChanger(
-            [],           //standard animaitons for scene "in", "action", "out"
+            [exportRoot.sc1, exportRoot.sc2, exportRoot.sc3],           //standard animaitons for scene "in", "action", "out"
             stage,
             exportRoot,
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
-            [scene1InteractionObjects, scene2InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
+            [scene1InteractionObjects, scene2InteractionsObjects, scene3InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
             []); //last array for the sccene change sounds
 
             bw.idle.setStage(stage);
 
         createjs.Ticker.addEventListener("tick", tickHandler);
+
+
+        //picture
+        bw.photo.registerPictureInteraction(exportRoot.sc3.l2.steinGR.photoTrigger, exportRoot.sc3.photo, null, exportRoot.sc3.photo.pic.close);
 
     }
 
@@ -89,6 +94,7 @@ bw.gruenersee = (function ($) {
     function unregister() {
         bw.sceneChanger.unregisterSceneChanger();
         createjs.Ticker.removeEventListener("tick", tickHandler);
+        bw.photo.unregisterPictureIntearction();
 
     }
 

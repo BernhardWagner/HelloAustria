@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head id="scriptinjector">
+<head>
     <meta charset="UTF-8">
     <title>Hello Austria</title>
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.css"> <!-- @see https://bootswatch.com/simplex/-->
@@ -71,11 +71,19 @@
                 </div>
 
                 <div class="place gruenersee" data-place="gruenersee">
-                    <img class="icon" src="assets/images/map/icon_gruenersee.png" alt="Lake" name/>
+                    <img data-toggle="tooltip" title="Grüner See" data-placement="right" class="icon" src="assets/images/map/icon_gruenersee.png" alt="Lake" name/>
                 </div>
                 <div class="box two" id="Lake">
                     <div class="grayoverlay"></div>
                     <canvas id="gruenersee" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place hallstatt" data-place="hallstatt">
+                    <img data-toggle="tooltip" title="Hallstatt" data-placement="right" class="icon" src="assets/images/map/hallstattIcon.png" alt="City_Hallstatt" name/>
+                </div>
+                <div class="box two" id="City_Hallstatt">
+                    <div class="grayoverlay"></div>
+                    <canvas id="hallstatt" width="1920" height="1080" style="background-color:#ffffff"></canvas>
                 </div>
             </div>
         </div>

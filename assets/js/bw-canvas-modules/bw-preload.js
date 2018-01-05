@@ -20,6 +20,7 @@ bw.preload = (function ($) {
             {src: "assets/js/bw-canvas-modules/bw-sceneChanger.js", id:'sceneChangerjs'},
             {src: "assets/js/bw-canvas-modules/bw-idleHint.js", id:'idleHintjs'},
             {src: "assets/js/bw-canvas-modules/bw-actions.js", id:'actionsjs'},
+            {src: "assets/js/bw-canvas-modules/bw-photo.js", id:'photojs'},
         ],
 
 
@@ -46,6 +47,7 @@ bw.preload = (function ($) {
         preload.loadManifest(soundLoadQueue);
         preload.loadManifest("loading-files/grossglockner-manifest.json");
         preload.loadManifest("loading-files/gruenersee-manifest.json");
+        preload.loadManifest("loading-files/hallstatt-manifest.json");
                                                         //TODO also preload every javascript!
 
         preload.addEventListener("fileload", handleFileLoad);
@@ -77,9 +79,13 @@ bw.preload = (function ($) {
                 bw.main.setDescriptions(evt.result);
         }
 
-        else if(evt.item.type === 'javascript') {
-            scriptInjector.appendChild(evt.result);
-        }
+        //loaded automatically
+        // else if(evt.item.type === 'javascript') {
+        //     //for proper js loading
+        //     //scriptInjector.append('<script src="' + evt.item.src + '"></script>')
+        //     //scriptInjector.appendChild(evt.result);
+        //     //loaded automatically
+        // }
     }
 
     function handleComplete() {
