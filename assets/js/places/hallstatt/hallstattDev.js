@@ -29,7 +29,7 @@ bw.hallstatt = (function ($) {
             scene2Layers = [exportRoot.sc2.l1, exportRoot.sc2.l2],
             scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2, exportRoot.sc3.l3],
 
-            scene1LayerParallaxDampings = [25,50,60,100,150],
+            scene1LayerParallaxDampings = [25,50,60,65,150],
             scene2LayerParallaxDampings = [20,50],
             scene3LayerParallaxDampings = [20,50,70];
 
