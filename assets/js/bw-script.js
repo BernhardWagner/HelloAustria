@@ -101,3 +101,7 @@ bw.main = (function ($) {
 
 
 }($));
+
+function playSound(string) {
+    createjs.Sound.play(string);
+}

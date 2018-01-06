@@ -35,6 +35,7 @@ bw.action = (function ($) {
 
     function clickAction(e) {
         if (e.currentTarget.actionSound) {
+            e.currentTarget.actionSound.volume = 0.5;
             e.currentTarget.actionSound.stop();
             e.currentTarget.actionSound.play();
         }

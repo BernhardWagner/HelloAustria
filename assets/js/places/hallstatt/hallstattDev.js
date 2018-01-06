@@ -20,18 +20,22 @@ bw.hallstatt = (function ($) {
 
 
     function register() {
-        var scene1InteractionObjects = [],
-            scene2InteractionsObjects = [],
-            scene3InteractionsObjects = [],
+        var scene1InteractionObjects = [exportRoot.sc1.l4.kirche, exportRoot.sc1.l3.pier],
+            scene2InteractionsObjects = [exportRoot.sc2.l2.fenster, exportRoot.sc2.l2.tuer, exportRoot.sc2.l2.lampe],
+            scene3InteractionsObjects = [exportRoot.sc3.l2.photoTrigger, exportRoot.sc3.l2.tuerSalzwerk],
 
 
             scene1Layers = [exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4, exportRoot.sc1.l5],
             scene2Layers = [exportRoot.sc2.l1, exportRoot.sc2.l2],
             scene3Layers = [exportRoot.sc3.l1, exportRoot.sc3.l2, exportRoot.sc3.l3],
 
-            scene1LayerParallaxDampings = [25,50,60,65,150],
-            scene2LayerParallaxDampings = [20,50],
-            scene3LayerParallaxDampings = [20,50,70];
+            scene1LayerParallaxDampings = [30,50,60,65,150],
+            scene2LayerParallaxDampings = [30,50],
+            scene3LayerParallaxDampings = [40,50,70];
+
+
+        //action sounds (can also also be added in flash file under the action animation)
+        bw.action.addActionSound(exportRoot.sc1.l4.kirche, 'hs_sc1_churchBell');
 
 
         bw.sceneChanger.registerSceneChanger(
@@ -47,9 +51,15 @@ bw.hallstatt = (function ($) {
 
         createjs.Ticker.addEventListener("tick", tickHandler);
 
+        //pier special
+        exportRoot.sc1.l3.pier.addEventListener("click", boatAction);
+
+        //lampe special
+        exportRoot.sc2.l2.lampe.addEventListener("click", lampAction);
+
 
         //picture
-        //bw.photo.registerPictureInteraction(exportRoot.sc3.l2.steinGR.photoTrigger, exportRoot.sc3.photo, null, exportRoot.sc3.photo.pic.close);
+        bw.photo.registerPictureInteraction(exportRoot.sc3.l2.photoTrigger, exportRoot.sc3.photo, null, exportRoot.sc3.photo.pic.close);
 
     }
 
@@ -93,6 +103,8 @@ bw.hallstatt = (function ($) {
 
     function unregister() {
         bw.sceneChanger.unregisterSceneChanger();
+        exportRoot.sc1.l3.pier.removeEventListener("click", boatAction);
+        exportRoot.sc2.l2.lampe.removeEventListener("click", lampAction);
         createjs.Ticker.removeEventListener("tick", tickHandler);
         //bw.photo.unregisterPictureIntearction();
 
@@ -102,6 +114,26 @@ bw.hallstatt = (function ($) {
 
 
         stage.update();
+    }
+
+    function boatAction(e) {
+        var boat = exportRoot.sc1.l4.schiff;
+
+        if(boat.currentLabel === 'away') {
+            boat.gotoAndPlay('drive in');
+        } else if (boat.currentLabel === 'in hafen') {
+            boat.gotoAndPlay('drive out');
+        }
+    }
+
+    function lampAction(e) {
+        var lamp = exportRoot.sc2.l2.lampe;
+
+        if(lamp.lampeLicht.currentLabel === 'aus') {
+            lamp.lampeLicht.gotoAndPlay('an');
+        } else {
+            lamp.lampeLicht.gotoAndPlay('aus');
+        }
     }
 
     return {

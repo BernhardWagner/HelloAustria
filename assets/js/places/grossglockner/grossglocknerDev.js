@@ -34,6 +34,9 @@ bw.grossglockner = (function ($) {
             scene2LayerParallaxDampings = [20,50],
             scene3LayerParallaxDampings = [20,45, 20];
 
+        //sounds
+        bw.action.addActionSound(exportRoot.sc2.l1.auto, 'gs_sc2_car');
+
 
         bw.sceneChanger.registerSceneChanger(
             [exportRoot.sc1, exportRoot.sc2, exportRoot.sc3],           //standard animaitons for scene "in", "action", "out"
@@ -42,7 +45,7 @@ bw.grossglockner = (function ($) {
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
-            []); //last array for the sccene change sounds
+            ['gs_sc1_ambience_spring', null , 'gs_sc3_ambience']); //last array for the sccene sounds
 
         registerSpecialScene();
         registerClimber();
@@ -54,7 +57,7 @@ bw.grossglockner = (function ($) {
 
 
     function registerSpecialScene() {
-        bw.sceneChanger.registerSpecialScene(exportRoot.special, [exportRoot.special.l1, exportRoot.special.l2, exportRoot.special.l3, exportRoot.special.l4], [20, 50, 100, 200], [exportRoot.special.sonne2], null);
+        bw.sceneChanger.registerSpecialScene(exportRoot.special, [exportRoot.special.l1, exportRoot.special.l2, exportRoot.special.l3, exportRoot.special.l4], [20, 50, 100, 200], [exportRoot.special.sonne2], 'gs_sc1_ambience_winter');
 
         exportRoot.sc1.sonne.cursor = "pointer";
         exportRoot.special.sonne2.cursor = "pointer";
@@ -165,14 +168,14 @@ bw.grossglockner = (function ($) {
     }
 
     function unregister() {
-            unregisterClimber();
-            bw.sceneChanger.unregisterSceneChanger();
-            exportRoot.special.sonne2.removeAllEventListeners();
-            exportRoot.sc1.sonne.removeAllEventListeners();
-            createjs.Ticker.removeEventListener("tick", tickHandler);
+        unregisterClimber();
+        bw.sceneChanger.unregisterSceneChanger();
+        exportRoot.special.sonne2.removeAllEventListeners();
+        exportRoot.sc1.sonne.removeAllEventListeners();
+        createjs.Ticker.removeEventListener("tick", tickHandler);
 
     }
-    
+
     function tickHandler() {
 
 

@@ -39,6 +39,16 @@
     {"src":"assets/images/grossglockner/sc3/kletterer01_klecks.png", "id":"kletterer01_klecks"},
     {"src":"assets/images/grossglockner/sc3/kletterer02_klecks.png", "id":"kletterer02_klecks"},
     {"src":"assets/images/grossglockner/sc3/kletterer03_klecks.png", "id":"kletterer03_klecks"},
-    {"src":"assets/images/grossglockner/sc3/foto.png", "id":"foto"}
+    {"src":"assets/images/grossglockner/sc3/foto.png", "id":"gs_foto"},
+
+    {"src":"assets/sounds/grossglockner/gs_sc1_ambience_spring.ogg", "id":"gs_sc1_ambience_spring"},
+    {"src":"assets/sounds/grossglockner/gs_sc1_ambience_winter.ogg", "id":"gs_sc1_ambience_winter"},
+    {"src":"assets/sounds/grossglockner/gs_sc3_ambience.ogg", "id":"gs_sc3_ambience"},
+
+    {"src":"assets/sounds/grossglockner/gs_sc1_reh.mp3", "id":"gs_sc1_reh"},
+    {"src":"assets/sounds/grossglockner/gs_sc1_rehHover.mp3", "id":"gs_sc1_rehHover"},
+    {"src":"assets/sounds/grossglockner/gs_sc1_rehLaub.mp3", "id":"gs_sc1_rehLaub"},
+
+    {"src":"assets/sounds/grossglockner/gs_sc2_car.mp3", "id":"gs_sc2_car"}
   ]
 }

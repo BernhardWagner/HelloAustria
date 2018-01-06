@@ -48,7 +48,6 @@ bw.preload = (function ($) {
         preload.loadManifest("loading-files/grossglockner-manifest.json");
         preload.loadManifest("loading-files/gruenersee-manifest.json");
         preload.loadManifest("loading-files/hallstatt-manifest.json");
-                                                        //TODO also preload every javascript!
 
         preload.addEventListener("fileload", handleFileLoad);
         preload.addEventListener("progress", handleProgress);

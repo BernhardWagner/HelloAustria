@@ -58,6 +58,8 @@ bw.sceneChanger = (function ($) {
                 else if(typeof soundArray[key] === 'string') {
                     returnArray[key] = createjs.Sound.createInstance(soundArray[key]);
                 }
+
+                (returnArray[key] !== null) ? returnArray[key].volume = 0.7 : null;
             }
         }
         return returnArray;

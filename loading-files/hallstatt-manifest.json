@@ -18,6 +18,7 @@
     {"src":"assets/images/hallstatt/sc2/hallstatt_02_mensch.png", "id":"hallstatt_02_mensch"},
     {"src":"assets/images/hallstatt/sc2/hallstatt_02_tueroffen.png", "id":"hallstatt_02_tueroffen"},
     {"src":"assets/images/hallstatt/sc2/hallstatt_02_tuerzu.png", "id":"hallstatt_02_tuerzu"},
+    {"src":"assets/images/hallstatt/sc2/hs_sc2_l2_fenster.PNG", "id":"hs_sc2_layer2_fenster"},
     {"src":"assets/images/hallstatt/sc3/hallstatt_03_layer04.jpg", "id":"hallstatt_03_layer04"},
     {"src":"assets/images/hallstatt/sc3/hallstatt_03_layer1.png", "id":"hallstatt_03_layer1"},
     {"src":"assets/images/hallstatt/sc3/hallstatt_03_layer2.png", "id":"hallstatt_03_layer2"},
@@ -30,6 +31,8 @@
     {"src":"assets/images/hallstatt/sc2/hallstatt_laterneein.png", "id":"hallstatt_laterneein"},
     {"src":"assets/images/hallstatt/sc2/Hallstatt_layer02_tuer_halboffen.png", "id":"Hallstatt_layer02_tuer_halboffen"},
     {"src":"assets/images/hallstatt/sc1/hallstatt_schiffsanlage.png", "id":"hallstatt_schiffsanlage"},
-    {"src":"assets/images/hallstatt/sc1/Kopievonhallstatt_schiffsanlage.png", "id":"Kopievonhallstatt_schiffsanlage"}
+    {"src":"assets/images/hallstatt/sc1/Kopievonhallstatt_schiffsanlage.png", "id":"Kopievonhallstatt_schiffsanlage"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc1_churchBell.mp3", "id":"hs_sc1_churchBell"}
   ]
 }

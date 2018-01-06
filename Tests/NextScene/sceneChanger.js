@@ -180,6 +180,8 @@ bw.sceneChanger = (function ($) {
             specialScene.scene.gotoAndPlay('out');
 
             specialScene.sound && specialScene.sound.stop();
+            //stop all sounds?
+            createjs.Sound.stop();
         }
         else {
             scenes[currentScene].gotoAndPlay('out');
