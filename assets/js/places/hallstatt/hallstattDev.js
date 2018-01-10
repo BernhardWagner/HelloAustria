@@ -45,7 +45,7 @@ bw.hallstatt = (function ($) {
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects, scene3InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
-            []); //last array for the sccene change sounds
+            ['hs_sc1_ambience']); //last array for the sccene sounds
 
             bw.idle.setStage(stage);
 
@@ -103,6 +103,7 @@ bw.hallstatt = (function ($) {
 
     function unregister() {
         bw.sceneChanger.unregisterSceneChanger();
+        createjs.Sound.stop();
         bw.photo.unregisterPictureIntearction();
         exportRoot.sc1.l3.pier.removeEventListener("click", boatAction);
         exportRoot.sc2.l2.lampe.removeEventListener("click", lampAction);

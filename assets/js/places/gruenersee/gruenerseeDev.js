@@ -94,6 +94,7 @@ bw.gruenersee = (function ($) {
 
     function unregister() {
         bw.sceneChanger.unregisterSceneChanger();
+        createjs.Sound.stop();
         createjs.Ticker.removeEventListener("tick", tickHandler);
         bw.photo.unregisterPictureIntearction();
 

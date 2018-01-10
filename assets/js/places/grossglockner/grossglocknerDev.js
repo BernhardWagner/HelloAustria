@@ -36,6 +36,7 @@ bw.grossglockner = (function ($) {
 
         //sounds
         bw.action.addActionSound(exportRoot.sc2.l1.auto, 'gs_sc2_car');
+        bw.action.addActionSound(exportRoot.sc2.l2.skifahrer, 'gs_sc2_skiier');
 
 
         bw.sceneChanger.registerSceneChanger(
@@ -45,7 +46,7 @@ bw.grossglockner = (function ($) {
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
-            ['gs_sc1_ambience_spring', null , 'gs_sc3_ambience']); //last array for the sccene sounds
+            ['gs_sc1_ambience_spring', 'gs_sc2_ambience' , 'gs_sc3_ambience']); //last array for the sccene sounds
 
         registerSpecialScene();
         registerClimber();
@@ -169,6 +170,7 @@ bw.grossglockner = (function ($) {
 
     function unregister() {
         unregisterClimber();
+        createjs.Sound.stop();
         bw.sceneChanger.unregisterSceneChanger();
         exportRoot.special.sonne2.removeAllEventListeners();
         exportRoot.sc1.sonne.removeAllEventListeners();

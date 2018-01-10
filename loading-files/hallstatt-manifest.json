@@ -33,6 +33,10 @@
     {"src":"assets/images/hallstatt/sc1/hallstatt_schiffsanlage.png", "id":"hallstatt_schiffsanlage"},
     {"src":"assets/images/hallstatt/sc1/Kopievonhallstatt_schiffsanlage.png", "id":"Kopievonhallstatt_schiffsanlage"},
 
-    {"src":"assets/sounds/hallstatt/hs_sc1_churchBell.mp3", "id":"hs_sc1_churchBell"}
+    {"src":"assets/sounds/hallstatt/hs_sc1_churchBell.mp3", "id":"hs_sc1_churchBell"},
+    {"src":"assets/sounds/hallstatt/hs_sc1_ambience.ogg", "id":"hs_sc1_ambience"},
+    {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_in.mp3", "id":"hs_sc1_boat_drive_in"},
+    {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_in_motor.mp3", "id":"hs_sc1_boat_drive_in_motor"},
+    {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_out_motor.mp3", "id":"hs_sc1_boat_drive_out_motor"}
   ]
 }

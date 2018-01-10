@@ -109,6 +109,7 @@ div#menuitem {
   padding-top: 10px;
   z-index: 30;
   background-color: white;
+  height: 100%;
 }
 
 div#menuitem.seemenu {

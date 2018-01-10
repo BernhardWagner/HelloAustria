@@ -11,6 +11,9 @@ bw.tippLoader = (function ($) {
         oldPercentage,
         percentageSteps;
 
+    i = 0;
+    oldPercentage = 0;
+    percentageSteps = 30;
 
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -20,9 +23,9 @@ bw.tippLoader = (function ($) {
     
     function init() {
         tippInject = $('#tipp');
-        i = 0;
-        oldPercentage = 0;
-        percentageSteps = ~~(100/Object.keys(tipps).length);
+        if(tipps) {
+            percentageSteps = ~~(100 / Object.keys(tipps).length);
+        }
     }
     
     

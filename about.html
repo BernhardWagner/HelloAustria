@@ -3,35 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>About Hello Austria</title>
-    <link rel="stylesheet" href="assets/css/mh-styles.css">
-    <script src="assets/lib/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/mh-script.js"></script>
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.css"> <!-- @see https://bootswatch.com/simplex/-->
+  <link rel="stylesheet" href="assets/css/bw-styles.css">
+  <link rel="stylesheet" href="assets/css/mh-styles.css">
+  <script src="assets/lib/jquery-3.2.1.min.js"></script>
+  <script src="assets/lib/tether.min.js"></script>
+  <script src="assets/lib/bootstrap.min.js"></script>
+  <script src="assets/js/mh-script.js"></script>
 
 </head>
-<body>
+<body class="auto-height">
 
-  <div id="menuitem">
-    <ul>
-      <a href="index.html"><li>MAP</li></a>
-      <a href="about.html"><li>ABOUT</li></a>
-      <a href="#"><li>IMPRESSUM</li></a>
-    </ul>
-  </div>
-
-  <nav id="navigation">
+<header class="fixed-header">
+  <nav id="navigation" class="navbar navbar-light bg-light">
     <div id="menu">
-      <button id="menubutton" type="button" onclick="openNav()">&#9776;</button>
-      <button id="menucross" type="button" onclick="closeNav()">&#735;</button>
+      <button class="hamburger hamburger--arrowturn" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
     </div>
     <div id="logo">
-      <img src="assets/images/logo.png" alt="Logo" />
+      <!-- <img src="assets/images/logo.png" alt="Logo"/>-->
     </div>
   </nav>
+  <div id="menuitem" class="side-menu-container">
+    <a href="index.html"><img src="assets/images/logo-placeholder.png" alt="Logo" class="logo-image"></a>
+    <ul class="list-group nav navbar-light">
+      <li class="list-group-item">
+        <a href="index.html"><span class="glyphicon glyphicon-send"></span>MAP</a>
+      </li>
+      <li class="active list-group-item">
+        <a a href="./about.html">ABOUT</a>
+      </li>
+      <li class="list-group-item">
+        <a href="./impressum.html">SITE NOTICE</a>
+      </li>
+    </ul>
+  </div>
+</header>
 
-  <main id="content">
-    <div id="info">
-        <div class="about">
-          <h1>ABOUT - ÜBERSCHRIFT</h1>
+  <main id="content" class="container auto-height">
+        <section class="about">
+          <h1 class="main-title">ABOUT - ÜBERSCHRIFT</h1>
           <p>
             Augue turpis lacus elementum, risus platea, arcu,
             turpis duis, urna magna sociis ut dignissim mus? Tincidunt.
@@ -50,31 +64,70 @@
             turpis duis, urna magna sociis ut dignissim mus? Tincidunt.
             Scelerisque turpis nisi elementum pulvinar ac ridiculus enim,
             duis ridiculus ultricies elit nascetur porttitor aliquet, nunc
-            enim dis ac, pulvinar, nisi cras integer magnis, pulvinar dolor,
-            aliquet sed tincidunt, integer. Ac, lorem, amet odio? Turpis in.
-            Amet tempor augue a et ultricies magna habitasse? Mattis nunc tristique
-            turpis! Amet, velit dignissim aenean! Turpis facilisis facilisis proin
-            nascetur parturient augue! Vut aliquet, duis? Dignissim elementum,
-            nec et est porta, enim? Pulvinar nunc? Auctor, sit sit tincidunt lacus
-            amet dolor, auctor sagittis platea magna cursus, vel placerat adipiscing,
-            phasellus facilisis est, sed porttitor, ac. Tincidunt in, ultricies porttitor!
-            Pulvinar aliquet sagittis porta scelerisque pellentesque magnis? Odio.
-            Augue turpis lacus elementum, risus platea, arcu,
-            turpis duis, urna magna sociis ut dignissim mus? Tincidunt.
-            Scelerisque turpis nisi elementum pulvinar ac ridiculus enim,
-            duis ridiculus ultricies elit nascetur porttitor aliquet, nunc
-            enim dis ac, pulvinar, nisi cras integer magnis, pulvinar dolor,
-            aliquet sed tincidunt, integer. Ac, lorem, amet odio? Turpis in.
-            Amet tempor augue a et ultricies magna habitasse? Mattis nunc tristique
-            turpis! Amet, velit dignissim aenean! Turpis facilisis facilisis proin
-            nascetur parturient augue! Vut aliquet, duis? Dignissim elementum,
-            nec et est porta, enim? Pulvinar nunc? Auctor, sit sit tincidunt lacus
-            amet dolor, auctor sagittis platea magna cursus, vel placerat adipiscing,
-            phasellus facilisis est, sed porttitor, ac. Tincidunt in, ultricies porttitor!
-            Pulvinar aliquet sagittis porta scelerisque pellentesque magnis? Odio.
           </p>
-        </div>
-    </div>
+          <div class="cards row card-deck mt-5">
+
+            <div class="card col-4 p-0">
+              <div class="card-flip">
+                <div class="front-face">
+                  <img class="card-img-top" src="assets/images/team/Lisa.jpg" alt="Lisa Eilmsteiner">
+                </div>
+                <div class="back-face">
+                  <div class="card-header">
+                    <h3 class="card-title">Lisa Eilmsteiner</h3>
+                  </div>
+                  <div class="card-body">
+                    <p><i>"Hier könnte Ihre Werbung stehen"</i></p>
+                  </div>
+                  <div class="card-footer">
+                    <b>Design, Konzept, Teamleader</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card col-4 p-0">
+              <div class="card-flip">
+                <div class="front-face">
+                  <img class="card-img-top" src="assets/images/team/Melanie.jpg" alt="Lisa Eilmsteiner">
+                </div>
+                <div class="back-face">
+                  <div class="card-header">
+                    <h3 class="card-title">Melanie Humer</h3>
+                  </div>
+                  <div class="card-body">
+                    <p><i>"Hier könnte Ihre Werbung stehen"</i></p>
+                  </div>
+                  <div class="card-footer">
+                    <b>Animation, Frontend, Konzept</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card col-4 p-0">
+              <div class="card-flip">
+                <div class="front-face">
+                  <img class="card-img-top" src="assets/images/team/Bernhard.jpg" alt="Lisa Eilmsteiner">
+                </div>
+                <div class="back-face">
+                  <div class="card-header">
+                    <h3 class="card-title">Bernhard Wagner</h3>
+                  </div>
+                  <div class="card-body">
+                    <p><i>"Hier könnte Ihre Werbung stehen"</i></p>
+                  </div>
+                  <div class="card-footer">
+                    <b>Animation, Frontend, Konzept</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
   </main>
 
 </body>
