@@ -20,12 +20,12 @@ bw.preload = (function ($) {
             {src: "assets/js/bw-canvas-modules/bw-sceneChanger.js", id:'sceneChangerjs'},
             {src: "assets/js/bw-canvas-modules/bw-idleHint.js", id:'idleHintjs'},
             {src: "assets/js/bw-canvas-modules/bw-actions.js", id:'actionsjs'},
-            {src: "assets/js/bw-canvas-modules/bw-photo.js", id:'photojs'},
+            {src: "assets/js/bw-canvas-modules/bw-photo.js", id:'photojs'}
         ],
 
 
         soundLoadQueue = [
-
+            {src: "assets/sounds/photo_shutter.mp3", id: 'photo_shutter'}
         ];
 
     function load() {

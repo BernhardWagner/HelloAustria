@@ -37,6 +37,24 @@
     {"src":"assets/sounds/hallstatt/hs_sc1_ambience.ogg", "id":"hs_sc1_ambience"},
     {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_in.mp3", "id":"hs_sc1_boat_drive_in"},
     {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_in_motor.mp3", "id":"hs_sc1_boat_drive_in_motor"},
-    {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_out_motor.mp3", "id":"hs_sc1_boat_drive_out_motor"}
+    {"src":"assets/sounds/hallstatt/hs_sc1_boat_drive_out_motor.mp3", "id":"hs_sc1_boat_drive_out_motor"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc2_window_swoosh1.mp3", "id":"hs_sc2_window_swoosh1"},
+    {"src":"assets/sounds/hallstatt/hs_sc2_window_swoosh2.mp3", "id":"hs_sc2_window_swoosh2"},
+    {"src":"assets/sounds/hallstatt/hs_sc2_window_swoosh3.mp3", "id":"hs_sc2_window_swoosh3"},
+    {"src":"assets/sounds/hallstatt/hs_sc2_window_woman.mp3", "id":"hs_sc2_window_woman"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc2_ambience.ogg", "id":"hs_sc2_ambience"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc2_door_open.mp3", "id":"hs_sc2_door_open"},
+    {"src":"assets/sounds/hallstatt/hs_sc2_door_close.mp3", "id":"hs_sc2_door_close"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc2_light.mp3", "id":"hs_sc2_light"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc3_ambience.ogg", "id":"hs_sc3_ambience"},
+
+    {"src":"assets/sounds/hallstatt/hs_sc3_swoosh.mp3", "id":"hs_sc3_swoosh"},
+    {"src":"assets/sounds/hallstatt/hs_sc3_door_open.mp3", "id":"hs_sc3_door_open"},
+    {"src":"assets/sounds/hallstatt/hs_sc3_door_close.mp3", "id":"hs_sc3_door_close"}
   ]
 }

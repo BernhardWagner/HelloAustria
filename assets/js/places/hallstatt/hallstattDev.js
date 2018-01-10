@@ -36,6 +36,7 @@ bw.hallstatt = (function ($) {
 
         //action sounds (can also also be added in flash file under the action animation)
         bw.action.addActionSound(exportRoot.sc1.l4.kirche, 'hs_sc1_churchBell');
+        bw.action.addActionSound(exportRoot.sc2.l2.lampe, 'hs_sc2_light');
 
 
         bw.sceneChanger.registerSceneChanger(
@@ -45,7 +46,7 @@ bw.hallstatt = (function ($) {
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects, scene3InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
-            ['hs_sc1_ambience']); //last array for the sccene sounds
+            ['hs_sc1_ambience', 'hs_sc2_ambience', 'hs_sc3_ambience']); //last array for the sccene sounds
 
             bw.idle.setStage(stage);
 
@@ -59,7 +60,7 @@ bw.hallstatt = (function ($) {
 
 
         //picture
-        bw.photo.registerPictureInteraction(exportRoot.sc3.l2.photoTrigger, exportRoot.sc3.photo, null, exportRoot.sc3.photo.pic.close);
+        bw.photo.registerPictureInteraction(exportRoot.sc3.l2.photoTrigger, exportRoot.sc3.photo, 'photo_shutter', exportRoot.sc3.photo.pic.close);
 
     }
 

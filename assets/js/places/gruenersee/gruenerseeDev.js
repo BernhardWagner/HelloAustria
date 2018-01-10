@@ -49,7 +49,7 @@ bw.gruenersee = (function ($) {
 
 
         //picture
-        bw.photo.registerPictureInteraction(exportRoot.sc3.l2.steinGR.photoTrigger, exportRoot.sc3.photo, null, exportRoot.sc3.photo.pic.close);
+        bw.photo.registerPictureInteraction(exportRoot.sc3.l2.steinGR.photoTrigger, exportRoot.sc3.photo, 'photo_shutter', exportRoot.sc3.photo.pic.close);
 
 
     }
