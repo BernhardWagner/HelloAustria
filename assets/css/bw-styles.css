@@ -133,10 +133,6 @@ li.active > a {
     background-color: #dbdbdb;
 }
 
-.list-group li.active {
-    background-color: #af1c24;
-}
-
 
 /*sections*/
 #content > section{
