@@ -23,7 +23,7 @@ bw.resizeMap = (function ($) {
         $(window).on("resize", function (e) {
             var mapBackgroundSize, topValue, leftValue, ratioX, ratioY;
 
-            content.height(window.innerHeight - navigation.outerHeight());
+            content.height(window.innerHeight); // - navigation.outerHeight()
             menuItem.outerHeight(content.height());
 
             if (content.width() / content.height() < 3264 / 1824) {

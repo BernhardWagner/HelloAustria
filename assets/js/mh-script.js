@@ -4,11 +4,14 @@ var mh = mh || {};
 
 mh.main = (function () {
 
-  var icons, boxes;
+  var icons, boxes, closeButton, closeButtonWrapper, infoButton;
 
   function init() {
     icons = $('.icon');
     boxes = $('.box');
+    closeButtonWrapper = $('#close-button-wrapper');
+    closeButton = closeButtonWrapper.find("#close-canvas");
+    infoButton = $('#info').find('.info');
 
 
       /*Hamburger Menu to arrow + toggle menuitem */
@@ -19,26 +22,40 @@ mh.main = (function () {
           $menuitem.toggleClass("seemenu");
       });
 
-
-      /*toggle infobox*/
-      $( "button.info" ).click(function() {
-          $( "div.infobox" ).toggleClass( "hiddeninfobox" );
-      });
-
       /*open canvas*/
       icons.on("click", function(e) {
-          console.log('#' + e.currentTarget.alt);
-          $('#' + e.currentTarget.alt).addClass("fullScreen");
+          var currentBox = $('#' + e.currentTarget.alt),
+              currentCanvas,
+              boundingRect;
+
+          currentCanvas = currentBox.find('canvas')[0];
+
+          infoButton.addClass('fade-fx');
+          icons.addClass('fade-fx');
+
+          //console.log('#' + e.currentTarget.alt);
+          currentBox.addClass("fullScreen");
           $(".mapAsBg").addClass("gray");
-          $(".close").addClass("closecanvas");
+
+          setTimeout(function () {
+              closeButton.addClass("closecanvas");
+              boundingRect = currentCanvas.getBoundingClientRect();
+              closeButtonWrapper.addClass('open');
+              closeButtonWrapper.css({
+                  'left': (boundingRect.right - 61) + 'px',
+                  'top': (boundingRect.top + 1) + 'px'
+              });
+              infoButton.css({
+                  'left': (boundingRect.right - 90) + 'px',
+                  'top' : (boundingRect.bottom - 90) + 'px'
+              });
+
+              infoButton.removeClass('fade-fx');
+          }, 650);
       });
 
       /*close canvas*/
-      $(".close").on("click", function() {
-          boxes.removeClass("fullScreen");
-          $(".mapAsBg").removeClass("gray");
-          $(".close").removeClass("closecanvas");
-      });
+      closeButton.on("click", closeCanvas);
 
       //register Tooltip
       $('[data-toggle="tooltip"]').tooltip();
@@ -48,7 +65,28 @@ mh.main = (function () {
       // });
   }
 
+   function closeCanvas() {
+       icons.removeClass('fade-fx');
+       closeButtonWrapper.removeClass('open');
+        boxes.removeClass("fullScreen");
+        $(".mapAsBg").removeClass("gray");
+        $(".close").removeClass("closecanvas");
+       infoButton.addClass('fade-fx');
+
+       setTimeout(function () {
+           infoButton.css({
+               'left': '',
+               'top' : ''
+           });
+           infoButton.removeClass('fade-fx');
+       }, 500)
+    }
+
     $( document ).ready(init);
+
+  return {
+      closeCanvas: closeCanvas
+  }
 
 
 

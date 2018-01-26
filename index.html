@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello Austria</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:500|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.css"> <!-- @see https://bootswatch.com/simplex/-->
     <link rel="stylesheet" href="assets/css/bw-styles.css">
     <link rel="stylesheet" href="assets/css/mh-styles.css">
@@ -21,8 +22,8 @@
 <div class="preload">
     <div class="center-div">
         <div id="loadingImageInjector"></div>
+        <div class="card loading-card"><h1 id="tipp" class="lead">Welcome to Austria</h1></div>
         <h1 class="loading-text lead mt-2">Loading...<span id="loading-percent">0%</span></h1>
-        <h1 id="tipp" class="lead">Welcome to Austria</h1>
     </div>
    <!-- <div class="loading-box"><div id="loading-bar"></div></div>-->
 </div>
@@ -31,7 +32,7 @@
 </div>
 <div class="loaded hidden">
     <header>
-        <nav id="navigation" class="navbar navbar-light bg-light">
+        <nav id="navigation" class="navbar navbar-light no-background">
             <div id="menu">
                 <button class="hamburger hamburger--arrowturn" type="button">
         <span class="hamburger-box">
@@ -44,10 +45,13 @@
             </div>
         </nav>
         <div id="menuitem" class="side-menu-container">
-            <a href="index.html"><img src="assets/images/logo-placeholder.png" alt="Logo" class="logo-image"></a>
+            <h1 class="menu-main-title margin">Welcome <br/> to Austria</h1>
             <ul class="list-group nav navbar-light">
                 <li class="active list-group-item">
                     <a href="index.html"><span class="glyphicon glyphicon-send"></span>MAP</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="./how-it-works.html">HOW IT WORKS</a>
                 </li>
                 <li class="list-group-item">
                     <a a href="./about.html">ABOUT</a>
@@ -62,7 +66,7 @@
     <main id="content">
         <div class="map-wrapper" id="map-wrap">
             <div class="map" id="map">
-                <img id="map-image" class="map-image" src="assets/images/map/map.jpg" alt="Map"/>
+                <img id="map-image" class="map-image" src="assets/images/map/KarteNeu.png" alt="Map"/>
                 <div class="place grossglockner" data-place="grossglockner">
                     <img data-toggle="tooltip" title="Großglockner" data-placement="right" class="icon" src="assets/images/map/Großglockner_Icon.png" alt="Mountain"/>
                 </div>
@@ -86,16 +90,79 @@
                     <div class="grayoverlay"></div>
                     <canvas id="hallstatt" width="1920" height="1080" style="background-color:#ffffff"></canvas>
                 </div>
+
+                <div class="place innsbruck" data-place="innsbruck">
+                    <img data-toggle="tooltip" title="Innsbruck" data-placement="right" class="icon" src="assets/images/map/Icon_Innsbruck.png" alt="City_Innsbruck" name/>
+                </div>
+                <div class="box two" id="City_Innsbruck">
+                    <div class="grayoverlay"></div>
+                    <canvas id="innsbruck" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place winestreet" data-place="winestreet">
+                    <img data-toggle="tooltip" title="Weinstraße" data-placement="right" class="icon" src="assets/images/map/Burgenland_Weinstrasse.png" alt="Wine_Hill" name/>
+                </div>
+                <div class="box two" id="Wine_Hill">
+                    <div class="grayoverlay"></div>
+                    <canvas id="winestreet" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place krimmlwaterfall" data-place="krimmlwaterfall">
+                    <img data-toggle="tooltip" title="Krimmler Waterfalls" data-placement="right" class="icon" src="assets/images/map/Salzburg_Krimmlerwasserfaelle.png" alt="Waterfall" name/>
+                </div>
+                <div class="box two" id="Waterfall">
+                    <div class="grayoverlay"></div>
+                    <canvas id="krimmlwaterfall" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place vienna" data-place="vienna">
+                    <img data-toggle="tooltip" title="Vienna (Food of Austria)" data-placement="right" class="icon" src="assets/images/map/Wien_Essen.png" alt="Austrian_Food" name/>
+                </div>
+                <div class="box two" id="Austrian_Food">
+                    <div class="grayoverlay"></div>
+                    <canvas id="vienna" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place donau" data-place="donau">
+                    <img data-toggle="tooltip" title="Donau" data-placement="right" class="icon" src="assets/images/map/Niederoesterreich_Donauradweg.png" alt="River_Donau" name/>
+                </div>
+                <div class="box two" id="River_Donau">
+                    <div class="grayoverlay"></div>
+                    <canvas id="donau" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
+
+                <div class="place bregenzforest" data-place="bregenzforest">
+                    <img data-toggle="tooltip" title="Bregenz Forest" data-placement="right" class="icon" src="assets/images/map/Vorarlberg_Bregenzerwald.png" alt="Forest" name/>
+                </div>
+                <div class="box two" id="Forest">
+                    <div class="grayoverlay"></div>
+                    <canvas id="bregenzforest" width="1920" height="1080" style="background-color:#ffffff"></canvas>
+                </div>
             </div>
         </div>
 
-        <button type="button" id="close-canvas" class="close"></button>
+        <div id="close-button-wrapper">
+            <button type="button" id="close-canvas" class="close"></button>
+        </div>
         <div id="info">
-            <button class="info" type="button"><img src="assets/images/iconinfo.svg" onerror="this.onerror=null; this.src='assets/images/iconinfo.png'" alt="Info"/></button>
-            <div class="infobox hiddeninfobox">
-                <h2 id="description-title"></h2>
-                <p id="description-text">
-                </p>
+            <button class="info" type="button" data-toggle="modal" data-target="#info-box-modal">i</button>
+            <div class="modal  fade" role="article" id="info-box-modal">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="position: relative;">
+                            <h2 id="description-title"></h2>
+                            <button type="button" data-dismiss="modal" style="font-size: 25pt; position: absolute; right: 10px; top: 10px;">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="description-text">
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -103,5 +170,6 @@
 </body>
 <script src="assets/js/bw-script.js"></script>
 <script src="assets/js/mh-script.js"></script>
+<script src="assets/js/bw-modal.js"></script>
 
 </html>

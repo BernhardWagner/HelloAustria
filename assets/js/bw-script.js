@@ -43,26 +43,28 @@ bw.main = (function ($) {
             changeInfoText();
         });
 
-        closeButton.click(function () {
-            switch (currentPlace) {
-                case "grossglockner":
-                    bw.grossglockner.unregister();
-                    break;
-
-                case "gruenersee":
-                    bw.gruenersee.unregister();
-                    break;
-
-                case "hallstatt":
-                    bw.hallstatt.unregister();
-                    break;
-            }
-
-            currentPlace = null;
-            changeInfoText();
-        });
+        closeButton.click(unregisterScene);
 
         bw.resizeMap.iconPosiontioningAndResize();
+    }
+
+    function unregisterScene() {
+        switch (currentPlace) {
+            case "grossglockner":
+                bw.grossglockner.unregister();
+                break;
+
+            case "gruenersee":
+                bw.gruenersee.unregister();
+                break;
+
+            case "hallstatt":
+                bw.hallstatt.unregister();
+                break;
+        }
+
+        currentPlace = null;
+        changeInfoText();
     }
 
     function getCurrentPlace() {
@@ -96,6 +98,7 @@ bw.main = (function ($) {
         getCurrentScene: getCurrentScene,
         setDescriptions: setDescriptions,
         changeInfoText: changeInfoText,
+        unregisterScene: unregisterScene,
         init: init,
     }
 

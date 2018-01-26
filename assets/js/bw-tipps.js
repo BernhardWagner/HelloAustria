@@ -33,7 +33,14 @@ bw.tippLoader = (function ($) {
         if(percentage > oldPercentage + percentageSteps) {
             oldPercentage = percentage;
             i++;
+
+            $(tippInject).addClass('fade-fx');
             tippInject[0].innerHTML = tipps[i];
+
+            setTimeout(function () {
+                $(tippInject).removeClass('fade-fx');
+            }, 250);
+
         }
     }
 

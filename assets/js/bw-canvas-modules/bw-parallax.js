@@ -15,6 +15,7 @@ bw.parallax = (function ($) {
         dampingFactors = layerdampings_;
         stage= stage_;
 
+
         setInitLayerPos();
 
 
@@ -24,12 +25,15 @@ bw.parallax = (function ($) {
     function unregisterParallax() {
         var i = 0;
 
+        stage.removeEventListener('stagemousemove', parallaxHandler);
+
         for (var layer in layers) {       //reset init layer positions
-            layers[layer].x = initLayerPos[i].x;
-            layers[layer].y = initLayerPos[i].y;
+            // layers[layer].x = initLayerPos[i].x;
+            // layers[layer].y = initLayerPos[i].y;
+            createjs.Tween.get(layers[layer], {override: true}).to({x: initLayerPos[i].x, y: initLayerPos[i].y }, 350, createjs.Ease.quintOut);
             i++;
         }
-        stage.removeEventListener('stagemousemove', parallaxHandler);
+
 
         layers = null;
         dampingFactors = null;
@@ -61,7 +65,6 @@ bw.parallax = (function ($) {
         }
 
         //stage.update();
-
     }
 
 

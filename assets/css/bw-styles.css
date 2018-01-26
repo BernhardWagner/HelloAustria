@@ -12,7 +12,16 @@
 }
 
 #content p {
-    font-size: 1.15em;
+    font-size: 14pt;
+    line-height: 1.7;
+}
+
+.card-footer {
+    font-size: 13pt;
+}
+
+.about h2 {
+margin-top: 40px;
 }
 
 
@@ -69,15 +78,20 @@
     max-height: 50vh;
 }
 
+.btn-default {
+    font-size: 14pt;
+}
+
 
 .loading-text, #tipp {
     text-align: center;
     display: block;
+    transition: opacity 0.5s ease;
 }
 
 .center-div {
     position: relative;
-    top: -20%;
+    top: -15%;
     transform: translateY(-50%);
     align-self: center;
     width: 50%;
@@ -112,8 +126,44 @@ li.active > a {
     color: white;
 }
 
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+
 .list-group {
-    font-size: 1.15em;
+    font-size: 14pt;
+}
+
+.menu-main-title {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body {
+    background-image: url(../images/HintergrundInfo2.png);
+}
+
+.bg .hamburger-inner, .bg .hamburger-inner::before, .bg .hamburger-inner::after {
+    background-color: white;
+}
+
+.bg {
+    background-color: #444444;
+}
+
+.margin.menu-main-title {
+    margin-top: 60px;
+}
+
+.address-list {
+    list-style: none;
+    padding: 0;
+    font-size: 15pt;
 }
 
 .list-group li {
@@ -130,7 +180,7 @@ li.active > a {
 
 .list-group li:not(.active) a:hover {
     text-decoration: none;
-    background-color: #dbdbdb;
+    background-color: rgba(255, 255, 255, 0.91);
 }
 
 
@@ -170,7 +220,9 @@ body.auto-height {
 
 
 #menuitem {
-    white-space: nowrap
+    white-space: nowrap;
+    font-size: 14pt;
+    text-transform: lowercase;
 }
 
 /*cards*/
@@ -273,6 +325,94 @@ body.auto-height {
     }
 }
 
+#content .modal-dialog {
+    max-width: 800px;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease;
+}
+
+nav#navigation.no-background {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: none;
+}
+
+#close-canvas {
+    z-index: 400;
+}
+
+#content .show .modal-dialog {
+    top: 50%;
+}
+
+.modal-content {
+    padding: 10px 30px;
+    background-color: #f4f4f4;
+    opacity: 0.99;
+    background-image: url("../images/HintergrundInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.modal-footer .btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.loading-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 600px;
+    padding-top: 10px;
+    height: 90px;
+    flex-shrink: 0;
+    margin-left: auto;
+    border: none;
+    margin-right: auto;
+}
+
+.loading-card #tipp {
+    font-size: 21pt;
+    margin-bottom: 0;
+    vertical-align: bottom;
+}
+
+#description-title {
+    font-size: 25pt;
+    padding-top: 10px;
+}
+
+/* tooltip */
+.tooltip-inner {
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.67);
+    color: #333;
+    font-size: 12pt;
+}
+
+.tooltip .arrow {
+    top: 50%;
+    margin-top: -3px;
+    left: -5px;
+}
+
+.tooltip .arrow::before {
+    border-right-color: rgba(255, 255, 255, 0.67);
+}
+
+/*misc */
+.fade-fx {
+    opacity: 0;
+    transition: 0.5s ease;
+}
 
 @media screen and (max-device-aspect-ratio: 6/5) {
     .small-screen-message {

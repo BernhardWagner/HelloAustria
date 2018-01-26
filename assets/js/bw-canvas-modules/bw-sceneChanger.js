@@ -42,7 +42,6 @@ bw.sceneChanger = (function ($) {
             }
         });
 
-
         stage.canvas.addEventListener("dblclick", changeScene);
     }
 
@@ -104,8 +103,8 @@ bw.sceneChanger = (function ($) {
 
     function toggleSpecialScene() {
         if(specialScene.active === false) {
-            specialScene.active = true;
             bw.parallax.unregisterParallax();
+            specialScene.active = true;
             scenes[currentScene].gotoAndPlay("out");
             sceneSounds[currentScene] && sceneSounds[currentScene].stop();
         }
