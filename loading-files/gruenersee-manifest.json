@@ -49,6 +49,25 @@
     {"src":"assets/images/gruenersee/comp/person01.png", "id":"person01"},
     {"src":"assets/images/gruenersee/comp/person02.png", "id":"person02"},
     {"src":"assets/images/gruenersee/comp/person03.png", "id":"person03"},
-    {"src":"assets/images/gruenersee/comp/person04.png", "id":"person04"}
+    {"src":"assets/images/gruenersee/comp/person04.png", "id":"person04"},
+
+    {"src":"assets/sounds/gruenersee/gs_sc1_ambience.ogg", "id":"gs_sc1_ambience"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_ambience.ogg", "id":"gs_sc2_ambience"},
+    {"src":"assets/sounds/gruenersee/gs_sc3_ambience.ogg", "id":"gs_sc3_ambience"},
+
+    {"src":"assets/sounds/gruenersee/gs_sc1_baum_hover.mp3", "id":"gs_sc1_baum_hover"},
+    {"src":"assets/sounds/gruenersee/gs_sc1_fisch.mp3", "id":"gs_sc1_fisch"},
+    {"src":"assets/sounds/gruenersee/gs_sc1_vogel.mp3", "id":"gs_sc1_vogel"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_fische.mp3", "id":"gs_sc2_fische"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_step1.mp3", "id":"gs_sc2_person_step1"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_step2.mp3", "id":"gs_sc2_person_step2"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_step3.mp3", "id":"gs_sc2_person_step3"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_step4.mp3", "id":"gs_sc2_person_step4"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_step5.mp3", "id":"gs_sc2_person_step5"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_step6.mp3", "id":"gs_sc2_person_step6"},
+    {"src":"assets/sounds/gruenersee/gs_sc2_person_whistle.mp3", "id":"gs_sc2_person_whistle"},
+    {"src":"assets/sounds/gruenersee/gs_sc3_fische.mp3", "id":"gs_sc3_fische"},
+    {"src":"assets/sounds/gruenersee/gs_sc3_bank.mp3", "id":"gs_sc3_bank"},
+    {"src":"assets/sounds/gruenersee/gs_sc3_diver.mp3", "id":"gs_sc3_diver"}
   ]
 }

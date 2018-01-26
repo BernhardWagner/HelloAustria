@@ -34,6 +34,10 @@ bw.gruenersee = (function ($) {
             scene3LayerParallaxDampings = [17,25,50, 100];
 
 
+        bw.action.addActionSound(exportRoot.sc3.l4.steinKL, 'gs_sc3_fische');
+        bw.action.addActionSound(exportRoot.sc3.l2.bank, 'gs_sc3_bank');
+
+
         bw.sceneChanger.registerSceneChanger(
             [exportRoot.sc1, exportRoot.sc2, exportRoot.sc3],           //standard animaitons for scene "in", "action", "out"
             stage,
@@ -41,7 +45,7 @@ bw.gruenersee = (function ($) {
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects, scene3InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
-            []); //last array for the sccene change sounds
+            ['gs_sc1_ambience', 'gs_sc2_ambience', 'gs_sc3_ambience']); //last array for the sccene change sounds
 
             bw.idle.setStage(stage);
 

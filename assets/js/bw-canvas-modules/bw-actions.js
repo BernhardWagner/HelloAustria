@@ -5,7 +5,7 @@ var bw = bw || {};
 
 bw.action = (function ($) {
 
-    var defaultActionObjects, hoverTimeout = 800, hoverOk;
+    var defaultActionObjects, hoverTimeout = 500, hoverOk;
 
     function registerAnimationDefaultActions(actionObjects_) {
         defaultActionObjects = actionObjects_;

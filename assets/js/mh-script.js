@@ -43,7 +43,7 @@ mh.main = (function () {
               closeButtonWrapper.addClass('open');
               closeButtonWrapper.css({
                   'left': (boundingRect.right - 61) + 'px',
-                  'top': (boundingRect.top + 1) + 'px'
+                  'top': (boundingRect.top) + 'px'
               });
               infoButton.css({
                   'left': (boundingRect.right - 90) + 'px',
