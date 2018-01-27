@@ -177,7 +177,6 @@ main#content {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  margin-bottom: 60px;
 }
 
 .map-wrapper {
@@ -385,4 +384,10 @@ button.info img {
 .closecanvas:hover {
   transition: all .3s ease-out;
   transform: rotate(180deg);
+}
+
+@media screen and (max-height: 900px){
+    .map {
+        margin-bottom: 65px;
+    }
 }

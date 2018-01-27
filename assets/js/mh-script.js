@@ -4,7 +4,7 @@ var mh = mh || {};
 
 mh.main = (function () {
 
-  var icons, boxes, closeButton, closeButtonWrapper, infoButton;
+  var icons, boxes, closeButton, closeButtonWrapper, infoButton, mapWrapper;
 
   function init() {
     icons = $('.icon');
@@ -12,6 +12,7 @@ mh.main = (function () {
     closeButtonWrapper = $('#close-button-wrapper');
     closeButton = closeButtonWrapper.find("#close-canvas");
     infoButton = $('#info').find('.info');
+    mapWrapper = $('#map-wrap');
 
 
       /*Hamburger Menu to arrow + toggle menuitem */
@@ -36,6 +37,8 @@ mh.main = (function () {
           //console.log('#' + e.currentTarget.alt);
           currentBox.addClass("fullScreen");
           $(".mapAsBg").addClass("gray");
+
+          mapWrapper.addClass('open-canvas');
 
           setTimeout(function () {
               closeButton.addClass("closecanvas");
@@ -67,6 +70,7 @@ mh.main = (function () {
 
    function closeCanvas() {
        icons.removeClass('fade-fx');
+       mapWrapper.removeClass('open-canvas');
        closeButtonWrapper.removeClass('open');
         boxes.removeClass("fullScreen");
         $(".mapAsBg").removeClass("gray");
