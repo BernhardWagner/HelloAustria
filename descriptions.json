@@ -46,5 +46,19 @@
             "title": "Salt Mine",
             "text": "Within Austria, Hallstatt is mostly known for it’s Salt Mine. After going up the mountain by cable car, you can enter a world of adventure und history. With tunnels of 65 Kilometers, slides and 21 tiers in total, this is a fun activity for people of all ages."
           }
-        ]
+        ],
+    "innsbruck": [
+              {
+                "title": "Nordkette",
+                "text": "The Nordkette, a range of mountains just north of Austria’s probably most charming city, Innsbruck. It can be seen from the city center, which gives the city a special and lovely ﬂair. You can reach the top of the mountain either by foot or cable car. From the top you can enjoy an amazing view over Innsbruck, as well as the stunning nature around it. The cable car leaves at the „Hungerburg“ (engl. hunger castle), which is simply just a part of the city. The Nordkette reaches his peak at 2,637m. In winter you can go skiing at the top of it, while taking in the breathtaking scenery."
+              },
+              {
+                "title": "Capitol of Tyrol",
+                "text": "Innsbruck is the capitol city of one of Austria’s 9 states, Tyrol. Tyrol is known for its breathtaking scenery, mountains everywhere and the friendliness of the people. The city is divided by a river called „Inn“. Even though it’s a city, you can escape the classic city life easily as there are so many options to enjoy some time in nature close by. Innsbruck hosted the 1964 and 1976 Winter Olympics, as well as the 1984 and 1988 Winter Paralympics."
+              },
+              {
+                "title": "„Goldenes Dachl“",
+                "text": "One of Innsbruck’s best known attraction is the „Goldenes Dachl“ in the Old Town. It was built in the year 1500 for the wedding of Emperor Maximilian I  and Bianca Maria Sforza. Goldenes Dachl means „Golden Rooftop“ and that’s exactly what it is: a rooftop decorated with 2,657 ﬁre-gilded copper tiles. From November until Christmas you can stroll through one of Austria’s most charming Christmas Market right in front of the „Goldenes Dachl“. Oh, and don’t worry, the tiles won’t fall down!"
+              }
+            ]
 }
