@@ -331,7 +331,7 @@ body.auto-height {
 }
 
 #content .modal-dialog {
-    max-width: 800px;
+    max-width: 900px;
     margin-top: 0;
     margin-bottom: 0;
     position: absolute;
@@ -339,6 +339,10 @@ body.auto-height {
     top: 0;
     transform: translate(-50%, -50%);
     transition: 0.4s ease;
+}
+
+#content .modal-footer {
+    padding: 5px;
 }
 
 nav#navigation.no-background {
