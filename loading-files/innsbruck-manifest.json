@@ -1,0 +1,33 @@
+{
+  "manifest": [
+    {"src":"assets/js/places/innsbruck/innsbruck.js", "id":"innsbruckjs"},
+    {"src": "assets/js/places/innsbruck/innsbruckDev.js", "id": "innsbruckDev.js"},
+    {"src":"assets/images/innsbruck/InnsbruckFoto.png", "id":"InnsbruckFoto"},
+    {"src":"assets/images/innsbruck/Bitmap1.png", "id":"Bitmap1"},
+    {"src":"assets/images/innsbruck/Innsbruck_BahnBkgr.jpg", "id":"Innsbruck_BahnBkgr"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_01_fahrrad.png", "id":"Innsbruck_01_fahrrad"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_01_gondel.png", "id":"Innsbruck_01_gondel"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_01_layer01.png", "id":"Innsbruck_01_layer01"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_01_layer02.png", "id":"Innsbruck_01_layer02"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_01_layer04.png", "id":"Innsbruck_01_layer04"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_01_layer05.png", "id":"Innsbruck_01_layer05"},
+    {"src":"assets/images/innsbruck/sc01/Innsbruck_l01_layer03.png", "id":"Innsbruck_l01_layer03"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_01_1.png", "id":"Innsbruck_Layer02_01_1"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_02.png", "id":"Innsbruck_Layer02_02"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_03.png", "id":"Innsbruck_Layer02_03"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_04.png", "id":"Innsbruck_Layer02_04"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_05.png", "id":"Innsbruck_Layer02_05"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_06.png", "id":"Innsbruck_Layer02_06"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_auto.png", "id":"Innsbruck_Layer02_auto"},
+    {"src":"assets/images/innsbruck/sc02/Innsbruck_Layer02_hungerburgbahn.png", "id":"Innsbruck_Layer02_hungerburgbahn"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_01.png", "id":"Innsbruck_Layer03_01"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_02.png", "id":"Innsbruck_Layer03_02"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_03.png", "id":"Innsbruck_Layer03_03"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Dachl.png", "id":"Innsbruck_Layer03_Dachl"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Personen1.png", "id":"Innsbruck_Layer03_Personen1"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_personen1_hover.png", "id":"Innsbruck_Layer03_personen1_hover"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Personen2.png", "id":"Innsbruck_Layer03_Personen2"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Personen3.png", "id":"Innsbruck_Layer03_Personen3"},
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Schindl.png", "id":"Innsbruck_Layer03_Schindl"}
+  ]
+}
