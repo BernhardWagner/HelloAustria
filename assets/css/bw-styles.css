@@ -446,7 +446,9 @@ nav#navigation.no-background {
     text-align: center;
     width: 100%;
     height: 100%;
-    background-color: darkred;
+    background-color: #fafafa;
+    background-image: url("../images/Hintergrund.png");
+    background-size: cover;
     overflow: hidden;
 }
 

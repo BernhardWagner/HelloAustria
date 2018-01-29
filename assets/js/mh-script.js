@@ -45,7 +45,7 @@ mh.main = (function () {
               boundingRect = currentCanvas.getBoundingClientRect();
               closeButtonWrapper.addClass('open');
               closeButtonWrapper.css({
-                  'left': (boundingRect.right - 61) + 'px',
+                  'left': (boundingRect.right - 60) + 'px',
                   'top': (boundingRect.top) + 'px'
               });
               infoButton.css({

@@ -20,9 +20,9 @@ bw.innsbruck = (function ($) {
 
 
     function register() {
-        var scene1InteractionObjects = [],
-            scene2InteractionsObjects = [],
-            scene3InteractionsObjects = [],
+        var scene1InteractionObjects = [exportRoot.sc1.l1.fahrrad, exportRoot.sc1.l1.gondel],
+            scene2InteractionsObjects = [exportRoot.sc2.l2.auto, exportRoot.sc2.l4.bahn],
+            scene3InteractionsObjects = [exportRoot.sc3.l1.personen, exportRoot.sc3.l2.dachl],
 
 
             scene1Layers = [exportRoot.sc1.l1, exportRoot.sc1.l2, exportRoot.sc1.l3, exportRoot.sc1.l4],
@@ -32,8 +32,6 @@ bw.innsbruck = (function ($) {
             scene1LayerParallaxDampings = [35, 75, 80, 120],
             scene2LayerParallaxDampings = [20, 30, 50, 80, 100],
             scene3LayerParallaxDampings = [35, 45, 55];
-
-        console.log(exportRoot.sc3);
 
 
         //action sounds (can also also be added in flash file under the action animation)
@@ -54,7 +52,7 @@ bw.innsbruck = (function ($) {
 
 
         //picture
-        //bw.photo.registerPictureInteraction(exportRoot.sc3.l2.photoTrigger, exportRoot.sc3.photo, 'photo_shutter', exportRoot.sc3.photo.pic.close);
+        bw.photo.registerPictureInteraction(exportRoot.sc3.l1.personen.photoTrigger, exportRoot.sc3.photo, 'photo_shutter', exportRoot.sc3.photo.pic.close);
 
     }
 
