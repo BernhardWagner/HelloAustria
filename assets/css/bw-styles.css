@@ -416,6 +416,40 @@ nav#navigation.no-background {
     left: -5px;
 }
 
+
+/*Präsentation*/
+.prasentation-title {
+    font-size: 200px;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease;
+}
+
+.prasentation-title a {
+    color: white;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.prasentation-title a:hover {
+    text-decoration: none;
+}
+
+.prasentation-title:hover {
+    transform: translate(-51% ,-50%);
+}
+
+.prasentation-title-box {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: darkred;
+    overflow: hidden;
+}
+
 .tooltip .arrow::before {
     border-right-color: rgba(255, 255, 255, 0.67);
 }

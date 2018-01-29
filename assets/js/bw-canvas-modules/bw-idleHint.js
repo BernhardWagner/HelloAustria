@@ -72,6 +72,8 @@ bw.idle = (function ($) {
     }
 
     function removeHints() {
+        //TODO timeout on remove
+
         for (var idleObjKey in idleObjects) {
             if(idleObjects.hasOwnProperty(idleObjKey)){
                 var obj = idleObjects[idleObjKey],
