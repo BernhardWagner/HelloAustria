@@ -272,6 +272,7 @@ body.auto-height {
 .card-flip .back-face {
    display: flex;
     flex-flow: column;
+    transform: translateZ(-2px);
 }
 
 .card-flip .back-face .card-footer {
@@ -285,6 +286,7 @@ body.auto-height {
 .card-flip .front-face {
     width: 100%;
     z-index: 1;
+    transform: translateZ(2px);
 }
 
 .card-flip .back-face {
