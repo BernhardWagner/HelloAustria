@@ -35,6 +35,12 @@ bw.innsbruck = (function ($) {
 
 
         //action sounds (can also also be added in flash file under the action animation)
+        bw.action.addActionSound(exportRoot.sc3.l2.dachl, "in_sc3_dachl");
+        bw.action.addActionSound(exportRoot.sc2.l2.auto, "in_sc2_auto");
+        bw.action.addActionSound(exportRoot.sc1.l1.fahrrad, "in_sc1_rad");
+        bw.action.addActionSound(exportRoot.sc1.l1.gondel, "in_sc1_seilbahn");
+        bw.action.addActionSound(exportRoot.sc3.l1.personen, "in_sc3_personen");
+
 
 
         bw.sceneChanger.registerSceneChanger(
@@ -44,7 +50,7 @@ bw.innsbruck = (function ($) {
             [scene1Layers, scene2Layers, scene3Layers], //Scenes first array is first scene, second is second scene...
             [scene1LayerParallaxDampings, scene2LayerParallaxDampings, scene3LayerParallaxDampings],
             [scene1InteractionObjects, scene2InteractionsObjects, scene3InteractionsObjects], //second last array for interaction objects (also seperated per subscene)
-            []); //last array for the sccene sounds
+            ["in_sc1_ambience", "in_sc2_ambience", 'in_sc3_ambience']); //last array for the sccene sounds
 
             bw.idle.setStage(stage);
 

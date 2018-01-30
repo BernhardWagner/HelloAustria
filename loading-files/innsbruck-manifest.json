@@ -28,6 +28,17 @@
     {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_personen1_hover.png", "id":"Innsbruck_Layer03_personen1_hover"},
     {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Personen2.png", "id":"Innsbruck_Layer03_Personen2"},
     {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Personen3.png", "id":"Innsbruck_Layer03_Personen3"},
-    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Schindl.png", "id":"Innsbruck_Layer03_Schindl"}
+    {"src":"assets/images/innsbruck/sc03/Innsbruck_Layer03_Schindl.png", "id":"Innsbruck_Layer03_Schindl"},
+
+    {"src":"assets/sounds/innsbruck/in_sc3_ambience.ogg", "id":"in_sc3_ambience"},
+    {"src":"assets/sounds/innsbruck/in_sc2_ambience.ogg", "id":"in_sc2_ambience"},
+    {"src":"assets/sounds/innsbruck/in_sc1_ambience.ogg", "id":"in_sc1_ambience"},
+
+
+    {"src":"assets/sounds/innsbruck/in_sc1_rad.mp3", "id":"in_sc1_rad"},
+    {"src":"assets/sounds/innsbruck/in_sc1_seilbahn2.mp3", "id":"in_sc1_seilbahn"},
+    {"src":"assets/sounds/innsbruck/in_sc2_auto.mp3", "id":"in_sc2_auto"},
+    {"src":"assets/sounds/innsbruck/in_sc3_personen2.mp3", "id":"in_sc3_personen"},
+    {"src":"assets/sounds/innsbruck/in_sc3_dachl.mp3", "id":"in_sc3_dachl"}
   ]
 }
