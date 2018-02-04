@@ -95,9 +95,14 @@ bw.main = (function ($) {
             descriptionTextField.innerHTML = descriptions['map'][0]['text'];
         }
 
-        else {
+        else if(descriptions[currentPlace]){
             descriptionTitleField.innerHTML = descriptions[currentPlace][getCurrentScene()]['title'];
             descriptionTextField.innerHTML = descriptions[currentPlace][getCurrentScene()]['text'];
+        }
+
+        else {
+            descriptionTitleField.innerHTML = "Coming Soon";
+            descriptionTextField.innerHTML = "This place is currently under construction";
         }
     }
 

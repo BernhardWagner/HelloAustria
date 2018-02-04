@@ -452,6 +452,20 @@ nav#navigation.no-background {
     overflow: hidden;
 }
 
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+.coming-soon h3 {
+    font-size: 22pt;
+    color: #878787;
+}
+
 .tooltip .arrow::before {
     border-right-color: rgba(255, 255, 255, 0.67);
 }
