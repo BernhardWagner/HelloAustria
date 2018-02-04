@@ -180,6 +180,7 @@ bw.sceneChanger = (function ($) {
         $(document).off("nextScene");
         bw.parallax.unregisterParallax();
         bw.action.unregisterAnimationDefaultActions();
+        bw.idle.removeHints();
         bw.idle.setIdleObjects([]);
 
         if(specialScene.active === true){

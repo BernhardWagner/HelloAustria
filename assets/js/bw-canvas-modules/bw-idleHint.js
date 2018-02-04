@@ -72,8 +72,6 @@ bw.idle = (function ($) {
     }
 
     function removeHints() {
-        //TODO timeout on remove
-
         for (var idleObjKey in idleObjects) {
             if(idleObjects.hasOwnProperty(idleObjKey)){
                 var obj = idleObjects[idleObjKey],
@@ -94,6 +92,18 @@ bw.idle = (function ($) {
         idleTimeCount = 0;
     }
 
+    function removeHintsForce() {
+        for (var idleObjKey in idleObjects) {
+            if (idleObjects.hasOwnProperty(idleObjKey)) {
+                var obj = idleObjects[idleObjKey];
+                
+                obj.shadow = null;
+                obj.scaleX = 1;
+                obj.scaleY = 1;
+            }
+        }
+    }
+
 
     function addIdleObject(idleObject) {
         if(!idleObjects) {
@@ -107,6 +117,7 @@ bw.idle = (function ($) {
         setIdleObjects: setIdleObjects,
         addIdleObject: addIdleObject,
         setStage: setStage,
+        removeHints: removeHintsForce,
     }
 
 }($));
