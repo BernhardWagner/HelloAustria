@@ -497,7 +497,7 @@ nav#navigation.no-background {
     font-size: 50pt;
 }
 
-@media screen and (max-device-aspect-ratio: 6/5) {
+@media screen and (max-device-aspect-ratio: 6/5), screen and (max-device-height: 580px) {
     .small-screen-message {
         display: block;
     }
@@ -508,6 +508,16 @@ nav#navigation.no-background {
 
     .preload {
         display: none;
+    }
+}
+
+@media screen and (max-device-height: 580px) {
+    .small-screen-message .screen-res-text h1 {
+        font-size: 30pt;
+    }
+
+    .small-screen-message .screen-res-text p {
+        font-size: 25pt;
     }
 }
 
