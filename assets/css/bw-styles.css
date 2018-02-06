@@ -476,6 +476,27 @@ nav#navigation.no-background {
     transition: 0.5s ease;
 }
 
+.screen-res-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.small-screen-message {
+    background-image: url("../images/Hintergrund.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.screen-res-text h1{
+    font-size: 120pt;
+}
+
+.screen-res-text p {
+    font-size: 50pt;
+}
+
 @media screen and (max-device-aspect-ratio: 6/5) {
     .small-screen-message {
         display: block;

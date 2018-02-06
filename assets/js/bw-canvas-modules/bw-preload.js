@@ -63,7 +63,7 @@ bw.preload = (function ($) {
            loadingImageInjector.append(preloadingImages.shift());
            currentPercentStep += 5;
 
-           bw.tippLoader.injectTipps(e.progress * 100);
+           //bw.tippLoader.injectTipps(e.progress * 100);
        }
     }
 
@@ -95,6 +95,7 @@ bw.preload = (function ($) {
         console.log("loaded");
         loadingWindow.addClass('hidden');
         loadedWindow.removeClass('hidden');
+        bw.tippLoader.destroyTipps();
         bw.main.init();
         //createjs.Sound.play("sound1");
     }

@@ -9,7 +9,9 @@ bw.tippLoader = (function ($) {
         tippInject,
         i,
         oldPercentage,
-        percentageSteps;
+        percentageSteps,
+        canSwitch,
+        stop,
 
     i = 0;
     oldPercentage = 0;
@@ -26,22 +28,55 @@ bw.tippLoader = (function ($) {
         if(tipps) {
             percentageSteps = ~~(100 / Object.keys(tipps).length);
         }
+
+        tippInject.click(function () {
+           switchScene();
+        });
+
+        setTimeout(function () {
+            canSwitch = true;
+            injectTipps();
+        },6000)
     }
     
     
-    function injectTipps(percentage) {
-        if(percentage > oldPercentage + percentageSteps) {
-            oldPercentage = percentage;
-            i++;
+    function injectTipps() {
+        if(canSwitch) {
+            //oldPercentage = percentage;
+            canSwitch = false;
 
-            $(tippInject).addClass('fade-fx');
-            tippInject[0].innerHTML = tipps[i];
+            switchScene();
 
             setTimeout(function () {
-                $(tippInject).removeClass('fade-fx');
-            }, 250);
+                canSwitch = true;
+                !stop && injectTipps();
+            }, 12000);
 
         }
+    }
+
+    function switchScene() {
+        i++;
+
+        if (i === Object.keys(tipps).length) {
+            i = 0;
+        }
+
+        $(tippInject).addClass('fade-fx');
+
+       setTimeout(function () {
+           tippInject[0].innerHTML = tipps[i];
+       }, 500);
+
+        setTimeout(function () {
+            $(tippInject).removeClass('fade-fx');
+        }, 500);
+    }
+
+
+    function destroyTipps() {
+        stop = true;
+        tippInject.off('click');
     }
 
     $(document).ready(init);
@@ -50,7 +85,8 @@ bw.tippLoader = (function ($) {
     xmlhttp.send();
 
     return {
-        injectTipps: injectTipps
+        injectTipps: injectTipps,
+        destroyTipps: destroyTipps,
     };
 
 })($);
